@@ -13,7 +13,11 @@ export const moduleTotalLessons: Record<string, number> = {};
 
 curriculum.forEach((m) => {
   let mTotal = 0;
+
+  moduleCoursesMap[m.moduleId] = m.courses.map(c => c.courseId)
   m.courses.forEach((c) => {
+    courseLessonsMap[c.courseId] = c.lessons.map(l => l.lessonId)
+
     const cTotal = c.lessons.length;
     courseTotalLessons[c.courseId] = cTotal;
     mTotal += cTotal;
@@ -50,6 +54,29 @@ export const useProgressStore = defineStore("progress", {
         this.courseCompletedCounts[courseId] === courseTotalLessons[courseId];
       this.completedModules[moduleId] =
         this.moduleCompletedCounts[moduleId] === moduleTotalLessons[moduleId];
+    },
+    completeCourse(courseId: string, moduleId: string, lessonIds: string[]) {
+      // 1. Mark all individual lessons as true
+      lessonIds.forEach(id => {
+        this.completedLessons[id] = true;
+      });
+
+      // 2. Instantly max out the course count and boolean
+      const totalInCourse = courseTotalLessons[courseId] || 0;
+      this.courseCompletedCounts[courseId] = totalInCourse;
+      this.completedCourses[courseId] = true;
+
+      // 3. Recalculate the parent module count based on sibling courses
+      // (Since we bypassed toggleLesson, we just recalculate the module once)
+      const siblingCourseIds = moduleCoursesMap[moduleId] || [];
+      let newModuleCount = 0;
+
+      siblingCourseIds.forEach(cId => {
+        newModuleCount += this.courseCompletedCounts[cId] || 0;
+      });
+
+      this.moduleCompletedCounts[moduleId] = newModuleCount;
+      this.completedModules[moduleId] = newModuleCount === moduleTotalLessons[moduleId];
     },
     initializeCompletions() {
       for (const mId in moduleTotalLessons) this.moduleCompletedCounts[mId] = 0;

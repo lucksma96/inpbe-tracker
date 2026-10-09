@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { onMounted, ref, computed } from "vue";
 import {
   useProgressStore,
   moduleTotalLessons,
@@ -38,6 +38,19 @@ const goBack = () => {
   else if (currentDepth.value === 1) currentDepth.value = 0;
 };
 
+const completeAll = () => {
+  if (!selectedCourse.value || !selectedModule.value) return;
+
+  // Pass the raw array of lesson IDs
+  const lessonIds = selectedCourse.value.lessons.map(l => l.lessonId);
+
+  store.completeCourse(
+    selectedCourse.value.courseId,
+    selectedModule.value.moduleId,
+    lessonIds
+  );
+};
+
 const getModulePercentage = (moduleId: string): number => {
   if (store.completedModules[moduleId]) return 100;
 
@@ -54,6 +67,49 @@ const getCoursePercentage = (courseId: string): number => {
   const total = courseTotalLessons[courseId] || 1;
 
   return Math.round((completed / total) * 100);
+};
+
+const isSelectedCourseIncomplete = computed((): boolean => {
+  if (!selectedCourse.value) return false;
+
+  return !store.completedCourses[selectedCourse.value.courseId];
+});
+
+// Helper to format minutes into a readable string
+const formatTime = (minutes: number): string => {
+  if (minutes <= 0) return "Concluído";
+  const h = Math.floor(minutes / 60);
+  const m = minutes % 60;
+  return h > 0 ? `${h}h ${m}m restantes` : `${m}m restantes`;
+};
+
+// Calculate remaining time for a specific Course
+const getCourseTimeLeft = (course: Course): number => {
+  let minutesLeft = 0;
+  course.lessons.forEach((l) => {
+    if (!store.completedLessons[l.lessonId]) {
+      minutesLeft += l.durationMinutes;
+    }
+  });
+  return minutesLeft;
+};
+
+// Calculate remaining time for a specific Module
+const getModuleTimeLeft = (module: Module): number => {
+  let minutesLeft = 0;
+  module.courses.forEach((c) => {
+    minutesLeft += getCourseTimeLeft(c);
+  });
+  return minutesLeft;
+};
+
+// Calculate total remaining time for the entire Curriculum
+const getGlobalTimeLeft = (): number => {
+  let minutesLeft = 0;
+  store.curriculum.forEach((m) => {
+    minutesLeft += getModuleTimeLeft(m);
+  });
+  return minutesLeft;
 };
 </script>
 
@@ -96,6 +152,23 @@ const getCoursePercentage = (courseId: string): number => {
                     : selectedCourse?.title
               }}
             </v-toolbar-title>
+            <template v-slot:append>
+              <v-chip
+                class="mr-2 font-weight-bold"
+                color="white"
+                variant="outlined"
+                size="small"
+              >
+                {{
+                  currentDepth === 0
+                    ? formatTime(getGlobalTimeLeft())
+                    : currentDepth === 1
+                    ? formatTime(getModuleTimeLeft(selectedModule!))
+                    : formatTime(getCourseTimeLeft(selectedCourse!))
+                }}
+              </v-chip>
+              <v-btn v-if="currentDepth === 2 && isSelectedCourseIncomplete" icon="mdi-check-all" @click="completeAll"></v-btn>
+            </template>
           </v-toolbar>
 
           <!-- v-window handles the left/right sliding animation automatically -->
@@ -107,6 +180,7 @@ const getCoursePercentage = (courseId: string): number => {
                   v-for="(m, i) in store.curriculum"
                   :key="m.moduleId"
                   :title="`Módulo ${i + 1} - ${m.title}`"
+                  :subtitle="formatTime(getModuleTimeLeft(m))"
                   :prepend-icon="
                     store.completedModules[m.moduleId] ? 'mdi-check-circle' : 'mdi-folder'
                   "
@@ -137,6 +211,7 @@ const getCoursePercentage = (courseId: string): number => {
                   v-for="(c, i) in selectedModule?.courses"
                   :key="c.courseId"
                   :title="`Curso ${i + 1} - ${c.title}`"
+                  :subtitle="formatTime(getCourseTimeLeft(c))"
                   :prepend-icon="
                     store.completedCourses[c.courseId]
                       ? 'mdi-check-circle-outline'
