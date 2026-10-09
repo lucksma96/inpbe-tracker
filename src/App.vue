@@ -115,7 +115,7 @@ const getGlobalTimeLeft = (): number => {
 
 <template>
   <v-app id="inpbe">
-    <v-app-bar flat>
+    <v-app-bar flat v-if="false">
       <v-container class="mx-auto d-flex align-center justify-center">
         <v-avatar color="purple" size="32"></v-avatar>
 
