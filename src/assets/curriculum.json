@@ -1,0 +1,3043 @@
+[
+  {
+    "moduleId": "m1",
+    "title": "Introdução à Prática Baseada em Evidências",
+    "courses": [
+      {
+        "courseId": "m1-c1",
+        "title": "A Prática Baseada Em Evidências",
+        "lessons": [
+          {
+            "lessonId": "m1-c1-l1",
+            "title": "Introdução",
+            "durationMinutes": 2
+          },
+          {
+            "lessonId": "m1-c1-l2",
+            "title": "Por Que Atuar Com Prática Baseada em Evidências",
+            "durationMinutes": 43
+          },
+          {
+            "lessonId": "m1-c1-l3",
+            "title": "Primórdios",
+            "durationMinutes": 19
+          },
+          {
+            "lessonId": "m1-c1-l4",
+            "title": "Problemas Metodológicos",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m1-c1-l5",
+            "title": "A Força-Tarefa da Divisão 12",
+            "durationMinutes": 32
+          },
+          {
+            "lessonId": "m1-c1-l6",
+            "title": "As Outras Forças-Tarefas",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m1-c1-l7",
+            "title": "A Força-Tarefa da Divisão 29",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m1-c1-l8",
+            "title": "Paradigma da PBE",
+            "durationMinutes": 39
+          },
+          {
+            "lessonId": "m1-c1-l9",
+            "title": "Prática Baseada em Evidências e Ética",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m1-c1-l10",
+            "title": "Limites dos Manuais",
+            "durationMinutes": 32
+          },
+          {
+            "lessonId": "m1-c1-l11",
+            "title": "A Quarta Onda",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m1-c1-l12",
+            "title": "A Abordagem Transdiagnóstica",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m1-c1-l13",
+            "title": "A Terapia Baseada em Processos",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m1-c1-l14",
+            "title": "A Proposta de Kelly Koerner",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m1-c1-l15",
+            "title": "Implementando a Prática Baseada em Evidências em Psicologia",
+            "durationMinutes": 46
+          },
+          {
+            "lessonId": "m1-c1-l16",
+            "title": "Síntese",
+            "durationMinutes": 4
+          }
+        ]
+      },
+      {
+        "courseId": "m1-c2",
+        "title": "A Prática Baseada Em Evidências",
+        "lessons": [
+          {
+            "lessonId": "m1-c2-l1",
+            "title": "A Escolha de Uma Abordagem",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m1-c2-l2",
+            "title": "Integração Em Psicoterapia",
+            "durationMinutes": 32
+          },
+          {
+            "lessonId": "m1-c2-l3",
+            "title": "O Trabalho Com Protocolos",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m1-c2-l4",
+            "title": "Os Componentes de Intervenção",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m1-c2-l5",
+            "title": "O Passo a Passo",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m1-c2-l6",
+            "title": "Um Exemplo Clínico",
+            "durationMinutes": 30
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m2",
+    "title": "Avaliação",
+    "courses": [
+      {
+        "courseId": "m2-c1",
+        "title": "Psicopatologia",
+        "lessons": [
+          {
+            "lessonId": "m2-c1-l1",
+            "title": "Introdução",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m2-c1-l2",
+            "title": "O Normal e o Patológico",
+            "durationMinutes": 27
+          },
+          {
+            "lessonId": "m2-c1-l3",
+            "title": "Classificação e Diagnóstico em Saúde Mental",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m2-c1-l4",
+            "title": "Um Breve Histórico do DSM",
+            "durationMinutes": 41
+          },
+          {
+            "lessonId": "m2-c1-l5",
+            "title": "Como Usar o DSM",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m2-c1-l6",
+            "title": "Etiologia",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m2-c1-l7",
+            "title": "Avaliação Clínica e Entrevista",
+            "durationMinutes": 38
+          },
+          {
+            "lessonId": "m2-c1-l8",
+            "title": "A SCID",
+            "durationMinutes": 37
+          },
+          {
+            "lessonId": "m2-c1-l9",
+            "title": "Sugestões de Instrumentos",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m2-c1-l10",
+            "title": "Exame Psíquico",
+            "durationMinutes": 56
+          },
+          {
+            "lessonId": "m2-c1-l11",
+            "title": "O Exame Psíquico e o DSM",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m2-c1-l12",
+            "title": "Alternativas ao DSM",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m2-c1-l13",
+            "title": "Alternativas ao DSM: P FACTOR e HITOP",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m2-c1-l14",
+            "title": "Alternativas ao DSM: MTFC e TBP",
+            "durationMinutes": 40
+          }
+        ]
+      },
+      {
+        "courseId": "m2-c2",
+        "title": "Transtornos Psiquiátricos",
+        "lessons": [
+          {
+            "lessonId": "m2-c2-l1",
+            "title": "Transtornos de Ansiedade",
+            "durationMinutes": 76
+          },
+          {
+            "lessonId": "m2-c2-l2",
+            "title": "Transtornos Obsessivo-Compulsivo",
+            "durationMinutes": 68
+          },
+          {
+            "lessonId": "m2-c2-l3",
+            "title": "Transtornos Psicóticos",
+            "durationMinutes": 59
+          },
+          {
+            "lessonId": "m2-c2-l4",
+            "title": "Transtornos Relacionados a Trauma e Estressores",
+            "durationMinutes": 42
+          },
+          {
+            "lessonId": "m2-c2-l5",
+            "title": "Transtorno Bipolar",
+            "durationMinutes": 74
+          },
+          {
+            "lessonId": "m2-c2-l6",
+            "title": "Transtornos Depressivos",
+            "durationMinutes": 55
+          },
+          {
+            "lessonId": "m2-c2-l7",
+            "title": "Transtornos Alimentares",
+            "durationMinutes": 49
+          },
+          {
+            "lessonId": "m2-c2-l8",
+            "title": "Dependência Quimica",
+            "durationMinutes": 95
+          },
+          {
+            "lessonId": "m2-c2-l9",
+            "title": "Internação Psiquiátrica",
+            "durationMinutes": 97
+          }
+        ]
+      },
+      {
+        "courseId": "m2-c3",
+        "title": "Formulação do Caso Clínico",
+        "lessons": [
+          {
+            "lessonId": "m2-c3-l1",
+            "title": "Formulação de Caso",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m2-c3-l2",
+            "title": "Formulação de Caso: Nomotética",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m2-c3-l3",
+            "title": "Formulação de Caso: Idiográfica",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m2-c3-l4",
+            "title": "Formulação de Caso e PBE em Psicologia",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m2-c3-l5",
+            "title": "A Situação Real da Psicoterapia",
+            "durationMinutes": 38
+          },
+          {
+            "lessonId": "m2-c3-l6",
+            "title": "O Lugar da Intuição",
+            "durationMinutes": 19
+          },
+          {
+            "lessonId": "m2-c3-l7",
+            "title": "Objetivos na Psicoterapia",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m2-c3-l8",
+            "title": "Uma Definição de Objetivos",
+            "durationMinutes": 19
+          },
+          {
+            "lessonId": "m2-c3-l9",
+            "title": "Objetivos, Bem-Estar e Afetos",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m2-c3-l10",
+            "title": "Tipos de Objetivos",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m2-c3-l11",
+            "title": "Aproximação e Evitação",
+            "durationMinutes": 21
+          },
+          {
+            "lessonId": "m2-c3-l12",
+            "title": "Objetivos Intrinsecos e Extrinsecos",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m2-c3-l13",
+            "title": "Construindo Objetivos com Nossos Clientes",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m2-c3-l14",
+            "title": "Um Objetivo Secreto de Todo Terapeuta",
+            "durationMinutes": 27
+          }
+        ]
+      },
+      {
+        "courseId": "m2-c4",
+        "title": "Entrevista Motivacional",
+        "lessons": [
+          {
+            "lessonId": "m2-c4-l1",
+            "title": "Motivação e Ambivalência",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m2-c4-l2",
+            "title": "Introdução",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m2-c4-l3",
+            "title": "História da Entrevista Motivacional",
+            "durationMinutes": 8
+          },
+          {
+            "lessonId": "m2-c4-l4",
+            "title": "O Espírito da Entrevista Motivacional",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m2-c4-l5",
+            "title": "Reflexo de Correção",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m2-c4-l6",
+            "title": "Os Processos e as Estratégias Nucleares",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m2-c4-l7",
+            "title": "Aprofundando as Estratégias Nucleares",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m2-c4-l8",
+            "title": "Da Motivação à Mudança",
+            "durationMinutes": 14
+          }
+        ]
+      },
+      {
+        "courseId": "m2-c5",
+        "title": "Monitoramento de Progresso e Mensuração de Resultados",
+        "lessons": [
+          {
+            "lessonId": "m2-c5-l1",
+            "title": "Introdução",
+            "durationMinutes": 2
+          },
+          {
+            "lessonId": "m2-c5-l2",
+            "title": "A Necessidade de Mensuração",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m2-c5-l3",
+            "title": "Pesquisas sobre Mensuração",
+            "durationMinutes": 7
+          },
+          {
+            "lessonId": "m2-c5-l4",
+            "title": "Formas de Mensuração",
+            "durationMinutes": 25
+          },
+          {
+            "lessonId": "m2-c5-l5",
+            "title": "O Mínimo que Devemos Saber sobre Psicometria",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m2-c5-l6",
+            "title": "Passo a Passo",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m2-c5-l7",
+            "title": "Sugestões de Instrumentos",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m2-c5-l8",
+            "title": "Processos Transdiagnósticos",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m2-c5-l9",
+            "title": "Monitoramente do Progresso",
+            "durationMinutes": 40
+          },
+          {
+            "lessonId": "m2-c5-l10",
+            "title": "Medidas Individualizadas",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m2-c5-l11",
+            "title": "Avaliação Ecológica Momentânea",
+            "durationMinutes": 7
+          },
+          {
+            "lessonId": "m2-c5-l12",
+            "title": "Considerações Finais",
+            "durationMinutes": 4
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m3",
+    "title": "Fundamentos Conceituais",
+    "courses": [
+      {
+        "courseId": "m3-c1",
+        "title": "História da Saúde Mental",
+        "lessons": [
+          {
+            "lessonId": "m3-c1-l1",
+            "title": "História da Saúde Mental: do Passado ao Futuro",
+            "durationMinutes": 144
+          }
+        ]
+      },
+      {
+        "courseId": "m3-c2",
+        "title": "Pressupostos Filosóficos do Behaviorismo Radical e a Análise do Comportamento",
+        "lessons": [
+          {
+            "lessonId": "m3-c2-l1",
+            "title": "Introdução",
+            "durationMinutes": 1
+          },
+          {
+            "lessonId": "m3-c2-l2",
+            "title": "Pressupostos Filosóficos do Behaviorismo Radical e a Análise do Comportamento",
+            "durationMinutes": 20
+          },
+          {
+            "lessonId": "m3-c2-l3",
+            "title": "O Triângulo Epistemológico da Análise do Comportamento",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m3-c2-l4",
+            "title": "Behaviorismo Radical a filosofia de uma ciência",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m3-c2-l5",
+            "title": "Causas Ficticias do Comportamento Humano",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m3-c2-l6",
+            "title": "O Comportamento como Objeto de Estudo",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m3-c2-l7",
+            "title": "O Modelo de Causalidade",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m3-c2-l8",
+            "title": "Sintese e Conclusão",
+            "durationMinutes": 3
+          }
+        ]
+      },
+      {
+        "courseId": "m3-c3",
+        "title": "Fundamentos Filosóficos e Teóricos da TCC",
+        "lessons": [
+          {
+            "lessonId": "m3-c3-l1",
+            "title": "Sócrates",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m3-c3-l2",
+            "title": "Estoicismo (parte 1)",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m3-c3-l3",
+            "title": "Estoicismo (parte 2)",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m3-c3-l4",
+            "title": "Aspectos Históricos da TCC",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m3-c3-l5",
+            "title": "Principios da TCC (parte 1)",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m3-c3-l6",
+            "title": "Princípios da TCC (parte 2)",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m3-c3-l7",
+            "title": "Modelo Cognitivo",
+            "durationMinutes": 15
+          }
+        ]
+      },
+      {
+        "courseId": "m3-c4",
+        "title": "Conceitos Básicos da Análise do Comportamento",
+        "lessons": [
+          {
+            "lessonId": "m3-c4-l1",
+            "title": "O que Comportamento",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m3-c4-l2",
+            "title": "Comportamento Respondente e Condicionamento Respondente",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m3-c4-l3",
+            "title": "Condicionamento Respondente",
+            "durationMinutes": 20
+          },
+          {
+            "lessonId": "m3-c4-l4",
+            "title": "Extinção Respondente",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m3-c4-l5",
+            "title": "Comportamento Operante",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m3-c4-l6",
+            "title": "Tipos de Reforçamento",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m3-c4-l7",
+            "title": "Conceito de Reforçamento na Clínica",
+            "durationMinutes": 39
+          },
+          {
+            "lessonId": "m3-c4-l8",
+            "title": "Classes de Respostas Topográficas e Funcionais",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m3-c4-l9",
+            "title": "Extinção Operante",
+            "durationMinutes": 24
+          },
+          {
+            "lessonId": "m3-c4-l10",
+            "title": "Extinção como Estratégia de Intervenção",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m3-c4-l11",
+            "title": "Modelagem",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m3-c4-l12",
+            "title": "Manutenção do Comportamento e Reforçamento Intermitente",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m3-c4-l13",
+            "title": "Reforçamento Continuo x Reforçamento Intermitente",
+            "durationMinutes": 3
+          },
+          {
+            "lessonId": "m3-c4-l14",
+            "title": "Controle de Estimulo Simples",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m3-c4-l15",
+            "title": "História de Reforçamento Diferencial para Criar um SD",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m3-c4-l16",
+            "title": "Controle de Estimulos e Exemplos Clínicos",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m3-c4-l17",
+            "title": "Definição de Estimulo Condicional",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m3-c4-l18",
+            "title": "Generalização de Estimulos",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m3-c4-l19",
+            "title": "Abstração",
+            "durationMinutes": 4
+          },
+          {
+            "lessonId": "m3-c4-l20",
+            "title": "Formação de Conceitos",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m3-c4-l21",
+            "title": "Controle Aversivo",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m3-c4-l22",
+            "title": "Por que Punimos?",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m3-c4-l23",
+            "title": "Conceito de Punição na Terapia",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m3-c4-l24",
+            "title": "Operações Motivadoras",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m3-c4-l25",
+            "title": "Distinção entre OMS e SDS",
+            "durationMinutes": 7
+          },
+          {
+            "lessonId": "m3-c4-l26",
+            "title": "O Conceito de OM na Prática Clínica",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m3-c4-l27",
+            "title": "Por que Estudar Comportamento Verbal na Clínica",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m3-c4-l28",
+            "title": "Como Devemos Analisar o Comportamento Verbal",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m3-c4-l29",
+            "title": "O Episódio Verbal Completo",
+            "durationMinutes": 4
+          },
+          {
+            "lessonId": "m3-c4-l30",
+            "title": "A Audiência no Comportamento Verbal",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m3-c4-l31",
+            "title": "Os Operantes Verbais",
+            "durationMinutes": 3
+          },
+          {
+            "lessonId": "m3-c4-l32",
+            "title": "O que é Mando?",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m3-c4-l33",
+            "title": "O que é Tato?",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m3-c4-l34",
+            "title": "Os Outros Operantes Verbais",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m3-c4-l35",
+            "title": "Comportamento Guiado por Regras Segundo Skinner",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m3-c4-l36",
+            "title": "Exemplos de Regras",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m3-c4-l37",
+            "title": "Regras na Prática Clínica",
+            "durationMinutes": 27
+          }
+        ]
+      },
+      {
+        "courseId": "m3-c5",
+        "title": "Análise Funcional do Comportamento",
+        "lessons": [
+          {
+            "lessonId": "m3-c5-l1",
+            "title": "Introdução à Análise Funcional",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m3-c5-l2",
+            "title": "Apresentação do Caso clínico",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m3-c5-l3",
+            "title": "Divergências nos Termos de Análise Funcional",
+            "durationMinutes": 7
+          },
+          {
+            "lessonId": "m3-c5-l4",
+            "title": "Elemento \"Resposta\" na Análise Funcional",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m3-c5-l5",
+            "title": "Resposta: caso clínico",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m3-c5-l6",
+            "title": "Elemento \"Consequência\" na Análise Funcional",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m3-c5-l7",
+            "title": "Consequência: caso clínico",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m3-c5-l8",
+            "title": "Identificação dos Eventos Antecedentes",
+            "durationMinutes": 8
+          },
+          {
+            "lessonId": "m3-c5-l9",
+            "title": "Antecedentes: caso clínico",
+            "durationMinutes": 19
+          },
+          {
+            "lessonId": "m3-c5-l10",
+            "title": "Fluxograma de Construção de Análise Funcional",
+            "durationMinutes": 7
+          },
+          {
+            "lessonId": "m3-c5-l11",
+            "title": "Análise Completa: caso clínico",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m3-c5-l12",
+            "title": "Diretrizes para Intervenção",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m3-c5-l13",
+            "title": "Diretrizes para Intervenção; caso clínico",
+            "durationMinutes": 20
+          }
+        ]
+      },
+      {
+        "courseId": "m3-c6",
+        "title": "Teoria das Molduras Relacionais (RFT): conceitos, pesquisas e implicações clínicas",
+        "lessons": [
+          {
+            "lessonId": "m3-c6-l1",
+            "title": "Introdução",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m3-c6-l2",
+            "title": "Introdução e Conceitos",
+            "durationMinutes": 59
+          },
+          {
+            "lessonId": "m3-c6-l3",
+            "title": "Pesquisas",
+            "durationMinutes": 24
+          },
+          {
+            "lessonId": "m3-c6-l4",
+            "title": "Implicações Clínicas",
+            "durationMinutes": 28
+          }
+        ]
+      },
+      {
+        "courseId": "m3-c7",
+        "title": "A História das Terapias Comportamentais",
+        "lessons": [
+          {
+            "lessonId": "m3-c7-l1",
+            "title": "Introdução",
+            "durationMinutes": 2
+          },
+          {
+            "lessonId": "m3-c7-l2",
+            "title": "Um Breve Panorama",
+            "durationMinutes": 7
+          },
+          {
+            "lessonId": "m3-c7-l3",
+            "title": "A Vertente Respondente da Modificação do Comportamento",
+            "durationMinutes": 39
+          },
+          {
+            "lessonId": "m3-c7-l4",
+            "title": "A Vertente Operante da Modificação do Comportamento",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m3-c7-l5",
+            "title": "O Surgimento da Análise do Comportamento Aplicada",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m3-c7-l6",
+            "title": "Considerações sobre a ABA",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m3-c7-l7",
+            "title": "A 1ª Onda",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m3-c7-l8",
+            "title": "A 2ª Onda",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m3-c7-l9",
+            "title": "A 3ª Onda",
+            "durationMinutes": 25
+          },
+          {
+            "lessonId": "m3-c7-l10",
+            "title": "Terapia Analítico-Comportamental",
+            "durationMinutes": 32
+          },
+          {
+            "lessonId": "m3-c7-l11",
+            "title": "A 4ª Onda",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m3-c7-l12",
+            "title": "Terapia Baseada em Processos",
+            "durationMinutes": 25
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m4",
+    "title": "Abordagens Terapêuticas",
+    "courses": [
+      {
+        "courseId": "m4-c1",
+        "title": "Terapia Cognitivo-Comportamental",
+        "lessons": [
+          {
+            "lessonId": "m4-c1-l1",
+            "title": "Fundamentos Filosóficos",
+            "durationMinutes": 49
+          },
+          {
+            "lessonId": "m4-c1-l2",
+            "title": "O Modelo Cognitivo (parte 1): os níveis de processamento da cognição",
+            "durationMinutes": 49
+          },
+          {
+            "lessonId": "m4-c1-l3",
+            "title": "o Modelo Cognitivo (parte 2): do modelo linear ao modal",
+            "durationMinutes": 40
+          },
+          {
+            "lessonId": "m4-c1-l4",
+            "title": "Princípios do Tratamento",
+            "durationMinutes": 40
+          },
+          {
+            "lessonId": "m4-c1-l5",
+            "title": "Psicoeducação",
+            "durationMinutes": 27
+          },
+          {
+            "lessonId": "m4-c1-l6",
+            "title": "Conceitualização Cognitiva",
+            "durationMinutes": 50
+          },
+          {
+            "lessonId": "m4-c1-l7",
+            "title": "Estrutura das Sessões e Plano de Ação",
+            "durationMinutes": 42
+          },
+          {
+            "lessonId": "m4-c1-l8",
+            "title": "Planejamento do Tratamento",
+            "durationMinutes": 52
+          },
+          {
+            "lessonId": "m4-c1-l9",
+            "title": "Questionamento Socrático",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m4-c1-l10",
+            "title": "Reestruturação Cognitiva",
+            "durationMinutes": 46
+          },
+          {
+            "lessonId": "m4-c1-l11",
+            "title": "Técnicas Cognitivas",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m4-c1-l12",
+            "title": "Transtornos Depressivos e Transtorno Bipolar",
+            "durationMinutes": 46
+          },
+          {
+            "lessonId": "m4-c1-l13",
+            "title": "Transtorno de Ansiedade Social e Transtorno de Ansiedade Generalizada",
+            "durationMinutes": 53
+          },
+          {
+            "lessonId": "m4-c1-l14",
+            "title": "Fobia específica e Transtorno de Pânico",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m4-c1-l15",
+            "title": "TOC e Transtornos Relacionados",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m4-c1-l16",
+            "title": "Transtornos Alimentares",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m4-c1-l17",
+            "title": "Transtorno de Estresse Pós-Traumático",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m4-c1-l18",
+            "title": "Transtornos Relacionados a Substâncias e Transtornos Aditivos",
+            "durationMinutes": 33
+          },
+          {
+            "lessonId": "m4-c1-l19",
+            "title": "Espectro da Esquizofrenia",
+            "durationMinutes": 42
+          },
+          {
+            "lessonId": "m4-c1-l20",
+            "title": "TDAH",
+            "durationMinutes": 25
+          },
+          {
+            "lessonId": "m4-c1-l21",
+            "title": "Desafios clínicos e Prevenção de Recaida",
+            "durationMinutes": 44
+          },
+          {
+            "lessonId": "m4-c1-l22",
+            "title": "Introdução à CT-R (Terapia Cognitiva Orientada para a Recuperação)",
+            "durationMinutes": 36
+          }
+        ]
+      },
+      {
+        "courseId": "m4-c2",
+        "title": "Ativação Comportamental",
+        "lessons": [
+          {
+            "lessonId": "m4-c2-l1",
+            "title": "Panorama da Ativação Comportamental para a Depressão",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m4-c2-l2",
+            "title": "Instrumentos para Avaliar Paciente com Depressão",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m4-c2-l3",
+            "title": "Análise do Comportamento e da Cognição",
+            "durationMinutes": 24
+          },
+          {
+            "lessonId": "m4-c2-l4",
+            "title": "Etiologias Cultural e Genética da Depressão",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m4-c2-l5",
+            "title": "Etiologia Psicológica da Depressão",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m4-c2-l6",
+            "title": "Tratamento Empiricamente Sustentado para Depressão",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m4-c2-l7",
+            "title": "O que é Ativação Comportamental",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m4-c2-l8",
+            "title": "Apresentando os Protocolos de Ativação Comportamental",
+            "durationMinutes": 21
+          },
+          {
+            "lessonId": "m4-c2-l9",
+            "title": "Modelo de Sessões de Terapia de Ativação Comportamental",
+            "durationMinutes": 32
+          },
+          {
+            "lessonId": "m4-c2-l10",
+            "title": "Exemplo clínico: espiral descendente da Depressão",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m4-c2-l11",
+            "title": "Caminho para Sair da Espiral Descendente da Depressão",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m4-c2-l12",
+            "title": "Registro de Atividade do Humor",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m4-c2-l13",
+            "title": "Inventário de Valores",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m4-c2-l14",
+            "title": "Problemas com Planejamento de Atividades",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m4-c2-l15",
+            "title": "Planejamento de Novas Atividades",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m4-c2-l16",
+            "title": "Análise de Padrões Passivos",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m4-c2-l17",
+            "title": "Como Incentivar Padrões Ativos Caso clínico",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m4-c2-l18",
+            "title": "Análise de Caso Clínico (continuação)",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m4-c2-l19",
+            "title": "Lista de Ativação Simples",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m4-c2-l20",
+            "title": "Encerramento orientações para utilização da Ativação Comportamental",
+            "durationMinutes": 7
+          }
+        ]
+      },
+      {
+        "courseId": "m4-c3",
+        "title": "Terapia Comportamental Dialética (DBT): Teoria e Prática",
+        "lessons": [
+          {
+            "lessonId": "m4-c3-l1",
+            "title": "Introdução",
+            "durationMinutes": 3
+          },
+          {
+            "lessonId": "m4-c3-l2",
+            "title": "Surgimento da DBT",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m4-c3-l3",
+            "title": "Standard DBT",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m4-c3-l4",
+            "title": "Componentes da DBT",
+            "durationMinutes": 24
+          },
+          {
+            "lessonId": "m4-c3-l5",
+            "title": "A Filosofia Dialética",
+            "durationMinutes": 20
+          },
+          {
+            "lessonId": "m4-c3-l6",
+            "title": "Dialética e Behaviorismo Radical",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m4-c3-l7",
+            "title": "A Dialética na Prática Clínica",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m4-c3-l8",
+            "title": "O Modelo Biossocial",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m4-c3-l9",
+            "title": "Vulnerabilidade Biologica",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m4-c3-l10",
+            "title": "Ambiente Invalidante",
+            "durationMinutes": 25
+          },
+          {
+            "lessonId": "m4-c3-l11",
+            "title": "Sintomas de TPB e o Modelo Biossocial",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m4-c3-l12",
+            "title": "Estágios de Tratamento",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m4-c3-l13",
+            "title": "Automonitoramento",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m4-c3-l14",
+            "title": "Dilemas Dialéticos e Alvos",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m4-c3-l15",
+            "title": "Formulação de Caso",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m4-c3-l16",
+            "title": "Os Três Principios da DBT",
+            "durationMinutes": 19
+          },
+          {
+            "lessonId": "m4-c3-l17",
+            "title": "Os Principios na Prática",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m4-c3-l18",
+            "title": "Validação",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m4-c3-l19",
+            "title": "Estratégias de Comprometimento",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m4-c3-l20",
+            "title": "Análise em Cadeia",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m4-c3-l21",
+            "title": "Análise de Soluções",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m4-c3-l22",
+            "title": "Intervenção: controle de estímulos",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m4-c3-l23",
+            "title": "Intervenção: nos pensamentos",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m4-c3-l24",
+            "title": "Intervenção: nas emoções",
+            "durationMinutes": 88
+          },
+          {
+            "lessonId": "m4-c3-l25",
+            "title": "Intervenção: manejo de contingências",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m4-c3-l26",
+            "title": "Estratégias Dialéticas",
+            "durationMinutes": 24
+          },
+          {
+            "lessonId": "m4-c3-l27",
+            "title": "Estratégias de Comunicação",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m4-c3-l28",
+            "title": "Manejo de Crise",
+            "durationMinutes": 55
+          },
+          {
+            "lessonId": "m4-c3-l29",
+            "title": "LRAMP",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m4-c3-l30",
+            "title": "Treino de Habilidades estrutura e funcionamento",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m4-c3-l31",
+            "title": "Mindfulness (parte 1)",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m4-c3-l32",
+            "title": "Mindfulness (parte 2)",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m4-c3-l33",
+            "title": "Mindfulness (parte 3)",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m4-c3-l34",
+            "title": "Habilidades de Tolerância a Mal-Estar",
+            "durationMinutes": 43
+          },
+          {
+            "lessonId": "m4-c3-l35",
+            "title": "Efetividade Interpessoal",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m4-c3-l36",
+            "title": "Habilidades de Regulação Emocional",
+            "durationMinutes": 56
+          },
+          {
+            "lessonId": "m4-c3-l37",
+            "title": "Resumindo a DBT",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m4-c3-l38",
+            "title": "Para Saber Mais sobre DET",
+            "durationMinutes": 16
+          }
+        ]
+      },
+      {
+        "courseId": "m4-c4",
+        "title": "ACT (Terapia de Aceitação e Compromisso)",
+        "lessons": [
+          {
+            "lessonId": "m4-c4-l1",
+            "title": "Introdução",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m4-c4-l2",
+            "title": "A Perspectiva da ACT",
+            "durationMinutes": 50
+          },
+          {
+            "lessonId": "m4-c4-l3",
+            "title": "Relação Linguagem-Sofrimento",
+            "durationMinutes": 58
+          },
+          {
+            "lessonId": "m4-c4-l4",
+            "title": "ACT e Filosofia da Ciência",
+            "durationMinutes": 56
+          },
+          {
+            "lessonId": "m4-c4-l5",
+            "title": "Pressupostos Teóricos sobre Cognição",
+            "durationMinutes": 57
+          },
+          {
+            "lessonId": "m4-c4-l6",
+            "title": "O Modelo de Flexibilidade Psicológica",
+            "durationMinutes": 33
+          },
+          {
+            "lessonId": "m4-c4-l7",
+            "title": "Pilar 1: ABERTO",
+            "durationMinutes": 39
+          },
+          {
+            "lessonId": "m4-c4-l8",
+            "title": "Pilar 2: CENTRADO",
+            "durationMinutes": 58
+          },
+          {
+            "lessonId": "m4-c4-l9",
+            "title": "Pilar 3: ENGAJADO",
+            "durationMinutes": 42
+          },
+          {
+            "lessonId": "m4-c4-l10",
+            "title": "Anseios, o Funil e o Pivô",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m4-c4-l11",
+            "title": "Formulação de Caso",
+            "durationMinutes": 70
+          },
+          {
+            "lessonId": "m4-c4-l12",
+            "title": "Relação Terapêutica",
+            "durationMinutes": 45
+          },
+          {
+            "lessonId": "m4-c4-l13",
+            "title": "Criando um Contexto para a Mudança",
+            "durationMinutes": 58
+          },
+          {
+            "lessonId": "m4-c4-l14",
+            "title": "Consciência do Momento Presente",
+            "durationMinutes": 70
+          },
+          {
+            "lessonId": "m4-c4-l15",
+            "title": "Dimensões do Self",
+            "durationMinutes": 55
+          },
+          {
+            "lessonId": "m4-c4-l16",
+            "title": "Desfusão",
+            "durationMinutes": 48
+          },
+          {
+            "lessonId": "m4-c4-l17",
+            "title": "Aceitação",
+            "durationMinutes": 44
+          },
+          {
+            "lessonId": "m4-c4-l18",
+            "title": "Conexão com os Valores",
+            "durationMinutes": 37
+          },
+          {
+            "lessonId": "m4-c4-l19",
+            "title": "Ação de Compromisso",
+            "durationMinutes": 73
+          },
+          {
+            "lessonId": "m4-c4-l20",
+            "title": "Ciência Comportamental Contextual e o Futuro",
+            "durationMinutes": 12
+          }
+        ]
+      },
+      {
+        "courseId": "m4-c5",
+        "title": "Introdução e Prática do Protocolo Transdiagnóstico",
+        "lessons": [
+          {
+            "lessonId": "m4-c5-l1",
+            "title": "Introdução e Prática do Protocolo Transdiagnóstico",
+            "durationMinutes": 146
+          },
+          {
+            "lessonId": "m4-c5-l2",
+            "title": "Revisitando o Protocolo Transdiagnóstico",
+            "durationMinutes": 48
+          }
+        ]
+      },
+      {
+        "courseId": "m4-c6",
+        "title": "Psicoterapia Baseada em Processos na Prática Clínica",
+        "lessons": [
+          {
+            "lessonId": "m4-c6-l1",
+            "title": "Por que uma Terapia Baseada em Processos",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m4-c6-l2",
+            "title": "Uma Abordagem em Rede",
+            "durationMinutes": 24
+          },
+          {
+            "lessonId": "m4-c6-l3",
+            "title": "Meta-Modelo Evolucionário Estendido",
+            "durationMinutes": 73
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m5",
+    "title": "Componentes de intervenção com roleplay",
+    "courses": [
+      {
+        "courseId": "m5-c1",
+        "title": "Validação",
+        "lessons": [
+          {
+            "lessonId": "m5-c1-l1",
+            "title": "Validação",
+            "durationMinutes": 40
+          },
+          {
+            "lessonId": "m5-c1-l2",
+            "title": "Role-plays de validação",
+            "durationMinutes": 18
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c2",
+        "title": "Relação Terapêutica",
+        "lessons": [
+          {
+            "lessonId": "m5-c2-l1",
+            "title": "Noções essenciais",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m5-c2-l2",
+            "title": "O que funciona e o que não funciona",
+            "durationMinutes": 36
+          },
+          {
+            "lessonId": "m5-c2-l3",
+            "title": "Role-plays",
+            "durationMinutes": 65
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c3",
+        "title": "Valores",
+        "lessons": [
+          {
+            "lessonId": "m5-c3-l1",
+            "title": "O que são valores? E o que não são!",
+            "durationMinutes": 41
+          },
+          {
+            "lessonId": "m5-c3-l2",
+            "title": "Valores nas diferentes abordagens psicoterapéuticas",
+            "durationMinutes": 43
+          },
+          {
+            "lessonId": "m5-c3-l3",
+            "title": "Estratégias clínicas de identificação e mensuração de valores",
+            "durationMinutes": 50
+          },
+          {
+            "lessonId": "m5-c3-l4",
+            "title": "Valores e terapia haseada em processos",
+            "durationMinutes": 33
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c4",
+        "title": "Psicoeducação",
+        "lessons": [
+          {
+            "lessonId": "m5-c4-l1",
+            "title": "Psicoeducação: uma das melhores armas terapêuticas",
+            "durationMinutes": 200
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c5",
+        "title": "Aceitação",
+        "lessons": [
+          {
+            "lessonId": "m5-c5-l1",
+            "title": "Fundamentos e componentes da aceitação",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m5-c5-l2",
+            "title": "Aspectos clínicos da aceitação",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m5-c5-l3",
+            "title": "Técnicas de Aceitação",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m5-c5-l4",
+            "title": "Role-plays",
+            "durationMinutes": 60
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c6",
+        "title": "Mindfulness",
+        "lessons": [
+          {
+            "lessonId": "m5-c6-l1",
+            "title": "Fundamentos do Mindfulness",
+            "durationMinutes": 52
+          },
+          {
+            "lessonId": "m5-c6-l2",
+            "title": "Definição de Mindfulness",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m5-c6-l3",
+            "title": "Mindfulness e Psicoterapia",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m5-c6-l4",
+            "title": "A prática de Mindfulness",
+            "durationMinutes": 31
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c7",
+        "title": "Manejo de Contingências",
+        "lessons": [
+          {
+            "lessonId": "m5-c7-l1",
+            "title": "Intervenção nos antecedentes",
+            "durationMinutes": 81
+          },
+          {
+            "lessonId": "m5-c7-l2",
+            "title": "Intervenção nos consequentes",
+            "durationMinutes": 50
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c8",
+        "title": "Autogerenciamento",
+        "lessons": [
+          {
+            "lessonId": "m5-c8-l1",
+            "title": "Autogerenciamento",
+            "durationMinutes": 102
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c9",
+        "title": "Resolução de Problemas",
+        "lessons": [
+          {
+            "lessonId": "m5-c9-l1",
+            "title": "Resolução de Problemas",
+            "durationMinutes": 66
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c10",
+        "title": "Reestruturação Cognitiva e Experimento Comportamental",
+        "lessons": [
+          {
+            "lessonId": "m5-c10-l1",
+            "title": "O que é Reestruturação Cognitiva?",
+            "durationMinutes": 33
+          },
+          {
+            "lessonId": "m5-c10-l2",
+            "title": "Os três componentes-chave da Reestruturação Cognitiva",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m5-c10-l3",
+            "title": "(parte 1): Intervenções Verbais",
+            "durationMinutes": 47
+          },
+          {
+            "lessonId": "m5-c10-l4",
+            "title": "(parte 2): Intervenções Verbais",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m5-c10-l5",
+            "title": "Experimento Comportamental: Definição Passo a passo",
+            "durationMinutes": 20
+          },
+          {
+            "lessonId": "m5-c10-l6",
+            "title": "Bônus 1: Registro de Pensamentos Disfuncionais (RPD)",
+            "durationMinutes": 41
+          },
+          {
+            "lessonId": "m5-c10-l7",
+            "title": "Bônus 2: Ativação e Fortalecimento de Esquemas Adaptativos",
+            "durationMinutes": 15
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c11",
+        "title": "Desfusão Cognitiva",
+        "lessons": [
+          {
+            "lessonId": "m5-c11-l1",
+            "title": "Introdução",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m5-c11-l2",
+            "title": "Como introduzir a técnica de desfusão cognitiva nas sessões?",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m5-c11-l3",
+            "title": "Roleplays",
+            "durationMinutes": 34
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c12",
+        "title": "Terapia de Exposição",
+        "lessons": [
+          {
+            "lessonId": "m5-c12-l1",
+            "title": "Panorama Geral",
+            "durationMinutes": 59
+          },
+          {
+            "lessonId": "m5-c12-l2",
+            "title": "Terapia de Exposição como alvo e Fundamentos Conceituais",
+            "durationMinutes": 78
+          },
+          {
+            "lessonId": "m5-c12-l3",
+            "title": "Compreensões Clínicas",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m5-c12-l4",
+            "title": "Planejamento 1 Avaliação Clínica e Funcional",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m5-c12-l5",
+            "title": "Planejamento 2: Lista de Exposição",
+            "durationMinutes": 38
+          },
+          {
+            "lessonId": "m5-c12-l6",
+            "title": "Preparação para a Prática de Exposição",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m5-c12-l7",
+            "title": "Fobia específica",
+            "durationMinutes": 70
+          },
+          {
+            "lessonId": "m5-c12-l8",
+            "title": "Transtorno de ansiedade social",
+            "durationMinutes": 41
+          },
+          {
+            "lessonId": "m5-c12-l9",
+            "title": "Transtorno de estresse pós-traumático",
+            "durationMinutes": 140
+          },
+          {
+            "lessonId": "m5-c12-l10",
+            "title": "Transtorno obsessivo compulsivo (TOC)",
+            "durationMinutes": 150
+          },
+          {
+            "lessonId": "m5-c12-l11",
+            "title": "Transtorno do pânico",
+            "durationMinutes": 74
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c13",
+        "title": "Regulação Emocional",
+        "lessons": [
+          {
+            "lessonId": "m5-c13-l1",
+            "title": "Introdução regulação emocional",
+            "durationMinutes": 8
+          },
+          {
+            "lessonId": "m5-c13-l2",
+            "title": "Definição de conceitos (parte 1): emoção e modelos conceituais",
+            "durationMinutes": 41
+          },
+          {
+            "lessonId": "m5-c13-l3",
+            "title": "Definição de conceitos (parte 2): da regulação à desregulação emocional",
+            "durationMinutes": 27
+          },
+          {
+            "lessonId": "m5-c13-l4",
+            "title": "Estratégias práticas (parte 1): intervenções antecedentes e outras",
+            "durationMinutes": 36
+          },
+          {
+            "lessonId": "m5-c13-l5",
+            "title": "Estratégias práticas (parte 2): interpretação, componentes fisiológicos e atenção",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m5-c13-l6",
+            "title": "Estratégias práticas (parte 3): resposta, compreendendo as emoções e emoção secundária",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m5-c13-l7",
+            "title": "Conclusão",
+            "durationMinutes": 4
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c14",
+        "title": "Avaliação e Tratamento da Suicidalidade",
+        "lessons": [
+          {
+            "lessonId": "m5-c14-l1",
+            "title": "Introdução",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m5-c14-l2",
+            "title": "Cuidados com a linguagem",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m5-c14-l3",
+            "title": "Definições",
+            "durationMinutes": 4
+          },
+          {
+            "lessonId": "m5-c14-l4",
+            "title": "Mitos sobre suicidio",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m5-c14-l5",
+            "title": "Sinais de alerta",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m5-c14-l6",
+            "title": "Por que alguém tira a propria vida?",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m5-c14-l7",
+            "title": "Modelos teóricos",
+            "durationMinutes": 39
+          },
+          {
+            "lessonId": "m5-c14-l8",
+            "title": "Avaliação narrativa",
+            "durationMinutes": 48
+          },
+          {
+            "lessonId": "m5-c14-l9",
+            "title": "Lista de problemas e objetivos de terapia",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m5-c14-l10",
+            "title": "Análise de uma tentativa de suicidio",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m5-c14-l11",
+            "title": "Hipóteses explicativas",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m5-c14-l12",
+            "title": "Monitoramento de progresso",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m5-c14-l13",
+            "title": "Documentação",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m5-c14-l14",
+            "title": "Técnicas de intervenção",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m5-c14-l15",
+            "title": "Role-play – validação",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m5-c14-l16",
+            "title": "Role-play – aceitação",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m5-c14-l17",
+            "title": "Role-play – resolução de problemas",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m5-c14-l18",
+            "title": "Role-play – reestruturação cognitiva",
+            "durationMinutes": 21
+          },
+          {
+            "lessonId": "m5-c14-l19",
+            "title": "Role-play – regulação emocional",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m5-c14-l20",
+            "title": "Plano de segurança",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m5-c14-l21",
+            "title": "Cartões de enfrentamento e kits de sobrevivência",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m5-c14-l22",
+            "title": "Intervenções de contato breve",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m5-c14-l23",
+            "title": "Internação",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m5-c14-l24",
+            "title": "Considerações finais",
+            "durationMinutes": 10
+          }
+        ]
+      },
+      {
+        "courseId": "m5-c15",
+        "title": "Competências Multiculturais",
+        "lessons": [
+          {
+            "lessonId": "m5-c15-l1",
+            "title": "Introdução",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m5-c15-l2",
+            "title": "Individualização contextualizada",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m5-c15-l3",
+            "title": "Cultura e marcadores sociais",
+            "durationMinutes": 54
+          },
+          {
+            "lessonId": "m5-c15-l4",
+            "title": "Competências Multiculturais",
+            "durationMinutes": 55
+          },
+          {
+            "lessonId": "m5-c15-l5",
+            "title": "Estudos de Competências Multiculturais",
+            "durationMinutes": 4
+          },
+          {
+            "lessonId": "m5-c15-l6",
+            "title": "Humildade Cultural",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m5-c15-l7",
+            "title": "O básico da humildade cultural",
+            "durationMinutes": 27
+          },
+          {
+            "lessonId": "m5-c15-l8",
+            "title": "Ferramentas de avaliação",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m5-c15-l9",
+            "title": "Formulação de caso",
+            "durationMinutes": 55
+          },
+          {
+            "lessonId": "m5-c15-l10",
+            "title": "Intervenção",
+            "durationMinutes": 41
+          },
+          {
+            "lessonId": "m5-c15-l11",
+            "title": "Encerramento",
+            "durationMinutes": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m6",
+    "title": "Neurociência aplicada à psicologia",
+    "courses": [
+      {
+        "courseId": "m6-c1",
+        "title": "Conceitos Básicos de Neurociências",
+        "lessons": [
+          {
+            "lessonId": "m6-c1-l1",
+            "title": "Introdução à Neuromorfologia – Estrutura do Sistema Nervoso",
+            "durationMinutes": 117
+          },
+          {
+            "lessonId": "m6-c1-l2",
+            "title": "Fundamentos e Mecanismos de Neurofisiologia (parte 1)",
+            "durationMinutes": 81
+          },
+          {
+            "lessonId": "m6-c1-l3",
+            "title": "Fundamentos e Mecanismos de Neurofisiologia (parte 2)",
+            "durationMinutes": 87
+          },
+          {
+            "lessonId": "m6-c1-l4",
+            "title": "Fundamentos e Mecanismos de Neurofisiologia (parte 3)",
+            "durationMinutes": 90
+          },
+          {
+            "lessonId": "m6-c1-l5",
+            "title": "Introdução à neurobiologia das emoções",
+            "durationMinutes": 93
+          },
+          {
+            "lessonId": "m6-c1-l6",
+            "title": "Conceitos fundamentais do comportamento motivado",
+            "durationMinutes": 65
+          },
+          {
+            "lessonId": "m6-c1-l7",
+            "title": "Conceitos neurofisiológicos básicos de aprendizagem e memória",
+            "durationMinutes": 94
+          }
+        ]
+      },
+      {
+        "courseId": "m6-c2",
+        "title": "Neurobiologia do Sono/Vigilia",
+        "lessons": [
+          {
+            "lessonId": "m6-c2-l1",
+            "title": "Neurobiologia do Sono/Vigilia",
+            "durationMinutes": 70
+          }
+        ]
+      },
+      {
+        "courseId": "m6-c3",
+        "title": "Neurobiologia do Sono/Vigilia",
+        "lessons": [
+          {
+            "lessonId": "m6-c3-l1",
+            "title": "Aspectos clínicos do Sono: transtornos do sono; avaliação do tempo e qualidade do sono, afinal, quanto tempo precisamos dormir?",
+            "durationMinutes": 132
+          },
+          {
+            "lessonId": "m6-c3-l2",
+            "title": "Atualizações sobre a Neurociência do Sono/Vigilia",
+            "durationMinutes": 95
+          }
+        ]
+      },
+      {
+        "courseId": "m6-c4",
+        "title": "Bases Biológicas e Farmacológicas da Ação dos Psicofármacos",
+        "lessons": [
+          {
+            "lessonId": "m6-c4-l1",
+            "title": "Apresentação",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m6-c4-l2",
+            "title": "Por que Estudar Psicofarmacologia",
+            "durationMinutes": 42
+          },
+          {
+            "lessonId": "m6-c4-l3",
+            "title": "Farmacocinética",
+            "durationMinutes": 38
+          },
+          {
+            "lessonId": "m6-c4-l4",
+            "title": "Farmacodinamica",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m6-c4-l5",
+            "title": "Interações Medicamentosas",
+            "durationMinutes": 46
+          },
+          {
+            "lessonId": "m6-c4-l6",
+            "title": "Introdução ao Sistema Nervoso",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m6-c4-l7",
+            "title": "Neurobiologia e Farmacologia da insônia",
+            "durationMinutes": 41
+          },
+          {
+            "lessonId": "m6-c4-l8",
+            "title": "Aspectos Neurobiológicos da Depressão",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m6-c4-l9",
+            "title": "Bases Farmacológicas dos Antidepressivos",
+            "durationMinutes": 37
+          },
+          {
+            "lessonId": "m6-c4-l10",
+            "title": "Bases Neurobiológicas e Farmacológicas da Ansiedade",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m6-c4-l11",
+            "title": "Aspectos Neurobiológicos da Esquizofrenia",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m6-c4-l12",
+            "title": "Bases Farmacológicas dos Antipsicóticos",
+            "durationMinutes": 25
+          },
+          {
+            "lessonId": "m6-c4-l13",
+            "title": "Bases Neurobiológicas e Farmacológicas do TB",
+            "durationMinutes": 38
+          },
+          {
+            "lessonId": "m6-c4-l14",
+            "title": "Bases Neurobiológicas e Farmacológicas do TDAH",
+            "durationMinutes": 44
+          },
+          {
+            "lessonId": "m6-c4-l15",
+            "title": "Bases Neurobiológicas e Farmacológicas do TEA",
+            "durationMinutes": 22
+          },
+          {
+            "lessonId": "m6-c4-l16",
+            "title": "Bases Biológicas da Dependência",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m6-c4-l17",
+            "title": "Psicofarmacologia Aplicada a Populações Especiais",
+            "durationMinutes": 37
+          },
+          {
+            "lessonId": "m6-c4-l18",
+            "title": "Encerramento",
+            "durationMinutes": 6
+          }
+        ]
+      },
+      {
+        "courseId": "m6-c5",
+        "title": "Cérebro e o Intestino",
+        "lessons": [
+          {
+            "lessonId": "m6-c5-l1",
+            "title": "A conversa entre o cérebro e o intestino, o que isso tem a ver com saúde mental",
+            "durationMinutes": 96
+          }
+        ]
+      },
+      {
+        "courseId": "m6-c6",
+        "title": "Genética e Ambiente",
+        "lessons": [
+          {
+            "lessonId": "m6-c6-l1",
+            "title": "Introdução à Organização Celular",
+            "durationMinutes": 114
+          },
+          {
+            "lessonId": "m6-c6-l2",
+            "title": "Introdução ao Funcionamento Celular",
+            "durationMinutes": 116
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m7",
+    "title": "Questões temáticas",
+    "courses": [
+      {
+        "courseId": "m7-c1",
+        "title": "Vício em apostas on-line: avaliação e tratamento",
+        "lessons": [
+          {
+            "lessonId": "m7-c1-l1",
+            "title": "Introdução",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m7-c1-l2",
+            "title": "Avaliação Clínica",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m7-c1-l3",
+            "title": "Objetivos de terapia",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m7-c1-l4",
+            "title": "Automonitoramento",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m7-c1-l5",
+            "title": "Psicoeducação",
+            "durationMinutes": 25
+          },
+          {
+            "lessonId": "m7-c1-l6",
+            "title": "Análise de uma sessão de jogo",
+            "durationMinutes": 20
+          },
+          {
+            "lessonId": "m7-c1-l7",
+            "title": "Manejo financeiro",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m7-c1-l8",
+            "title": "Reestruturação cognitiva",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m7-c1-l9",
+            "title": "Resolução de problemas",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m7-c1-l10",
+            "title": "Regulação emocional",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m7-c1-l11",
+            "title": "Prevenção de recaida",
+            "durationMinutes": 8
+          },
+          {
+            "lessonId": "m7-c1-l12",
+            "title": "Role-play 1 (avaliação clínica)",
+            "durationMinutes": 43
+          },
+          {
+            "lessonId": "m7-c1-l13",
+            "title": "Role-play 2 (análise e técnicas)",
+            "durationMinutes": 28
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c2",
+        "title": "Ciência Comportamental a Serviço da Felicidade",
+        "lessons": [
+          {
+            "lessonId": "m7-c2-l1",
+            "title": "Introdução",
+            "durationMinutes": 38
+          },
+          {
+            "lessonId": "m7-c2-l2",
+            "title": "Robert Waldinger",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m7-c2-l3",
+            "title": "O que Faz uma Vida Boa?",
+            "durationMinutes": 4
+          },
+          {
+            "lessonId": "m7-c2-l4",
+            "title": "Prof. Dan Gilbert: the science of happiness",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m7-c2-l5",
+            "title": "O que Pode Afetar a Felicidade?",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m7-c2-l6",
+            "title": "Confiança e Motivação",
+            "durationMinutes": 2
+          },
+          {
+            "lessonId": "m7-c2-l7",
+            "title": "Prof. Dan Ariely: the value of trust",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m7-c2-l8",
+            "title": "Psicologia Positiva",
+            "durationMinutes": 33
+          },
+          {
+            "lessonId": "m7-c2-l9",
+            "title": "Susan Pinker",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m7-c2-l10",
+            "title": "Blue Zones",
+            "durationMinutes": 33
+          },
+          {
+            "lessonId": "m7-c2-l11",
+            "title": "Como Cultivar Relações Intimas",
+            "durationMinutes": 21
+          },
+          {
+            "lessonId": "m7-c2-l12",
+            "title": "E o Bem-Estar do Profissional da Saúde?",
+            "durationMinutes": 25
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c3",
+        "title": "Experiências Anōmalas",
+        "lessons": [
+          {
+            "lessonId": "m7-c3-l1",
+            "title": "Experiências Anomalas e Mistico-Religiosas: diagnóstico diferencial e manejo clínico",
+            "durationMinutes": 100
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c4",
+        "title": "Dor Crônica e ACT",
+        "lessons": [
+          {
+            "lessonId": "m7-c4-l1",
+            "title": "Como Tratar Paciente com Dor Crônica",
+            "durationMinutes": 63
+          },
+          {
+            "lessonId": "m7-c4-l2",
+            "title": "Terapia de Aceitação e Compromisso (ACT)",
+            "durationMinutes": 138
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c5",
+        "title": "Intervenções Baseadas em Evidências para os Transtornos Alimentares",
+        "lessons": [
+          {
+            "lessonId": "m7-c5-l1",
+            "title": "Introdução",
+            "durationMinutes": 8
+          },
+          {
+            "lessonId": "m7-c5-l2",
+            "title": "O Ideal de Corpo Feminino ao Longo da História",
+            "durationMinutes": 3
+          },
+          {
+            "lessonId": "m7-c5-l3",
+            "title": "Cultura e Comportamento Alimentar",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m7-c5-l4",
+            "title": "O que São Transtornos Alimentares?",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m7-c5-l5",
+            "title": "Tratamentos Baseados em Evidências",
+            "durationMinutes": 11
+          },
+          {
+            "lessonId": "m7-c5-l6",
+            "title": "Componentes dos Tratamentos Baseados em Evidências",
+            "durationMinutes": 36
+          },
+          {
+            "lessonId": "m7-c5-l7",
+            "title": "Estudo de Caso",
+            "durationMinutes": 40
+          },
+          {
+            "lessonId": "m7-c5-l8",
+            "title": "Prevenção",
+            "durationMinutes": 24
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c6",
+        "title": "Obesidade",
+        "lessons": [
+          {
+            "lessonId": "m7-c6-l1",
+            "title": "Sobre a Obesidade: aspectos evolutivos, manejo e estilo de vida",
+            "durationMinutes": 103
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c7",
+        "title": "Psicologia & Nutrição",
+        "lessons": [
+          {
+            "lessonId": "m7-c7-l1",
+            "title": "Psicologia e Nutrição: fundamentos e abordagens multidisciplinares teóricas e práticas",
+            "durationMinutes": 98
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c8",
+        "title": "Psicoterapia Baseada em Evidências para Crianças",
+        "lessons": [
+          {
+            "lessonId": "m7-c8-l1",
+            "title": "Avaliação inicial e entrevista com os cuidadores",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m7-c8-l2",
+            "title": "Primeiras sessões com a criança",
+            "durationMinutes": 21
+          },
+          {
+            "lessonId": "m7-c8-l3",
+            "title": "Introdução ao protocolo",
+            "durationMinutes": 42
+          },
+          {
+            "lessonId": "m7-c8-l4",
+            "title": "Emoções",
+            "durationMinutes": 54
+          },
+          {
+            "lessonId": "m7-c8-l5",
+            "title": "Pensamento e Comportamento",
+            "durationMinutes": 51
+          },
+          {
+            "lessonId": "m7-c8-l6",
+            "title": "Reações fisiológicas",
+            "durationMinutes": 39
+          },
+          {
+            "lessonId": "m7-c8-l7",
+            "title": "Distorções cognitivas e estratégias de modificação comportamental",
+            "durationMinutes": 68
+          },
+          {
+            "lessonId": "m7-c8-l8",
+            "title": "Análise de evidências e resolução de problemas",
+            "durationMinutes": 56
+          },
+          {
+            "lessonId": "m7-c8-l9",
+            "title": "Consciência da Experiência Emocional",
+            "durationMinutes": 48
+          },
+          {
+            "lessonId": "m7-c8-l10",
+            "title": "Relatos de Caso",
+            "durationMinutes": 66
+          },
+          {
+            "lessonId": "m7-c8-l11",
+            "title": "Exposição para diferenças áreas problemáticas (parte 1)",
+            "durationMinutes": 32
+          },
+          {
+            "lessonId": "m7-c8-l12",
+            "title": "Exposição para diferenças áreas problemáticas (parte 2)",
+            "durationMinutes": 58
+          },
+          {
+            "lessonId": "m7-c8-l13",
+            "title": "Processo de alta",
+            "durationMinutes": 24
+          }
+        ]
+      },
+      {
+        "courseId": "m7-c9",
+        "title": "Psicoterapia Baseada em Evidências para Adolescentes",
+        "lessons": [
+          {
+            "lessonId": "m7-c9-l1",
+            "title": "Desenvolvimento fisico, psicossocial e neurológico na adolescência",
+            "durationMinutes": 110
+          },
+          {
+            "lessonId": "m7-c9-l2",
+            "title": "Diagnósticos prevalentes na adolescência",
+            "durationMinutes": 95
+          },
+          {
+            "lessonId": "m7-c9-l3",
+            "title": "Avaliação e conceitualização de caso",
+            "durationMinutes": 105
+          },
+          {
+            "lessonId": "m7-c9-l4",
+            "title": "Regulação emocional",
+            "durationMinutes": 97
+          },
+          {
+            "lessonId": "m7-c9-l5",
+            "title": "Evidências de tratamento para a Adolescência (parte 1)",
+            "durationMinutes": 80
+          },
+          {
+            "lessonId": "m7-c9-l6",
+            "title": "Evidências de tratamento para a Adolescência (parte 2)",
+            "durationMinutes": 118
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m8",
+    "title": "Letramento científico",
+    "courses": [
+      {
+        "courseId": "m8-c1",
+        "title": "Fundamentos do Pensamento Científico e Metodologia de Pesquisa",
+        "lessons": [
+          {
+            "lessonId": "m8-c1-l1",
+            "title": "Introdução",
+            "durationMinutes": 3
+          },
+          {
+            "lessonId": "m8-c1-l2",
+            "title": "Pensamento Científico",
+            "durationMinutes": 44
+          },
+          {
+            "lessonId": "m8-c1-l3",
+            "title": "Métodos de Pesquisa Clínica",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m8-c1-l4",
+            "title": "Estudo de Caso",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m8-c1-l5",
+            "title": "Pesquisa Experimental",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m8-c1-l6",
+            "title": "ECR (parte 1)",
+            "durationMinutes": 69
+          },
+          {
+            "lessonId": "m8-c1-l7",
+            "title": "ECR (parte 2)",
+            "durationMinutes": 66
+          },
+          {
+            "lessonId": "m8-c1-l8",
+            "title": "Experimento de Caso Único",
+            "durationMinutes": 48
+          },
+          {
+            "lessonId": "m8-c1-l9",
+            "title": "Considerações sobre os Métodos",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m8-c1-l10",
+            "title": "Revisão Sistemática e Meta-Análise",
+            "durationMinutes": 46
+          },
+          {
+            "lessonId": "m8-c1-l11",
+            "title": "Grade",
+            "durationMinutes": 22
+          }
+        ]
+      },
+      {
+        "courseId": "m8-c2",
+        "title": "Fundamentos do Pensamento Científico e Metodologia de Pesquisa",
+        "lessons": [
+          {
+            "lessonId": "m8-c2-l1",
+            "title": "Introdução",
+            "durationMinutes": 2
+          },
+          {
+            "lessonId": "m8-c2-l2",
+            "title": "Estatística Descritiva e Inferencial",
+            "durationMinutes": 9
+          },
+          {
+            "lessonId": "m8-c2-l3",
+            "title": "Tipos de Variáveis",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m8-c2-l4",
+            "title": "Transformação de Variáveis",
+            "durationMinutes": 10
+          },
+          {
+            "lessonId": "m8-c2-l5",
+            "title": "Medidas de Tendência Central",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m8-c2-l6",
+            "title": "Medidas de Dispersão",
+            "durationMinutes": 29
+          },
+          {
+            "lessonId": "m8-c2-l7",
+            "title": "Teste de Hipóteses",
+            "durationMinutes": 28
+          },
+          {
+            "lessonId": "m8-c2-l8",
+            "title": "Medidas de Efeito (parte 1)",
+            "durationMinutes": 36
+          },
+          {
+            "lessonId": "m8-c2-l9",
+            "title": "Medidas de Efeito (parte 2)",
+            "durationMinutes": 38
+          },
+          {
+            "lessonId": "m8-c2-l10",
+            "title": "Intervalo de Confiança",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m8-c2-l11",
+            "title": "Análise de Dados e o III",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m8-c2-l12",
+            "title": "Poder Estatístico",
+            "durationMinutes": 7
+          }
+        ]
+      },
+      {
+        "courseId": "m8-c3",
+        "title": "A Prática Baseada em Evidências com Leo Costa",
+        "lessons": [
+          {
+            "lessonId": "m8-c3-l1",
+            "title": "Prática Baseada em Evidências",
+            "durationMinutes": 64
+          },
+          {
+            "lessonId": "m8-c3-l2",
+            "title": "O que Você Precisa Saber para Ler e Interpretar Ensaios Controlados Aleatorizados?",
+            "durationMinutes": 54
+          },
+          {
+            "lessonId": "m8-c3-l3",
+            "title": "O que Você Precisa Saber para Ler e Interpretar Revisões Sistemáticas e Metanálises?",
+            "durationMinutes": 24
+          }
+        ]
+      },
+      {
+        "courseId": "m8-c4",
+        "title": "Filosofia da Ciência para Psicólogos e Psiquiatras",
+        "lessons": [
+          {
+            "lessonId": "m8-c4-l1",
+            "title": "Apresentando o Curso",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m8-c4-l2",
+            "title": "Básico da Filosofia da Ciência",
+            "durationMinutes": 35
+          },
+          {
+            "lessonId": "m8-c4-l3",
+            "title": "Como Definir Conceitos",
+            "durationMinutes": 19
+          },
+          {
+            "lessonId": "m8-c4-l4",
+            "title": "Como Definir Conceitos (parte 2)",
+            "durationMinutes": 12
+          },
+          {
+            "lessonId": "m8-c4-l5",
+            "title": "O que é uma Evidência Científica? Pilares Básicos",
+            "durationMinutes": 23
+          },
+          {
+            "lessonId": "m8-c4-l6",
+            "title": "Noção Bayesiana de Evidencia",
+            "durationMinutes": 24
+          },
+          {
+            "lessonId": "m8-c4-l7",
+            "title": "Noção Pragmatista de Evidência Científica",
+            "durationMinutes": 27
+          },
+          {
+            "lessonId": "m8-c4-l8",
+            "title": "Rebatendo Mitos Sobre Dedução e Indução",
+            "durationMinutes": 13
+          },
+          {
+            "lessonId": "m8-c4-l9",
+            "title": "Compreendendo Dedução e Indução",
+            "durationMinutes": 30
+          },
+          {
+            "lessonId": "m8-c4-l10",
+            "title": "Falácias Lógicas e Pensamento Critico",
+            "durationMinutes": 27
+          },
+          {
+            "lessonId": "m8-c4-l11",
+            "title": "Entendendo o Problema da Indução",
+            "durationMinutes": 25
+          },
+          {
+            "lessonId": "m8-c4-l12",
+            "title": "Método Científico",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m8-c4-l13",
+            "title": "Principios Básicos Para Discutir Demarcação entre Ciência e Pseudociência",
+            "durationMinutes": 14
+          },
+          {
+            "lessonId": "m8-c4-l14",
+            "title": "A Demarcação de Karl Popper",
+            "durationMinutes": 26
+          },
+          {
+            "lessonId": "m8-c4-l15",
+            "title": "A Queda do Problema da Demarcação e o Novo Movimento Demarcacionista",
+            "durationMinutes": 16
+          },
+          {
+            "lessonId": "m8-c4-l16",
+            "title": "Demarcando Ciência e Pseudociência no Sentido Ampliado (parte 1 – aula teórica)",
+            "durationMinutes": 27
+          },
+          {
+            "lessonId": "m8-c4-l17",
+            "title": "Demarcando Ciência e Pseudociência no Sentido Ampliado (parte 2 – aplicação prática e exemplos)",
+            "durationMinutes": 52
+          },
+          {
+            "lessonId": "m8-c4-l18",
+            "title": "Recomendações de Fontes de Pesquisa e Leitura",
+            "durationMinutes": 18
+          }
+        ]
+      },
+      {
+        "courseId": "m8-c5",
+        "title": "Objetividade, Neutralidade e Prática Baseada em Evidências",
+        "lessons": [
+          {
+            "lessonId": "m8-c5-l1",
+            "title": "Criticas à Neutralidade (parte 1)",
+            "durationMinutes": 62
+          },
+          {
+            "lessonId": "m8-c5-l2",
+            "title": "Críticas à Neutralidade (parte 2) – Science Must Fall?",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m8-c5-l3",
+            "title": "Operacionalizando a Objetividade",
+            "durationMinutes": 49
+          },
+          {
+            "lessonId": "m8-c5-l4",
+            "title": "Apreciação das críticas à objetividade",
+            "durationMinutes": 64
+          },
+          {
+            "lessonId": "m8-c5-l5",
+            "title": "A Objetividade Possível/Desejável na PBE?",
+            "durationMinutes": 39
+          },
+          {
+            "lessonId": "m8-c5-l6",
+            "title": "Considerações Finais",
+            "durationMinutes": 29
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "moduleId": "m9",
+    "title": "Questões práticas e gestão em psicologia",
+    "courses": [
+      {
+        "courseId": "m9-c1",
+        "title": "Elaboração de Documentos Psicológicos",
+        "lessons": [
+          {
+            "lessonId": "m9-c1-l1",
+            "title": "Legislações Básicas e Avaliação Psicológica",
+            "durationMinutes": 60
+          },
+          {
+            "lessonId": "m9-c1-l2",
+            "title": "Avaliação Psicológica na Prática e Redação de Documentos Psicológicos",
+            "durationMinutes": 64
+          },
+          {
+            "lessonId": "m9-c1-l3",
+            "title": "Declaração Psicológica e Atestado Psicológico",
+            "durationMinutes": 53
+          },
+          {
+            "lessonId": "m9-c1-l4",
+            "title": "Relatório Psicológico e Relatório Multiprofissional",
+            "durationMinutes": 59
+          },
+          {
+            "lessonId": "m9-c1-l5",
+            "title": "Laudo Psicológico e Parecer Psicológico",
+            "durationMinutes": 62
+          },
+          {
+            "lessonId": "m9-c1-l6",
+            "title": "Registro Documental, Prontuário e Questões Adicionais",
+            "durationMinutes": 68
+          }
+        ]
+      },
+      {
+        "courseId": "m9-c2",
+        "title": "Contabilidade para Psicólogos",
+        "lessons": [
+          {
+            "lessonId": "m9-c2-l1",
+            "title": "Introdução",
+            "durationMinutes": 2
+          },
+          {
+            "lessonId": "m9-c2-l2",
+            "title": "O que atuar na PF?",
+            "durationMinutes": 5
+          },
+          {
+            "lessonId": "m9-c2-l3",
+            "title": "INSS e Carné Leão",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m9-c2-l4",
+            "title": "Carné Leão | Passo a passo",
+            "durationMinutes": 20
+          },
+          {
+            "lessonId": "m9-c2-l5",
+            "title": "INSS",
+            "durationMinutes": 18
+          },
+          {
+            "lessonId": "m9-c2-l6",
+            "title": "IRPF Anual",
+            "durationMinutes": 6
+          },
+          {
+            "lessonId": "m9-c2-l7",
+            "title": "Dúvidas Gerais Cálculo Impostos PF",
+            "durationMinutes": 4
+          },
+          {
+            "lessonId": "m9-c2-l8",
+            "title": "CNPJ",
+            "durationMinutes": 15
+          },
+          {
+            "lessonId": "m9-c2-l9",
+            "title": "Abertura do CNPJ",
+            "durationMinutes": 8
+          },
+          {
+            "lessonId": "m9-c2-l10",
+            "title": "Impostos no CNPJ",
+            "durationMinutes": 17
+          },
+          {
+            "lessonId": "m9-c2-l11",
+            "title": "Dicas importantes",
+            "durationMinutes": 7
+          },
+          {
+            "lessonId": "m9-c2-l12",
+            "title": "Recado final",
+            "durationMinutes": 2
+          }
+        ]
+      },
+      {
+        "courseId": "m9-c3",
+        "title": "Modelo de Negócios",
+        "lessons": [
+          {
+            "lessonId": "m9-c3-l1",
+            "title": "Modelo de Negócios",
+            "durationMinutes": 84
+          }
+        ]
+      },
+      {
+        "courseId": "m9-c4",
+        "title": "Marketing para Psicólogos com Camila Leal",
+        "lessons": [
+          {
+            "lessonId": "m9-c4-l1",
+            "title": "Tudo o que uma Especialista pode te ensinar sobre Marketing para Psicólogos",
+            "durationMinutes": 93
+          },
+          {
+            "lessonId": "m9-c4-l2",
+            "title": "Narrativas que Vendem",
+            "durationMinutes": 15
+          }
+        ]
+      },
+      {
+        "courseId": "m9-c5",
+        "title": "Dicas de Marketing com Eslen Delanogare",
+        "lessons": [
+          {
+            "lessonId": "m9-c5-l1",
+            "title": "Lógica das Redes Sociais",
+            "durationMinutes": 34
+          },
+          {
+            "lessonId": "m9-c5-l2",
+            "title": "Como utilizar o YouTube",
+            "durationMinutes": 33
+          },
+          {
+            "lessonId": "m9-c5-l3",
+            "title": "Como utilizar o Instagram",
+            "durationMinutes": 31
+          },
+          {
+            "lessonId": "m9-c5-l4",
+            "title": "Como formar uma Tribo",
+            "durationMinutes": 14
+          }
+        ]
+      },
+      {
+        "courseId": "m9-c6",
+        "title": "Finanças para Psicólogos",
+        "lessons": [
+          {
+            "lessonId": "m9-c6-l1",
+            "title": "Saúde Financeira para Psicólogos",
+            "durationMinutes": 71
+          },
+          {
+            "lessonId": "m9-c6-l2",
+            "title": "Investimento",
+            "durationMinutes": 50
+          },
+          {
+            "lessonId": "m9-c6-l3",
+            "title": "Renda Váriavel",
+            "durationMinutes": 58
+          }
+        ]
+      },
+      {
+        "courseId": "m9-c7",
+        "title": "Para além da teoria e da técnica em Psicología: cuidados éticos e jurídicos da profissão",
+        "lessons": [
+          {
+            "lessonId": "m9-c7-l1",
+            "title": "Cuidados com as redes sociais profissionais",
+            "durationMinutes": 144
+          },
+          {
+            "lessonId": "m9-c7-l2",
+            "title": "A relação terapêutica: aspectos éticos e juridicos",
+            "durationMinutes": 85
+          },
+          {
+            "lessonId": "m9-c7-l3",
+            "title": "O sigilo profissional",
+            "durationMinutes": 132
+          },
+          {
+            "lessonId": "m9-c7-l4",
+            "title": "Documentos psicológicos: aspectos éticos e juridicos",
+            "durationMinutes": 95
+          },
+          {
+            "lessonId": "m9-c7-l5",
+            "title": "A responsabilidade profissional do Psicólogo",
+            "durationMinutes": 65
+          },
+          {
+            "lessonId": "m9-c7-l6",
+            "title": "LGPD: O que o psicólogo precisa saber?",
+            "durationMinutes": 44
+          }
+        ]
+      }
+    ]
+  }
+]
