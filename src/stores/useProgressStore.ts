@@ -25,18 +25,27 @@ curriculum.forEach((m) => {
   moduleTotalLessons[m.moduleId] = mTotal;
 });
 
+interface ProgressState {
+  curriculum: Module[];
+  completedLessons: Record<string, boolean>;
+  completedCourses: Record<string, boolean>;
+  completedModules: Record<string, boolean>;
+  courseCompletedCounts: Record<string, number>;
+  moduleCompletedCounts: Record<string, number>;
+}
+
 export const useProgressStore = defineStore("progress", {
-  state: () => ({
-    curriculum: curriculum as Module[],
-    completedLessons: {} as Record<string, boolean>,
+  state: (): ProgressState => ({
+    curriculum: curriculum,
+    completedLessons: {},
 
     // Track booleans for the checkmark UI
-    completedCourses: {} as Record<string, boolean>,
-    completedModules: {} as Record<string, boolean>,
+    completedCourses: {},
+    completedModules: {},
 
     // Track raw numbers for the progress bars
-    courseCompletedCounts: {} as Record<string, number>,
-    moduleCompletedCounts: {} as Record<string, number>,
+    courseCompletedCounts: {},
+    moduleCompletedCounts: {},
   }),
   actions: {
     toggleLesson(lessonId: string, courseId: string, moduleId: string) {
