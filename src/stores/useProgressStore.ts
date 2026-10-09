@@ -1,80 +1,82 @@
-import { defineStore } from 'pinia'
-import type { Module } from '../models/module'
-import curriculumJSON from '../assets/curriculum.json'
+import { defineStore } from "pinia";
+import type { Module } from "../models/module";
+import curriculumJSON from "../assets/curriculum.json";
 
-const curriculum = curriculumJSON as Array<Module>
+const curriculum = curriculumJSON as Array<Module>;
 
 // STATIC LOOKUP MAPS (Generated once on load for O(1) sibling checks)
-const courseLessonsMap: Record<string, string[]> = {}
-const moduleCoursesMap: Record<string, string[]> = {}
+const courseLessonsMap: Record<string, string[]> = {};
+const moduleCoursesMap: Record<string, string[]> = {};
 
-curriculum.forEach(m => {
-  moduleCoursesMap[m.moduleId] = m.courses.map(c => c.courseId)
-  m.courses.forEach(c => {
-    courseLessonsMap[c.courseId] = c.lessons.map(l => l.lessonId)
-  })
-})
+export const courseTotalLessons: Record<string, number> = {};
+export const moduleTotalLessons: Record<string, number> = {};
 
-interface ProgressState {
-  curriculum: Module[]
-  completedLessons: Record<string, boolean>
-  completedCourses: Record<string, boolean>
-  completedModules: Record<string, boolean>
-}
+curriculum.forEach((m) => {
+  let mTotal = 0;
+  m.courses.forEach((c) => {
+    const cTotal = c.lessons.length;
+    courseTotalLessons[c.courseId] = cTotal;
+    mTotal += cTotal;
+  });
+  moduleTotalLessons[m.moduleId] = mTotal;
+});
 
-export const useProgressStore = defineStore('progress', {
-  state: (): ProgressState => ({
+export const useProgressStore = defineStore("progress", {
+  state: () => ({
     curriculum: curriculum as Module[],
     completedLessons: {} as Record<string, boolean>,
+
+    // Track booleans for the checkmark UI
     completedCourses: {} as Record<string, boolean>,
     completedModules: {} as Record<string, boolean>,
+
+    // Track raw numbers for the progress bars
+    courseCompletedCounts: {} as Record<string, number>,
+    moduleCompletedCounts: {} as Record<string, number>,
   }),
   actions: {
     toggleLesson(lessonId: string, courseId: string, moduleId: string) {
-      const isNowComplete = !this.completedLessons[lessonId]
-      this.completedLessons[lessonId] = isNowComplete
+      const isNowComplete = !this.completedLessons[lessonId];
+      this.completedLessons[lessonId] = isNowComplete;
 
-      if (!isNowComplete) {
-        // If a lesson is unchecked, instantly invalidate parents (no calculation needed)
-        this.completedCourses[courseId] = false
-        this.completedModules[moduleId] = false
-        return
-      }
+      // O(1) Updates: Just increment or decrement the parent counters
+      const modifier = isNowComplete ? 1 : -1;
 
-      // If checked, check siblings to see if we should bubble up
-      const siblings = courseLessonsMap[courseId] || []
-      const courseComplete = siblings.every(id => this.completedLessons[id])
+      this.courseCompletedCounts[courseId] = (this.courseCompletedCounts[courseId] ?? 0) + modifier
+      this.moduleCompletedCounts[moduleId] = (this.moduleCompletedCounts[moduleId] ?? 0) + modifier
 
-      if (courseComplete) {
-        this.completedCourses[courseId] = true
-
-        // If course became complete, check course siblings
-        const courseSiblings = moduleCoursesMap[moduleId] || []
-        const moduleComplete = courseSiblings.every(id => this.completedCourses[id])
-
-        if (moduleComplete) {
-          this.completedModules[moduleId] = true
-        }
-      }
+      // O(1) Checks: Compare current count against the static total
+      this.completedCourses[courseId] =
+        this.courseCompletedCounts[courseId] === courseTotalLessons[courseId];
+      this.completedModules[moduleId] =
+        this.moduleCompletedCounts[moduleId] === moduleTotalLessons[moduleId];
     },
     initializeCompletions() {
-      for (const [moduleId, courseIds] of Object.entries(moduleCoursesMap)) {
-        let allCoursesComplete = courseIds.length > 0;
+      for (const mId in moduleTotalLessons) this.moduleCompletedCounts[mId] = 0;
+      for (const cId in courseTotalLessons) this.courseCompletedCounts[cId] = 0;
 
-        for (const courseId of courseIds) {
-          const lessonIds = courseLessonsMap[courseId] || [];
-          const allLessonsComplete = lessonIds.length > 0 && lessonIds.every(id => this.completedLessons[id]);
+      // Loop only through the saved lessons to restore parent counts
+      for (const [lessonId, isComplete] of Object.entries(this.completedLessons)) {
+        if (isComplete) {
+          // Extract parent IDs via string manipulation (e.g. 'm1-c1-l1' -> 'm1-c1' -> 'm1')
+          const courseId = lessonId.substring(0, lessonId.lastIndexOf("-"));
+          const moduleId = courseId.substring(0, courseId.lastIndexOf("-"));
 
-          this.completedCourses[courseId] = allLessonsComplete;
-          if (!allLessonsComplete) {
-            allCoursesComplete = false;
-          }
+          this.courseCompletedCounts[courseId] = (this.courseCompletedCounts[courseId] ?? 0) + 1
+          this.moduleCompletedCounts[moduleId] = (this.moduleCompletedCounts[moduleId] ?? 0) + 1
         }
-        this.completedModules[moduleId] = allCoursesComplete;
       }
-    }
+
+      // Restore parent booleans based on the newly calculated counts
+      for (const cId in courseTotalLessons) {
+        this.completedCourses[cId] = this.courseCompletedCounts[cId] === courseTotalLessons[cId];
+      }
+      for (const mId in moduleTotalLessons) {
+        this.completedModules[mId] = this.moduleCompletedCounts[mId] === moduleTotalLessons[mId];
+      }
+    },
   },
   persist: {
-    pick: ['completedLessons']
-  }
-})
+    pick: ["completedLessons"],
+  },
+});

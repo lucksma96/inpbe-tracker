@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
-import { useProgressStore } from "./stores/useProgressStore";
+import {
+  useProgressStore,
+  moduleTotalLessons,
+  courseTotalLessons,
+} from "./stores/useProgressStore";
 
 import type { Module } from "./models/module";
 import type { Course } from "./models/course";
@@ -33,6 +37,24 @@ const goBack = () => {
   if (currentDepth.value === 2) currentDepth.value = 1;
   else if (currentDepth.value === 1) currentDepth.value = 0;
 };
+
+const getModulePercentage = (moduleId: string): number => {
+  if (store.completedModules[moduleId]) return 100;
+
+  const completed = store.moduleCompletedCounts[moduleId] || 0;
+  const total = moduleTotalLessons[moduleId] || 1; // fallback to 1 to prevent divide-by-zero
+
+  return Math.round((completed / total) * 100);
+};
+
+const getCoursePercentage = (courseId: string): number => {
+  if (store.completedCourses[courseId]) return 100;
+
+  const completed = store.courseCompletedCounts[courseId] || 0;
+  const total = courseTotalLessons[courseId] || 1;
+
+  return Math.round((completed / total) * 100);
+};
 </script>
 
 <template>
@@ -61,7 +83,7 @@ const goBack = () => {
 
     <v-main class="bg-grey-lighten-3">
       <v-container>
-        <v-card max-width="600" class="mx-auto">
+        <v-card max-width="800" class="mx-auto">
           <!-- Dynamic Header with Back Button -->
           <v-toolbar color="primary">
             <v-btn v-if="currentDepth > 0" icon="mdi-arrow-left" @click="goBack"></v-btn>
@@ -91,7 +113,20 @@ const goBack = () => {
                   :base-color="store.completedModules[m.moduleId] ? 'success' : undefined"
                   append-icon="mdi-chevron-right"
                   @click="openModule(m)"
-                ></v-list-item>
+                >
+                  <v-progress-linear
+                    :model-value="getModulePercentage(m.moduleId)"
+                    :chunk-count="m.courses.length"
+                    chunk-gap="2"
+                    color="primary"
+                    height="15"
+                    rounded="sm"
+                  >
+                    <template v-slot:default="{ value }">
+                      <small class="text-white">{{ Math.round(value) }}%</small>
+                    </template>
+                  </v-progress-linear>
+                </v-list-item>
               </v-list>
             </v-window-item>
 
@@ -110,7 +145,20 @@ const goBack = () => {
                   :base-color="store.completedCourses[c.courseId] ? 'success' : undefined"
                   append-icon="mdi-chevron-right"
                   @click="openCourse(c)"
-                ></v-list-item>
+                >
+                  <v-progress-linear
+                    :model-value="getCoursePercentage(c.courseId)"
+                    :chunk-count="c.lessons.length"
+                    chunk-gap="2"
+                    color="primary"
+                    height="15"
+                    rounded="sm"
+                  >
+                    <template v-slot:default="{ value }">
+                      <small class="text-white">{{ Math.round(value) }}%</small>
+                    </template>
+                  </v-progress-linear>
+                </v-list-item>
               </v-list>
             </v-window-item>
 
