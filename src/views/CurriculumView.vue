@@ -58,6 +58,32 @@ const isSelectedCourseIncomplete = computed((): boolean => {
 
     return !store.completedCourses[selectedCourse.value.courseId];
 });
+
+const toolbarTitle = computed((): string => {
+    switch (currentDepth.value) {
+        case 0:
+            return "Currículo";
+        case 1:
+            return selectedModule.value?.title || "";
+        case 2:
+            return selectedCourse.value?.title || "";
+        default:
+            return "";
+    }
+});
+
+const toolbarTimeLeftFormatted = computed((): string => {
+    switch (currentDepth.value) {
+        case 0:
+            return formatTime(getGlobalTimeLeft());
+        case 1:
+            return formatTime(getModuleTimeLeft(selectedModule.value as Module));
+        case 2:
+            return formatTime(getCourseTimeLeft(selectedCourse.value as Course));
+        default:
+            return "";
+    }
+});
 </script>
 
 <template>
@@ -66,24 +92,10 @@ const isSelectedCourseIncomplete = computed((): boolean => {
             <!-- Dynamic Header with Back Button -->
             <v-toolbar color="primary">
                 <v-btn v-if="currentDepth > 0" icon="mdi-arrow-left" @click="goBack"></v-btn>
-                <v-toolbar-title>
-                    {{
-                        currentDepth === 0
-                            ? "Currículo"
-                            : currentDepth === 1
-                                ? selectedModule?.title
-                                : selectedCourse?.title
-                    }}
-                </v-toolbar-title>
+                <v-toolbar-title>{{ toolbarTitle }}</v-toolbar-title>
                 <template v-slot:append>
                     <v-chip class="mr-2 font-weight-bold" color="white" variant="outlined" size="small">
-                        {{
-                            currentDepth === 0
-                                ? formatTime(getGlobalTimeLeft())
-                                : currentDepth === 1
-                                    ? formatTime(getModuleTimeLeft(selectedModule!))
-                                    : formatTime(getCourseTimeLeft(selectedCourse!))
-                        }}
+                        {{ toolbarTimeLeftFormatted }}
                     </v-chip>
                     <v-btn v-if="currentDepth === 2 && isSelectedCourseIncomplete" icon="mdi-check-all"
                         @click="completeAll"></v-btn>
@@ -95,7 +107,7 @@ const isSelectedCourseIncomplete = computed((): boolean => {
                 <!-- DEPTH 0: MODULES -->
                 <v-window-item :value="0">
                     <v-list>
-                        <v-list-item v-for="(m, i) in store.curriculum" :key="m.moduleId"
+                        <v-list-item class="my-1 py-3" v-for="(m, i) in store.curriculum" :key="m.moduleId"
                             :title="`Módulo ${i + 1} - ${m.title}`" :subtitle="formatTime(getModuleTimeLeft(m))"
                             :prepend-icon="store.completedModules[m.moduleId] ? 'mdi-check-circle' : 'mdi-folder'"
                             :base-color="store.completedModules[m.moduleId] ? 'success' : undefined"
@@ -113,7 +125,7 @@ const isSelectedCourseIncomplete = computed((): boolean => {
                 <!-- DEPTH 1: COURSES -->
                 <v-window-item :value="1">
                     <v-list>
-                        <v-list-item v-for="(c, i) in selectedModule?.courses" :key="c.courseId"
+                        <v-list-item class="my-1 py-3" v-for="(c, i) in selectedModule?.courses" :key="c.courseId"
                             :title="`Curso ${i + 1} - ${c.title}`" :subtitle="formatTime(getCourseTimeLeft(c))"
                             :prepend-icon="store.completedCourses[c.courseId]
                                 ? 'mdi-check-circle-outline'
@@ -133,7 +145,7 @@ const isSelectedCourseIncomplete = computed((): boolean => {
                 <!-- DEPTH 2: LESSONS -->
                 <v-window-item :value="2">
                     <v-list>
-                        <v-list-item v-for="(l, i) in selectedCourse?.lessons" :key="l.lessonId"
+                        <v-list-item class="my-1 py-3" v-for="(l, i) in selectedCourse?.lessons" :key="l.lessonId"
                             :title="`Aula ${i + 1} - ${l.title}`" :subtitle="`${l.durationMinutes} min`">
                             <template v-slot:prepend>
                                 <v-checkbox-btn :model-value="!!store.completedLessons[l.lessonId]" @update:model-value="
