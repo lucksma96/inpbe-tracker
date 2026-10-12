@@ -51,18 +51,18 @@ const completeAll = () => {
         selectedModule.value.moduleId,
         lessonIds
     );
-
-    const isSelectedCourseIncomplete = computed((): boolean => {
-        if (!selectedCourse.value) return false;
-
-        return !store.completedCourses[selectedCourse.value.courseId];
-    });
 };
+
+const isSelectedCourseIncomplete = computed((): boolean => {
+    if (!selectedCourse.value) return false;
+
+    return !store.completedCourses[selectedCourse.value.courseId];
+});
 </script>
 
 <template>
-    <v-container>
-        <v-card max-width="800" class="mx-auto">
+    <v-container class="py-8">
+        <v-card max-width="800" class="mx-auto" elevation="2" rounded="xl">
             <!-- Dynamic Header with Back Button -->
             <v-toolbar color="primary">
                 <v-btn v-if="currentDepth > 0" icon="mdi-arrow-left" @click="goBack"></v-btn>
@@ -97,8 +97,8 @@ const completeAll = () => {
                     <v-list>
                         <v-list-item v-for="(m, i) in store.curriculum" :key="m.moduleId"
                             :title="`Módulo ${i + 1} - ${m.title}`" :subtitle="formatTime(getModuleTimeLeft(m))"
-                            :prepend-icon="store.completedModules[m.moduleId] ? 'mdi-check-circle' : 'mdi-folder'
-                                " :base-color="store.completedModules[m.moduleId] ? 'success' : undefined"
+                            :prepend-icon="store.completedModules[m.moduleId] ? 'mdi-check-circle' : 'mdi-folder'"
+                            :base-color="store.completedModules[m.moduleId] ? 'success' : undefined"
                             append-icon="mdi-chevron-right" @click="openModule(m)">
                             <v-progress-linear :model-value="getModulePercentage(m.moduleId)"
                                 :chunk-count="m.courses.length" chunk-gap="2" color="primary" height="15" rounded="sm">
@@ -151,5 +151,3 @@ const completeAll = () => {
         </v-card>
     </v-container>
 </template>
-
-<style scoped></style>
