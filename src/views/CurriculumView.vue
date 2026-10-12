@@ -61,7 +61,7 @@ const isSelectedCourseIncomplete = computed((): boolean => {
 </script>
 
 <template>
-    <v-container class="py-8">
+    <v-container class="py-6">
         <v-card max-width="800" class="mx-auto" elevation="2" rounded="xl">
             <!-- Dynamic Header with Back Button -->
             <v-toolbar color="primary">

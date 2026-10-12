@@ -4,7 +4,7 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdyt
 </script>
 
 <template>
-    <v-container class="py-8">
+    <v-container class="py-6">
         <v-card max-width="800" class="mx-auto" elevation="2" rounded="xl">
             <!-- Header Section -->
             <v-card-item class="text-center pt-8 pb-4">

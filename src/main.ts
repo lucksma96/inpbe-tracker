@@ -9,6 +9,7 @@ import piniaPluginPersistedState from 'pinia-plugin-persistedstate'
 
 import 'unfonts.css'
 import '@mdi/font/css/materialdesignicons.css'
+import './assets/main.css'
 
 // Vuetify
 import 'vuetify/styles'
