@@ -112,10 +112,10 @@ const toolbarTimeLeftFormatted = computed((): string => {
                             :prepend-icon="store.completedModules[m.moduleId] ? 'mdi-check-circle' : 'mdi-folder'"
                             :base-color="store.completedModules[m.moduleId] ? 'success' : undefined"
                             append-icon="mdi-chevron-right" @click="openModule(m)">
-                            <v-progress-linear :model-value="getModulePercentage(m.moduleId)"
-                                :chunk-count="m.courses.length" chunk-gap="2" color="primary" height="15" rounded="sm">
+                            <v-progress-linear :model-value="getModulePercentage(m.moduleId)" chunk-gap="2"
+                                color="primary" height="15" rounded="sm">
                                 <template v-slot:default="{ value }">
-                                    <small class="text-white">{{ Math.round(value) }}%</small>
+                                    <small class="text-secondary">{{ Math.round(value) }}%</small>
                                 </template>
                             </v-progress-linear>
                         </v-list-item>
@@ -132,10 +132,10 @@ const toolbarTimeLeftFormatted = computed((): string => {
                                 : 'mdi-play-box-outline'
                                 " :base-color="store.completedCourses[c.courseId] ? 'success' : undefined"
                             append-icon="mdi-chevron-right" @click="openCourse(c)">
-                            <v-progress-linear :model-value="getCoursePercentage(c.courseId)"
-                                :chunk-count="c.lessons.length" chunk-gap="2" color="primary" height="15" rounded="sm">
+                            <v-progress-linear :model-value="getCoursePercentage(c.courseId)" chunk-gap="2"
+                                color="primary" height="15" rounded="sm">
                                 <template v-slot:default="{ value }">
-                                    <small class="text-white">{{ Math.round(value) }}%</small>
+                                    <small class="text-secondary">{{ Math.round(value) }}%</small>
                                 </template>
                             </v-progress-linear>
                         </v-list-item>
