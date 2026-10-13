@@ -30,7 +30,7 @@ const routes = [
         </v-responsive>
       </v-container>
     </v-app-bar>
-    <v-main class="bg-grey-lighten-3">
+    <v-main class="color-background">
       <router-view v-slot="{ Component }">
         <v-fade-transition hide-on-leave>
           <component :is="Component" />
