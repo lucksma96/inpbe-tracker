@@ -248,13 +248,28 @@
           },
           {
             "lessonId": "m2-c2-l8",
-            "title": "Dependência Quimica",
+            "title": "Dependência Química",
             "durationMinutes": 95
           },
           {
             "lessonId": "m2-c2-l9",
             "title": "Internação Psiquiátrica",
             "durationMinutes": 97
+          },
+          {
+            "lessonId": "m2-c2-l10",
+            "title": "TDAH (Transtorno do Déficit de Atenção com Hiperatividade)",
+            "durationMinutes": 44
+          },
+          {
+            "lessonId": "m2-c2-l11",
+            "title": "Transtorno do Espectro Autista",
+            "durationMinutes": 55
+          },
+          {
+            "lessonId": "m2-c2-l12",
+            "title": "Transtornos de Personalidade",
+            "durationMinutes": 60
           }
         ]
       },
@@ -319,7 +334,7 @@
           },
           {
             "lessonId": "m2-c3-l12",
-            "title": "Objetivos Intrinsecos e Extrinsecos",
+            "title": "Objetivos Intrínsecos e Extrínsecos",
             "durationMinutes": 17
           },
           {
@@ -426,7 +441,7 @@
           },
           {
             "lessonId": "m2-c5-l9",
-            "title": "Monitoramente do Progresso",
+            "title": "Monitoramento do Progresso",
             "durationMinutes": 40
           },
           {
@@ -489,7 +504,7 @@
           },
           {
             "lessonId": "m3-c2-l5",
-            "title": "Causas Ficticias do Comportamento Humano",
+            "title": "Causas Fictícias do Comportamento Humano",
             "durationMinutes": 18
           },
           {
@@ -535,7 +550,7 @@
           },
           {
             "lessonId": "m3-c3-l5",
-            "title": "Principios da TCC (parte 1)",
+            "title": "Princípios da TCC (parte 1)",
             "durationMinutes": 9
           },
           {
@@ -616,12 +631,12 @@
           },
           {
             "lessonId": "m3-c4-l13",
-            "title": "Reforçamento Continuo x Reforçamento Intermitente",
+            "title": "Reforçamento Contínuo x Reforçamento Intermitente",
             "durationMinutes": 3
           },
           {
             "lessonId": "m3-c4-l14",
-            "title": "Controle de Estimulo Simples",
+            "title": "Controle de Estímulo Simples",
             "durationMinutes": 11
           },
           {
@@ -631,17 +646,17 @@
           },
           {
             "lessonId": "m3-c4-l16",
-            "title": "Controle de Estimulos e Exemplos Clínicos",
+            "title": "Controle de Estímulos e Exemplos Clínicos",
             "durationMinutes": 23
           },
           {
             "lessonId": "m3-c4-l17",
-            "title": "Definição de Estimulo Condicional",
+            "title": "Definição de Estímulo Condicional",
             "durationMinutes": 6
           },
           {
             "lessonId": "m3-c4-l18",
-            "title": "Generalização de Estimulos",
+            "title": "Generalização de Estímulos",
             "durationMinutes": 5
           },
           {
@@ -807,7 +822,7 @@
           },
           {
             "lessonId": "m3-c5-l13",
-            "title": "Diretrizes para Intervenção; caso clínico",
+            "title": "Diretrizes para Intervenção: caso clínico",
             "durationMinutes": 20
           }
         ]
@@ -1016,7 +1031,7 @@
           },
           {
             "lessonId": "m4-c1-l21",
-            "title": "Desafios clínicos e Prevenção de Recaida",
+            "title": "Desafios clínicos e Prevenção de Recaída",
             "durationMinutes": 44
           },
           {
@@ -1178,7 +1193,7 @@
           },
           {
             "lessonId": "m4-c3-l9",
-            "title": "Vulnerabilidade Biologica",
+            "title": "Vulnerabilidade Biológica",
             "durationMinutes": 18
           },
           {
@@ -1213,12 +1228,12 @@
           },
           {
             "lessonId": "m4-c3-l16",
-            "title": "Os Três Principios da DBT",
+            "title": "Os Três Princípios da DBT",
             "durationMinutes": 19
           },
           {
             "lessonId": "m4-c3-l17",
-            "title": "Os Principios na Prática",
+            "title": "Os Princípios na Prática",
             "durationMinutes": 26
           },
           {
@@ -1303,7 +1318,7 @@
           },
           {
             "lessonId": "m4-c3-l34",
-            "title": "Habilidades de Tolerância a Mal-Estar",
+            "title": "Habilidades de Tolerância ao Mal-Estar",
             "durationMinutes": 43
           },
           {
@@ -1323,7 +1338,7 @@
           },
           {
             "lessonId": "m4-c3-l38",
-            "title": "Para Saber Mais sobre DET",
+            "title": "Para Saber Mais Sobre DBT",
             "durationMinutes": 16
           }
         ]
@@ -1488,7 +1503,7 @@
           },
           {
             "lessonId": "m5-c1-l2",
-            "title": "Role-plays de validação",
+            "title": "Roleplays de validação",
             "durationMinutes": 18
           }
         ]
@@ -1509,7 +1524,7 @@
           },
           {
             "lessonId": "m5-c2-l3",
-            "title": "Role-plays",
+            "title": "Roleplays",
             "durationMinutes": 65
           }
         ]
@@ -1525,7 +1540,7 @@
           },
           {
             "lessonId": "m5-c3-l2",
-            "title": "Valores nas diferentes abordagens psicoterapéuticas",
+            "title": "Valores nas diferentes abordagens psicoterapêuticas",
             "durationMinutes": 43
           },
           {
@@ -1535,7 +1550,7 @@
           },
           {
             "lessonId": "m5-c3-l4",
-            "title": "Valores e terapia haseada em processos",
+            "title": "Valores e terapia baseada em processos",
             "durationMinutes": 33
           }
         ]
@@ -1572,7 +1587,7 @@
           },
           {
             "lessonId": "m5-c5-l4",
-            "title": "Role-plays",
+            "title": "Roleplays",
             "durationMinutes": 60
           }
         ]
@@ -1826,7 +1841,7 @@
           },
           {
             "lessonId": "m5-c14-l4",
-            "title": "Mitos sobre suicidio",
+            "title": "Mitos sobre suicídio",
             "durationMinutes": 5
           },
           {
@@ -1856,7 +1871,7 @@
           },
           {
             "lessonId": "m5-c14-l10",
-            "title": "Análise de uma tentativa de suicidio",
+            "title": "Análise de uma tentativa de suicídio",
             "durationMinutes": 23
           },
           {
@@ -1881,27 +1896,27 @@
           },
           {
             "lessonId": "m5-c14-l15",
-            "title": "Role-play – validação",
+            "title": "Roleplay – validação",
             "durationMinutes": 17
           },
           {
             "lessonId": "m5-c14-l16",
-            "title": "Role-play – aceitação",
+            "title": "Roleplay – aceitação",
             "durationMinutes": 17
           },
           {
             "lessonId": "m5-c14-l17",
-            "title": "Role-play – resolução de problemas",
+            "title": "Roleplay – resolução de problemas",
             "durationMinutes": 14
           },
           {
             "lessonId": "m5-c14-l18",
-            "title": "Role-play – reestruturação cognitiva",
+            "title": "Roleplay – reestruturação cognitiva",
             "durationMinutes": 21
           },
           {
             "lessonId": "m5-c14-l19",
-            "title": "Role-play – regulação emocional",
+            "title": "Roleplay – regulação emocional",
             "durationMinutes": 23
           },
           {
@@ -2041,27 +2056,27 @@
       },
       {
         "courseId": "m6-c2",
-        "title": "Neurobiologia do Sono/Vigilia",
+        "title": "Neurobiologia do Sono/Vigília",
         "lessons": [
           {
             "lessonId": "m6-c2-l1",
-            "title": "Neurobiologia do Sono/Vigilia",
+            "title": "Neurobiologia do Sono/Vigília",
             "durationMinutes": 70
           }
         ]
       },
       {
         "courseId": "m6-c3",
-        "title": "Neurobiologia do Sono/Vigilia",
+        "title": "Neurobiologia do Sono/Vigília",
         "lessons": [
           {
             "lessonId": "m6-c3-l1",
-            "title": "Aspectos clínicos do Sono: transtornos do sono; avaliação do tempo e qualidade do sono, afinal, quanto tempo precisamos dormir?",
+            "title": "Aspectos clínicos do sono: transtornos do sono, avaliação do tempo e qualidade do sono, afinal, quanto tempo precisamos dormir?",
             "durationMinutes": 132
           },
           {
             "lessonId": "m6-c3-l2",
-            "title": "Atualizações sobre a Neurociência do Sono/Vigilia",
+            "title": "Atualizações sobre a Neurociência do Sono/Vigília",
             "durationMinutes": 95
           }
         ]
@@ -2087,7 +2102,7 @@
           },
           {
             "lessonId": "m6-c4-l4",
-            "title": "Farmacodinamica",
+            "title": "Farmacodinâmica",
             "durationMinutes": 35
           },
           {
@@ -2251,17 +2266,17 @@
           },
           {
             "lessonId": "m7-c1-l11",
-            "title": "Prevenção de recaida",
+            "title": "Prevenção de recaída",
             "durationMinutes": 8
           },
           {
             "lessonId": "m7-c1-l12",
-            "title": "Role-play 1 (avaliação clínica)",
+            "title": "Roleplay 1 (avaliação clínica)",
             "durationMinutes": 43
           },
           {
             "lessonId": "m7-c1-l13",
-            "title": "Role-play 2 (análise e técnicas)",
+            "title": "Roleplay 2 (análise e técnicas)",
             "durationMinutes": 28
           }
         ]
@@ -2334,11 +2349,11 @@
       },
       {
         "courseId": "m7-c3",
-        "title": "Experiências Anōmalas",
+        "title": "Experiências Anômalas",
         "lessons": [
           {
             "lessonId": "m7-c3-l1",
-            "title": "Experiências Anomalas e Mistico-Religiosas: diagnóstico diferencial e manejo clínico",
+            "title": "Experiências Anômalas e Místico-Religiosas: diagnóstico diferencial e manejo clínico",
             "durationMinutes": 100
           }
         ]
@@ -2483,12 +2498,12 @@
           },
           {
             "lessonId": "m7-c8-l11",
-            "title": "Exposição para diferenças áreas problemáticas (parte 1)",
+            "title": "Exposição para diferentes áreas problemáticas (parte 1)",
             "durationMinutes": 32
           },
           {
             "lessonId": "m7-c8-l12",
-            "title": "Exposição para diferenças áreas problemáticas (parte 2)",
+            "title": "Exposição para diferentes áreas problemáticas (parte 2)",
             "durationMinutes": 58
           },
           {
@@ -2504,7 +2519,7 @@
         "lessons": [
           {
             "lessonId": "m7-c9-l1",
-            "title": "Desenvolvimento fisico, psicossocial e neurológico na adolescência",
+            "title": "Desenvolvimento físico, psicossocial e neurológico na adolescência",
             "durationMinutes": 110
           },
           {
@@ -2739,7 +2754,7 @@
           },
           {
             "lessonId": "m8-c4-l10",
-            "title": "Falácias Lógicas e Pensamento Critico",
+            "title": "Falácias Lógicas e Pensamento Crítico",
             "durationMinutes": 27
           },
           {
@@ -2754,7 +2769,7 @@
           },
           {
             "lessonId": "m8-c4-l13",
-            "title": "Principios Básicos Para Discutir Demarcação entre Ciência e Pseudociência",
+            "title": "Princípios Básicos Para Discutir Demarcação entre Ciência e Pseudociência",
             "durationMinutes": 14
           },
           {
@@ -2878,12 +2893,12 @@
           },
           {
             "lessonId": "m9-c2-l3",
-            "title": "INSS e Carné Leão",
+            "title": "INSS e Carnê-Leão",
             "durationMinutes": 18
           },
           {
             "lessonId": "m9-c2-l4",
-            "title": "Carné Leão | Passo a passo",
+            "title": "Carnê-Leão | Passo a passo",
             "durationMinutes": 20
           },
           {
@@ -2997,14 +3012,14 @@
           },
           {
             "lessonId": "m9-c6-l3",
-            "title": "Renda Váriavel",
+            "title": "Renda Variável",
             "durationMinutes": 58
           }
         ]
       },
       {
         "courseId": "m9-c7",
-        "title": "Para além da teoria e da técnica em Psicología: cuidados éticos e jurídicos da profissão",
+        "title": "Para além da teoria e da técnica em Psicologia: cuidados éticos e jurídicos da profissão",
         "lessons": [
           {
             "lessonId": "m9-c7-l1",
@@ -3013,7 +3028,7 @@
           },
           {
             "lessonId": "m9-c7-l2",
-            "title": "A relação terapêutica: aspectos éticos e juridicos",
+            "title": "A relação terapêutica: aspectos éticos e jurídicos",
             "durationMinutes": 85
           },
           {
@@ -3023,7 +3038,7 @@
           },
           {
             "lessonId": "m9-c7-l4",
-            "title": "Documentos psicológicos: aspectos éticos e juridicos",
+            "title": "Documentos psicológicos: aspectos éticos e jurídicos",
             "durationMinutes": 95
           },
           {
