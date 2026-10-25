@@ -1,5 +1,6 @@
 import { defineStore } from "pinia";
 import type { Module } from "../models/module";
+import type { IProgressState } from "../models/states/IProgressState";
 import curriculumJSON from "../assets/curriculum.json";
 
 const curriculum = curriculumJSON as Array<Module>;
@@ -25,17 +26,8 @@ curriculum.forEach((m) => {
   moduleTotalLessons[m.moduleId] = mTotal;
 });
 
-interface ProgressState {
-  curriculum: Module[];
-  completedLessons: Record<string, boolean>;
-  completedCourses: Record<string, boolean>;
-  completedModules: Record<string, boolean>;
-  courseCompletedCounts: Record<string, number>;
-  moduleCompletedCounts: Record<string, number>;
-}
-
 export const useProgressStore = defineStore("progress", {
-  state: (): ProgressState => ({
+  state: (): IProgressState => ({
     curriculum: curriculum,
     completedLessons: {},
 
