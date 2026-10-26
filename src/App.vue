@@ -10,6 +10,7 @@ onMounted(() => {
 
 const routes = [
   { route: '/', title: 'Início' },
+  { route: '/settings', title: 'Configurações' },
   { route: '/about', title: 'Sobre' }
 ]
 </script>
