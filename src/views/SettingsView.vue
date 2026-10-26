@@ -17,38 +17,76 @@ const currentTheme = computed({
 
 <template>
     <v-container class="py-6">
-        <v-card max-width="800" class="mx-auto" elevation="2" rounded="xl">
-            <v-card-item class="text-center pt-8 pb-4">
-                <v-avatar v-model="store.profilePicture" color="surface-variant" size="128" rounded="lg"
-                    :badge="{ color: 'primary', location: 'bottom end' }">
-                    <template v-slot:badge>
-                        <v-icon-btn icon="mdi-pencil" size="x-small" variant="plain"></v-icon-btn>
-                    </template>
-                </v-avatar>
-                <v-text-field v-model="store.username" clearable label="Nome"></v-text-field>
+        <v-card max-width="800" class="mx-auto pa-2 pa-sm-4" elevation="2" rounded="xl">
+            <v-card-item class="pb-2">
+                <template v-slot:prepend>
+                    <v-icon icon="mdi-cog-outline" color="primary" size="32" class="mr-2"></v-icon>
+                </template>
+                <v-card-title class="text-h5 font-weight-bold">Configurações</v-card-title>
+                <v-card-subtitle>Personalize seu perfil e a aparência do aplicativo</v-card-subtitle>
             </v-card-item>
-            <v-card-item class="pb-4">
-                <v-radio-group v-model="currentTheme" label="Tema">
-                    <v-radio value="system">
-                        <template v-slot:label>
+
+            <v-divider class="mt-4"></v-divider>
+
+            <v-card-text>
+                <!-- Section 1: User Profile -->
+                <div class="mb-8">
+                    <div class="d-flex align-center">
+                        <v-icon icon="mdi-account-outline" color="primary" class="mr-2"></v-icon>
+                        <h3 class="text-h6 font-weight-medium">Perfil</h3>
+                    </div>
+
+                    <div class="d-flex flex-column align-center mb-6">
+                        <div class="position-relative">
+                            <v-avatar size="100" color="purple-lighten-5" class="elevation-2">
+                                <v-img v-if="store.profilePicture" :src="store.profilePicture" alt="Foto de perfil"
+                                    cover></v-img>
+                                <v-icon v-else icon="mdi-account" size="56" color="purple"></v-icon>
+                            </v-avatar>
+
+                            <v-btn icon="mdi-camera" size="x-small" color="primary" class="position-absolute"
+                                style="bottom: 0; right: -4px;" elevation="3"></v-btn>
+                        </div>
+                        <span class="text-caption text-medium-emphasis mt-2">Foto de perfil</span>
+                    </div>
+
+                    <v-text-field v-model="store.username" label="Nome de Usuário"
+                        placeholder="Como você quer ser chamado(a)?" variant="outlined" density="comfortable"
+                        prepend-inner-icon="mdi-account-circle-outline" clearable hide-details="auto"></v-text-field>
+                </div>
+
+                <v-divider class="my-2"></v-divider>
+
+                <!-- Section 2: Appearance / Theme -->
+                <div>
+                    <div class="d-flex align-center">
+                        <v-icon icon="mdi-palette-outline" color="primary" class="mr-2"></v-icon>
+                        <h3 class="text-h6 font-weight-medium">Aparência</h3>
+                    </div>
+
+                    <p class="text-body-2 text-medium-emphasis mb-4">
+                        Escolha o tema visual do aplicativo:
+                    </p>
+
+                    <v-btn-toggle v-model="currentTheme" mandatory color="primary" variant="outlined" divided
+                        class="w-100 d-flex flex-wrap flex-sm-nowrap h-auto" rounded="lg">
+                        <v-btn value="system" class="flex-grow-1 py-3 h-auto" stack>
                             <v-icon icon="mdi-desktop-tower-monitor" class="mr-1"></v-icon>
-                            Sistema
-                        </template>
-                    </v-radio>
-                    <v-radio value="light">
-                        <template v-slot:label>
+                            <span>Sistema</span>
+                        </v-btn>
+
+                        <v-btn value="light" class="flex-grow-1 py-3 h-auto" stack>
                             <v-icon icon="mdi-white-balance-sunny" class="mr-1"></v-icon>
-                            Claro
-                        </template>
-                    </v-radio>
-                    <v-radio value="dark">
-                        <template v-slot:label>
+                            <span>Claro</span>
+                        </v-btn>
+
+                        <v-btn value="dark" class="flex-grow-1 py-3 h-auto" stack>
                             <v-icon icon="mdi-weather-night" class="mr-1"></v-icon>
-                            Escuro
-                        </template>
-                    </v-radio>
-                </v-radio-group>
-            </v-card-item>
+                            <span>Escuro</span>
+                        </v-btn>
+                    </v-btn-toggle>
+                </div>
+            </v-card-text>
         </v-card>
     </v-container>
 </template>
