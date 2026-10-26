@@ -1,5 +1,7 @@
 export type Theme = 'system' | 'light' | 'dark';
 
 export interface ISettingsState {
-    theme: Theme
+    theme: Theme,
+    username: string,
+    profilePicture: string
 }
