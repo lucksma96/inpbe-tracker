@@ -110,7 +110,87 @@ const currentTheme = computed({
                         </v-btn>
                     </v-btn-toggle>
                 </div>
+
+                <v-divider class="my-2"></v-divider>
+
+                <div>
+                    <div class="d-flex align-center">
+                        <v-icon icon="mdi-palette-outline" color="primary" class="mr-2"></v-icon>
+                        <h3 class="text-h6 font-weight-medium">Dados</h3>
+                    </div>
+
+                    <p class="text-body-2 text-medium-emphasis mb-4">
+                        Exporte ou importe seus dados:
+                    </p>
+
+                    <div>
+                        <v-btn
+                            id="btnExport"
+                            prepend-icon="mdi-export"
+                            variant="tonal"
+                            class="mr-2"
+                        >
+                            Exportar
+                        </v-btn>
+                        <v-btn id="btnImport" prepend-icon="mdi-import" variant="tonal"
+                            >Importar</v-btn
+                        >
+                    </div>
+                </div>
             </v-card-text>
         </v-card>
     </v-container>
+
+    <v-dialog activator="#btnExport" max-width="512">
+        <template v-slot:default="{ isActive }">
+            <v-card title="Exportar dados">
+                <v-card-text>
+                    <span>Escolha abaixo o você quer exportar:</span>
+                    <v-checkbox-btn
+                        label="Currículo"
+                        description="Lista de aulas finalizadas"
+                    ></v-checkbox-btn>
+                    <v-checkbox-btn
+                        label="Configurações"
+                        description="Nome, foto, tema, etc"
+                    ></v-checkbox-btn>
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-btn
+                        text="Cancelar"
+                        color="secondary"
+                        @click="isActive.value = false"
+                    ></v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn text="Exportar" color="primary"></v-btn>
+                </v-card-actions>
+            </v-card>
+        </template>
+    </v-dialog>
+
+    <v-dialog activator="#btnImport" max-width="512">
+        <template v-slot:default="{ isActive }">
+            <v-card title="Importar dados">
+                <v-card-text>
+                    <v-file-upload
+                        density="default"
+                        title="Arraste o arquivo com os dados a importar"
+                        divider-text="ou busque localmente"
+                        browse-text="Buscar arquivo"
+                    ></v-file-upload>
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-btn
+                        text="Cancelar"
+                        color="secondary"
+                        @click="isActive.value = false"
+                    ></v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn text="Importar" color="primary"></v-btn>
+                </v-card-actions>
+            </v-card>
+        </template>
+    </v-dialog>
 </template>
