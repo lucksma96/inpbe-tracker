@@ -11,8 +11,8 @@ const currentTheme = computed({
     set: (newValue) => {
         store.theme = newValue;
         theme.change(newValue);
-    }
-})
+    },
+});
 </script>
 
 <template>
@@ -39,20 +39,37 @@ const currentTheme = computed({
                     <div class="d-flex flex-column align-center mb-6">
                         <div class="position-relative">
                             <v-avatar size="100" color="purple-lighten-5" class="elevation-2">
-                                <v-img v-if="store.profilePicture" :src="store.profilePicture" alt="Foto de perfil"
-                                    cover></v-img>
+                                <v-img
+                                    v-if="store.profilePicture"
+                                    :src="store.profilePicture"
+                                    alt="Foto de perfil"
+                                    cover
+                                ></v-img>
                                 <v-icon v-else icon="mdi-account" size="56" color="purple"></v-icon>
                             </v-avatar>
 
-                            <v-btn icon="mdi-camera" size="x-small" color="primary" class="position-absolute"
-                                style="bottom: 0; right: -4px;" elevation="3"></v-btn>
+                            <v-btn
+                                icon="mdi-camera"
+                                size="x-small"
+                                color="primary"
+                                class="position-absolute"
+                                style="bottom: 0; right: -4px"
+                                elevation="3"
+                            ></v-btn>
                         </div>
                         <span class="text-caption text-medium-emphasis mt-2">Foto de perfil</span>
                     </div>
 
-                    <v-text-field v-model="store.username" label="Nome de Usuário"
-                        placeholder="Como você quer ser chamado(a)?" variant="outlined" density="comfortable"
-                        prepend-inner-icon="mdi-account-circle-outline" clearable hide-details="auto"></v-text-field>
+                    <v-text-field
+                        v-model="store.username"
+                        label="Nome de Usuário"
+                        placeholder="Como você quer ser chamado(a)?"
+                        variant="outlined"
+                        density="comfortable"
+                        prepend-inner-icon="mdi-account-circle-outline"
+                        clearable
+                        hide-details="auto"
+                    ></v-text-field>
                 </div>
 
                 <v-divider class="my-2"></v-divider>
@@ -68,8 +85,15 @@ const currentTheme = computed({
                         Escolha o tema visual do aplicativo:
                     </p>
 
-                    <v-btn-toggle v-model="currentTheme" mandatory color="primary" variant="outlined" divided
-                        class="w-100 d-flex flex-wrap flex-sm-nowrap h-auto" rounded="lg">
+                    <v-btn-toggle
+                        v-model="currentTheme"
+                        mandatory
+                        color="primary"
+                        variant="outlined"
+                        divided
+                        class="w-100 d-flex flex-wrap flex-sm-nowrap h-auto"
+                        rounded="lg"
+                    >
                         <v-btn value="system" class="flex-grow-1 py-3 h-auto" stack>
                             <v-icon icon="mdi-desktop-tower-monitor" class="mr-1"></v-icon>
                             <span>Sistema</span>
