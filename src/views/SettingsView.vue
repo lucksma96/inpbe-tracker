@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed } from 'vue';
-import { useSettingsStore } from '../stores/useSettingsStore';
-import { useTheme } from 'vuetify';
+import { computed } from "vue";
+import { useSettingsStore } from "../stores/useSettingsStore";
+import { useTheme } from "vuetify";
 
 const store = useSettingsStore();
 const theme = useTheme();
@@ -81,9 +81,7 @@ const currentTheme = computed({
                         <h3 class="text-h6 font-weight-medium">Aparência</h3>
                     </div>
 
-                    <p class="text-body-2 text-medium-emphasis mb-4">
-                        Escolha o tema visual do aplicativo:
-                    </p>
+                    <p class="text-body-2 text-medium-emphasis mb-4">Escolha o tema visual do aplicativo:</p>
 
                     <v-btn-toggle
                         v-model="currentTheme"
@@ -119,22 +117,11 @@ const currentTheme = computed({
                         <h3 class="text-h6 font-weight-medium">Dados</h3>
                     </div>
 
-                    <p class="text-body-2 text-medium-emphasis mb-4">
-                        Exporte ou importe seus dados:
-                    </p>
+                    <p class="text-body-2 text-medium-emphasis mb-4">Exporte ou importe seus dados:</p>
 
                     <div>
-                        <v-btn
-                            id="btnExport"
-                            prepend-icon="mdi-export"
-                            variant="tonal"
-                            class="mr-2"
-                        >
-                            Exportar
-                        </v-btn>
-                        <v-btn id="btnImport" prepend-icon="mdi-import" variant="tonal"
-                            >Importar</v-btn
-                        >
+                        <v-btn id="btnExport" prepend-icon="mdi-export" variant="tonal" class="mr-2"> Exportar </v-btn>
+                        <v-btn id="btnImport" prepend-icon="mdi-import" variant="tonal">Importar</v-btn>
                     </div>
                 </div>
             </v-card-text>
@@ -146,22 +133,12 @@ const currentTheme = computed({
             <v-card title="Exportar dados">
                 <v-card-text>
                     <span>Escolha abaixo o você quer exportar:</span>
-                    <v-checkbox-btn
-                        label="Currículo"
-                        description="Lista de aulas finalizadas"
-                    ></v-checkbox-btn>
-                    <v-checkbox-btn
-                        label="Configurações"
-                        description="Nome, foto, tema, etc"
-                    ></v-checkbox-btn>
+                    <v-checkbox-btn label="Currículo" description="Lista de aulas finalizadas"></v-checkbox-btn>
+                    <v-checkbox-btn label="Configurações" description="Nome, foto, tema, etc"></v-checkbox-btn>
                 </v-card-text>
 
                 <v-card-actions>
-                    <v-btn
-                        text="Cancelar"
-                        color="secondary"
-                        @click="isActive.value = false"
-                    ></v-btn>
+                    <v-btn text="Cancelar" color="secondary" @click="isActive.value = false"></v-btn>
                     <v-spacer></v-spacer>
                     <v-btn text="Exportar" color="primary"></v-btn>
                 </v-card-actions>
@@ -182,11 +159,7 @@ const currentTheme = computed({
                 </v-card-text>
 
                 <v-card-actions>
-                    <v-btn
-                        text="Cancelar"
-                        color="secondary"
-                        @click="isActive.value = false"
-                    ></v-btn>
+                    <v-btn text="Cancelar" color="secondary" @click="isActive.value = false"></v-btn>
                     <v-spacer></v-spacer>
                     <v-btn text="Importar" color="primary"></v-btn>
                 </v-card-actions>

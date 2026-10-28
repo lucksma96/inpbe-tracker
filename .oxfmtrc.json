@@ -1,5 +1,5 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "printWidth": 200,
-  "tabWidth": 4
+  "printWidth": 120,
+  "singleQuote": true
 }
