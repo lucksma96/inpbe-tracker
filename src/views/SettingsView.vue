@@ -1,18 +1,68 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, ref } from "vue";
 import { useSettingsStore } from "../stores/useSettingsStore";
+import { useProgressStore } from "../stores/useProgressStore";
 import { useTheme } from "vuetify";
 
-const store = useSettingsStore();
+const settingsStore = useSettingsStore();
+const progressStore = useProgressStore();
 const theme = useTheme();
 
 const currentTheme = computed({
-    get: () => store.theme,
+    get: () => settingsStore.theme,
     set: (newValue) => {
-        store.theme = newValue;
+        settingsStore.theme = newValue;
         theme.change(newValue);
     },
 });
+
+const exportDialogActive = ref(false);
+const importDialogActive = ref(false);
+const confirmationDialogActive = ref(false);
+const uploadedFile = ref<File | undefined>(undefined);
+const isImporting = ref(false);
+
+const importFile = async () => {
+    const file = uploadedFile.value as File;
+    if (!file) return;
+
+    isImporting.value = true;
+
+    try {
+        const content = await file.text();
+
+        const fileExtension = file.name.split(".").pop();
+
+        switch (fileExtension) {
+            case "csv":
+                const exportedLessonsIds = content.split(/\r?\n/);
+                if (!exportedLessonsIds[0]?.match(/m\d+-c\d+-l\d+/)) exportedLessonsIds.shift();
+                const completedLessonsIds = exportedLessonsIds.reduce(
+                    (record, lessonId) => {
+                        record[lessonId] = true;
+                        return record;
+                    },
+                    {} as Record<string, boolean>,
+                );
+                progressStore.completedLessons = completedLessonsIds;
+                progressStore.initializeCompletions();
+                break;
+            case "json":
+                break;
+            default:
+                throw new Error(`Arquivo com extensão não aceitável (${fileExtension}).`);
+        }
+
+        confirmationDialogActive.value = true;
+    } catch (error) {
+        console.error("Erro ao ler o arquivo de importação:", error);
+    } finally {
+        isImporting.value = false;
+        uploadedFile.value = undefined;
+    }
+
+    importDialogActive.value = false;
+};
 </script>
 
 <template>
@@ -40,8 +90,8 @@ const currentTheme = computed({
                         <div class="position-relative">
                             <v-avatar size="100" color="purple-lighten-5" class="elevation-2">
                                 <v-img
-                                    v-if="store.profilePicture"
-                                    :src="store.profilePicture"
+                                    v-if="settingsStore.profilePicture"
+                                    :src="settingsStore.profilePicture"
                                     alt="Foto de perfil"
                                     cover
                                 ></v-img>
@@ -61,7 +111,7 @@ const currentTheme = computed({
                     </div>
 
                     <v-text-field
-                        v-model="store.username"
+                        v-model="settingsStore.username"
                         label="Nome de Usuário"
                         placeholder="Como você quer ser chamado(a)?"
                         variant="outlined"
@@ -119,16 +169,18 @@ const currentTheme = computed({
 
                     <p class="text-body-2 text-medium-emphasis mb-4">Exporte ou importe seus dados:</p>
 
-                    <div>
+                    <div class="d-flex">
                         <v-btn id="btnExport" prepend-icon="mdi-export" variant="tonal" class="mr-2"> Exportar </v-btn>
                         <v-btn id="btnImport" prepend-icon="mdi-import" variant="tonal">Importar</v-btn>
+                        <v-spacer></v-spacer>
+                        <v-btn text="Clear Data" color="secondary" @click="progressStore.clearProgress"></v-btn>
                     </div>
                 </div>
             </v-card-text>
         </v-card>
     </v-container>
 
-    <v-dialog activator="#btnExport" max-width="512">
+    <v-dialog v-model="exportDialogActive" activator="#btnExport" max-width="512">
         <template v-slot:default="{ isActive }">
             <v-card title="Exportar dados">
                 <v-card-text>
@@ -146,22 +198,37 @@ const currentTheme = computed({
         </template>
     </v-dialog>
 
-    <v-dialog activator="#btnImport" max-width="512">
+    <v-dialog v-model="importDialogActive" activator="#btnImport" max-width="512">
         <template v-slot:default="{ isActive }">
             <v-card title="Importar dados">
                 <v-card-text>
                     <v-file-upload
+                        v-model="uploadedFile"
                         density="default"
+                        icon="mdi-upload"
                         title="Arraste o arquivo com os dados a importar"
                         divider-text="ou busque localmente"
                         browse-text="Buscar arquivo"
+                        clearable
+                        filter-by-type=".csv,.json"
                     ></v-file-upload>
                 </v-card-text>
 
                 <v-card-actions>
                     <v-btn text="Cancelar" color="secondary" @click="isActive.value = false"></v-btn>
                     <v-spacer></v-spacer>
-                    <v-btn text="Importar" color="primary"></v-btn>
+                    <v-btn text="Importar" color="primary" @click="importFile"></v-btn>
+                </v-card-actions>
+            </v-card>
+        </template>
+    </v-dialog>
+
+    <v-dialog v-model="confirmationDialogActive" max-width="256">
+        <template v-slot:default="{ isActive }">
+            <v-card title="Sucesso">
+                <v-card-text>Importação concluída com sucesso.</v-card-text>
+                <v-card-actions>
+                    <v-btn text="Fechar" @click="isActive.value = false"></v-btn>
                 </v-card-actions>
             </v-card>
         </template>
