@@ -1,3 +1,5 @@
+import type { Module } from "../module";
+
 export interface IProgressState {
     curriculum: Module[];
     completedLessons: Record<string, boolean>;
