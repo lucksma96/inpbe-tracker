@@ -103,6 +103,13 @@ export const useProgressStore = defineStore("progress", {
         this.completedModules[mId] = this.moduleCompletedCounts[mId] === moduleTotalLessons[mId];
       }
     },
+    clearProgress() {
+        this.completedLessons = {};
+        completedCourses: {}
+    completedModules: {}
+    courseCompletedCounts: {}
+    moduleCompletedCounts: {}
+    },
   },
   persist: {
     pick: ["completedLessons"],
