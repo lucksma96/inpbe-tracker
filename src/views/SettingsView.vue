@@ -268,7 +268,8 @@ const exportFile = () => {
             <v-card title="Foto de perfil">
                 <v-card-text>
                     <v-file-input v-model="temporaryProfilePictureFile" clearable accept="image/*" label="Enviar foto"
-                        variant="outlined" @update:model-value="uploadProfilePicture"></v-file-input>
+                        variant="outlined" @update:model-value="uploadProfilePicture"
+                        @click:clear="temporaryProfilePictureData = ''"></v-file-input>
                     <cropper ref="crpProfilePicture" :src="temporaryProfilePictureData"
                         v-show="temporaryProfilePictureData" :stencil-component="CircleStencil" :stencil-props="{
                             aspectRatio: 1 / 1
