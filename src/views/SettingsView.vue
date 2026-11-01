@@ -54,6 +54,17 @@ const importFile = async () => {
                 progressStore.initializeCompletions();
                 break;
             case "json":
+                const dataToImport = JSON.parse(content);
+                if (Object.keys(dataToImport.completedLessons).length > 0) {
+                    progressStore.completedLessons = dataToImport.completedLessons;
+                }
+                if (Object.keys(dataToImport.settings).length > 0) {
+                    const settings = dataToImport.settings;
+                    settingsStore.profilePicture = settings.profilePicture;
+                    settingsStore.username = settings.username;
+                    settingsStore.theme = settings.theme;
+                    theme.change(settings.theme);
+                }
                 break;
             default:
                 throw new Error(`Arquivo com extensão não aceitável (${fileExtension}).`);
