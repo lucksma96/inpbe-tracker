@@ -3,6 +3,8 @@ import { computed, ref } from "vue";
 import { useSettingsStore } from "../stores/useSettingsStore";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useTheme } from "vuetify";
+import { Cropper, CircleStencil } from 'vue-advanced-cropper';
+import 'vue-advanced-cropper/dist/style.css';
 import type { IProgressState } from "@/models/states/IProgressState";
 import type { ISettingsState } from "@/models/states/ISettingsState";
 
@@ -18,15 +20,58 @@ const currentTheme = computed({
     },
 });
 
+const profilePictureDialogActive = ref(false);
 const exportDialogActive = ref(false);
 const importDialogActive = ref(false);
 const confirmationDialogActive = ref(false);
-const uploadedFile = ref<File | undefined>(undefined);
+const uploadedFile = ref<File | undefined>();
+const temporaryProfilePictureFile = ref<File | undefined>();
+const temporaryProfilePictureData = ref<string>();
 const isExporting = ref(false);
 const isImporting = ref(false);
 
 const exportCurriculum = ref(false);
 const exportSettings = ref(false);
+
+const crpProfilePicture = ref();
+
+const fileToDataURL = (file: File): Promise<string> => {
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result as string);
+        reader.onerror = (error) => reject(error);
+        reader.readAsDataURL(file);
+    });
+};
+
+const uploadProfilePicture = async () => {
+    const rawFile = temporaryProfilePictureFile.value;
+    const file = Array.isArray(rawFile) ? rawFile[0] : rawFile;
+    if (!file) return;
+
+    try {
+        const base64Data = await fileToDataURL(file);
+        temporaryProfilePictureData.value = base64Data;
+    } catch (error) {
+        console.error("Erro ao carregar imagem:", error);
+    }
+}
+
+const saveProfilePicture = () => {
+    const { canvas } = crpProfilePicture.value.getResult();
+
+    if (canvas) {
+        // Export the cropped canvas as a lightweight WebP Base64 string
+        const croppedBase64 = canvas.toDataURL('image/webp', 0.8);
+        settingsStore.profilePicture = croppedBase64;
+
+        // Clear temporary data & close dialog
+        temporaryProfilePictureData.value = '';
+        temporaryProfilePictureFile.value = undefined;
+    }
+
+    profilePictureDialogActive.value = false;
+}
 
 const importFile = async () => {
     const file = uploadedFile.value as File;
@@ -151,8 +196,8 @@ const exportFile = () => {
                                 <v-icon v-else icon="mdi-account" size="56" color="purple"></v-icon>
                             </v-avatar>
 
-                            <v-btn icon="mdi-camera" size="x-small" color="primary" class="position-absolute"
-                                style="bottom: 0; right: -4px" elevation="3"></v-btn>
+                            <v-btn id="btnUpdatePfp" icon="mdi-camera" size="x-small" color="primary"
+                                class="position-absolute" style="bottom: 0; right: -4px" elevation="3"></v-btn>
                         </div>
                         <span class="text-caption text-medium-emphasis mt-2">Foto de perfil</span>
                     </div>
@@ -203,7 +248,7 @@ const exportFile = () => {
                     <p class="text-body-2 text-medium-emphasis mb-4">Exporte ou importe seus dados:</p>
 
                     <div class="d-flex">
-                        <v-btn id="btnExport" prepend-icon="mdi-export" variant="tonal" class="mr-2"> Exportar </v-btn>
+                        <v-btn id="btnExport" prepend-icon="mdi-export" variant="tonal" class="mr-2">Exportar</v-btn>
                         <v-btn id="btnImport" prepend-icon="mdi-import" variant="tonal">Importar</v-btn>
                         <v-spacer></v-spacer>
                         <!-- <v-btn text="Clear Data" color="secondary" @click="progressStore.clearProgress"></v-btn> -->
@@ -212,6 +257,30 @@ const exportFile = () => {
             </v-card-text>
         </v-card>
     </v-container>
+
+    <v-dialog v-model="profilePictureDialogActive" activator="#btnUpdatePfp" max-width="512">
+        <template v-slot:default="{ isActive }">
+            <v-card title="Foto de perfil">
+                <v-card-text>
+                    <v-file-input v-model="temporaryProfilePictureFile" clearable label="Enviar foto" variant="outlined"
+                        @update:model-value="uploadProfilePicture"></v-file-input>
+                    <cropper ref="crpProfilePicture" :src="temporaryProfilePictureData"
+                        :stencil-component="CircleStencil" :stencil-props="{
+                            aspectRatio: 1 / 1
+                        }" :auto-zoom="true" :stencil-size="{
+                            width: 256,
+                            height: 256
+                        }" image-restriction="stencil" class="cropper"></cropper>
+                </v-card-text>
+
+                <v-card-actions>
+                    <v-btn text="Cancelar" color="secondary" @click="isActive.value = false"></v-btn>
+                    <v-spacer></v-spacer>
+                    <v-btn text="Salvar" color="primary" @click="saveProfilePicture"></v-btn>
+                </v-card-actions>
+            </v-card>
+        </template>
+    </v-dialog>
 
     <v-dialog v-model="exportDialogActive" activator="#btnExport" max-width="512">
         <template v-slot:default="{ isActive }">
@@ -262,3 +331,9 @@ const exportFile = () => {
         </template>
     </v-dialog>
 </template>
+<style>
+.cropper {
+    height: 400px;
+    background: #DDD;
+}
+</style>
