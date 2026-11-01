@@ -73,6 +73,11 @@ const saveProfilePicture = () => {
     profilePictureDialogActive.value = false;
 }
 
+const removeProfilePicture = () => {
+    settingsStore.profilePicture = '';
+    profilePictureDialogActive.value = false;
+}
+
 const importFile = async () => {
     const file = uploadedFile.value as File;
     if (!file) return;
@@ -275,6 +280,21 @@ const exportFile = () => {
 
                 <v-card-actions>
                     <v-btn text="Cancelar" color="secondary" @click="isActive.value = false"></v-btn>
+                    <v-spacer></v-spacer>
+                    <v-dialog max-width="256">
+                        <template v-slot:activator="{ props: activatorProps }">
+                            <v-btn v-bind="activatorProps" text="Remover foto" color="secondary"></v-btn>
+                        </template>
+                        <template v-slot:default="{ isActive }">
+                            <v-card title="Confirmação">
+                                <v-card-text>Tem certeza?</v-card-text>
+                                <v-card-actions>
+                                    <v-btn text="Não" @click="isActive.value = false"></v-btn>
+                                    <v-btn text="Sim" @click="removeProfilePicture"></v-btn>
+                                </v-card-actions>
+                            </v-card>
+                        </template>
+                    </v-dialog>
                     <v-spacer></v-spacer>
                     <v-btn text="Salvar" color="primary" @click="saveProfilePicture"></v-btn>
                 </v-card-actions>
