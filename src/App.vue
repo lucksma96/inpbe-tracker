@@ -1,15 +1,18 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useProgressStore } from "./stores/useProgressStore";
+import { useSettingsStore } from "./stores/useSettingsStore";
 
-const store = useProgressStore();
+const progressStore = useProgressStore();
+const settingsStore = useSettingsStore();
 
 onMounted(() => {
-  store.initializeCompletions();
+  progressStore.initializeCompletions();
 });
 
 const routes = [
   { route: '/', title: 'Início' },
+  { route: '/settings', title: 'Configurações' },
   { route: '/about', title: 'Sobre' }
 ]
 </script>
@@ -18,11 +21,16 @@ const routes = [
   <v-app id="inpbe">
     <v-app-bar flat>
       <v-container class="mx-auto d-flex align-center justify-center">
-        <v-avatar color="purple" size="32" v-if="false"></v-avatar>
-
         <v-btn class="mx-1" v-for="r in routes" :to="r.route" :text="r.title" variant="text"></v-btn>
 
         <v-spacer></v-spacer>
+
+        <span v-if="settingsStore.username" class="mr-2">Olá, {{ settingsStore.username }}</span>
+        <v-avatar size="32" color="purple-lighten-5" class="elevation-2">
+          <v-img v-if="settingsStore.profilePicture" :src="settingsStore.profilePicture" alt="Foto de perfil"
+            cover></v-img>
+          <v-icon v-else icon="mdi-account" size="56" color="purple"></v-icon>
+        </v-avatar>
 
         <v-responsive max-width="160" v-if="false">
           <v-text-field density="compact" label="Pesquisar" rounded="lg" variant="solo-filled" flat hide-details
