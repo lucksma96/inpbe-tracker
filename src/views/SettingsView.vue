@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import { useSettingsStore } from "../stores/useSettingsStore";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useTheme } from "vuetify";
@@ -40,6 +40,7 @@ const profilePictureDialogActive = ref(false);
 
 const isCalculating = ref(false);
 const isCalculated = ref(false);
+const isValid = ref(false);
 const isDirty = ref(false);
 const enableStartDate = ref(false);
 const enableStarterLesson = ref(false);
@@ -82,6 +83,25 @@ onMounted(() => {
         enableStarterLesson.value = true;
     }
 });
+
+watch(
+    [
+        enableStartDate,
+        () => deadlineStartDate,
+        () => deadlineEndDate,
+        enableStarterLesson,
+        starterLesson
+    ],
+    () => {
+        isDirty.value = true;
+        isCalculated.value = false;
+
+        const validStarterDate = !enableStartDate.value || !!deadlineStartDate.value;
+        const validStarterLesson = !enableStarterLesson.value || !!starterLesson.value;
+        isValid.value = validStarterDate && validStarterLesson && !!deadlineEndDate.value;
+    },
+    { deep: true }
+);
 
 const fileToDataURL = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -390,7 +410,7 @@ const exportFile = () => {
                             </v-col>
                         </v-row>
                     </v-container>
-                    <v-btn :loading="isCalculating" :disabled="!isDirty"
+                    <v-btn :loading="isCalculating" :disabled="!isDirty || !isValid"
                         :color="isCalculated && !isDirty ? 'success' : 'primary'" @click="handleCalculate"
                         class="transition-swing">
                         <v-fade-transition mode="out-in">
