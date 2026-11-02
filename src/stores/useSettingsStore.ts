@@ -9,7 +9,7 @@ export const useSettingsStore = defineStore("settings", {
         profilePicture: "",
         startDate: undefined,
         endDate: undefined,
-        starterLessonId: ""
+        starterLesson: undefined
     }),
     persist: {
         serializer: {

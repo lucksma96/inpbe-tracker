@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, ref } from "vue";
 import { useSettingsStore } from "../stores/useSettingsStore";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useTheme } from "vuetify";
@@ -39,6 +39,8 @@ const selectLessonsList = computed(() => {
 const profilePictureDialogActive = ref(false);
 const enableStartDate = ref(false);
 const enableStarterLesson = ref(false);
+const deadlineStartDate = ref<Date>();
+const deadlineEndDate = ref<Date>();
 const starterModule = ref<Module>();
 const starterCourse = ref<Course>();
 const starterLesson = ref<Lesson>();
@@ -56,6 +58,26 @@ const exportCurriculum = ref(false);
 const exportSettings = ref(false);
 
 const crpProfilePicture = ref();
+
+onMounted(() => {
+    if (settingsStore.startDate) {
+        deadlineStartDate.value = settingsStore.startDate;
+        enableStartDate.value = true;
+    }
+
+    if (settingsStore.endDate) {
+        deadlineEndDate.value = settingsStore.endDate;
+    }
+
+    const storedStarterLesson = settingsStore.starterLesson;
+    if (storedStarterLesson) {
+        const [moduleId, courseId, _] = storedStarterLesson.lessonId.split('-');
+        starterModule.value = progressStore.curriculum.find(m => m.moduleId === moduleId);
+        starterCourse.value = starterModule.value?.courses.find(c => c.courseId === `${moduleId}-${courseId}`);
+        starterLesson.value = storedStarterLesson;
+        enableStarterLesson.value = true;
+    }
+});
 
 const fileToDataURL = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -135,7 +157,17 @@ const calculateDeadlines = () => {
         progressStore.lessonsDeadlines[lesson.lessonId] = lessonDeadline;
     }
 
+    settingsStore.startDate = deadlineStartDate.value;
+    settingsStore.endDate = deadlineEndDate.value;
+    settingsStore.starterLesson = starterLesson.value;
+
     calculatingDeadlines.value = false;
+}
+
+const clearStarterSelections = (module: boolean = true, course: boolean = true, lesson: boolean = true) => {
+    if (module) starterModule.value = undefined;
+    if (course) starterCourse.value = undefined;
+    if (lesson) starterLesson.value = undefined;
 }
 
 const importFile = async () => {
@@ -317,12 +349,11 @@ const exportFile = () => {
                     <v-container>
                         <v-row>
                             <v-col v-if="enableStartDate">
-                                <v-date-input v-model="settingsStore.startDate" clearable label="Data de início"
+                                <v-date-input v-model="deadlineStartDate" clearable label="Data de início"
                                     class="mr-3"></v-date-input>
                             </v-col>
                             <v-col>
-                                <v-date-input v-model="settingsStore.endDate" clearable
-                                    label="Data de fim"></v-date-input>
+                                <v-date-input v-model="deadlineEndDate" clearable label="Data de fim"></v-date-input>
                             </v-col>
                         </v-row>
                     </v-container>
@@ -333,17 +364,17 @@ const exportFile = () => {
                             <v-col>
                                 <v-select v-model="starterModule" clearable label="Módulo"
                                     :items="progressStore.curriculum" item-title="title" item-value="moduleId"
-                                    return-object></v-select>
+                                    return-object @click:clear="clearStarterSelections()"></v-select>
                             </v-col>
                             <v-col>
                                 <v-select v-model="starterCourse" :disabled="!starterModule" clearable label="Curso"
-                                    :items="selectCoursesList" item-title="title" item-value="courseId"
-                                    return-object></v-select>
+                                    :items="selectCoursesList" item-title="title" item-value="courseId" return-object
+                                    @click:clear="clearStarterSelections(false)"></v-select>
                             </v-col>
                             <v-col>
                                 <v-select v-model="starterLesson" :disabled="!starterCourse" clearable label="Aula"
-                                    :items="selectLessonsList" item-title="title" item-value="lessonId"
-                                    return-object></v-select>
+                                    :items="selectLessonsList" item-title="title" item-value="lessonId" return-object
+                                    @click:clear="clearStarterSelections(false, false)"></v-select>
                             </v-col>
                         </v-row>
                     </v-container>
