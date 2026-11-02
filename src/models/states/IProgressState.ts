@@ -7,4 +7,5 @@ export interface IProgressState {
     completedModules: Record<string, boolean>;
     courseCompletedCounts: Record<string, number>;
     moduleCompletedCounts: Record<string, number>;
+    lessonsDeadlines: Record<string, Date>;
 }

@@ -30,6 +30,7 @@ export const useProgressStore = defineStore("progress", {
     state: (): IProgressState => ({
         curriculum: curriculum,
         completedLessons: {},
+        lessonsDeadlines: {},
 
         // Track booleans for the checkmark UI
         completedCourses: {},
@@ -39,6 +40,9 @@ export const useProgressStore = defineStore("progress", {
         courseCompletedCounts: {},
         moduleCompletedCounts: {},
     }),
+    getters: {
+        allLessonsFlat: () => curriculum.flatMap(m => m.courses).flatMap(c => c.lessons).flatMap(l => l)
+    },
     actions: {
         toggleLesson(lessonId: string, courseId: string, moduleId: string) {
             const isNowComplete = !this.completedLessons[lessonId];

@@ -100,6 +100,44 @@ const removeProfilePicture = () => {
     profilePictureDialogActive.value = false;
 }
 
+const calculateDeadlines = () => {
+    calculatingDeadlines.value = true;
+
+    const startDate = settingsStore.startDate || new Date();
+    const endDate = settingsStore.endDate || new Date();
+
+    let lessons = progressStore.allLessonsFlat;
+    if (enableStarterLesson.value && starterLesson.value) {
+        const startIndex = lessons.findIndex(l => l.lessonId == starterLesson.value?.lessonId);
+        if (startIndex !== -1) {
+            lessons = lessons.slice(startIndex);
+        }
+    }
+
+    if (lessons.length === 0) {
+        calculatingDeadlines.value = false;
+        return;
+    }
+
+    const totalDurationMinutes = lessons.map(l => l.durationMinutes).reduce((t, v) => t + v, 0);
+    const millisBetweenStartEndDates = Math.abs(endDate.getTime() - startDate.getTime());
+    const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+    const daysBetweenStartEndDates = Math.max(1, Math.ceil(millisBetweenStartEndDates / ONE_DAY_MS));
+    const maxMinutesPerDay = totalDurationMinutes / daysBetweenStartEndDates;
+
+    let minutesAccumulator = 0;
+    for (const lesson of lessons) {
+        minutesAccumulator += lesson.durationMinutes;
+        const daysRequired = maxMinutesPerDay > 0 ? Math.ceil(minutesAccumulator / maxMinutesPerDay) : 0;
+        const deadlineMillis = startDate.getTime() + (daysRequired * ONE_DAY_MS);
+        const lessonDeadline = new Date(deadlineMillis);
+        lessonDeadline.setHours(23, 59, 59, 999);
+        progressStore.lessonsDeadlines[lesson.lessonId] = lessonDeadline;
+    }
+
+    calculatingDeadlines.value = false;
+}
+
 const importFile = async () => {
     const file = uploadedFile.value as File;
     if (!file) return;
