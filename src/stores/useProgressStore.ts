@@ -30,6 +30,7 @@ export const useProgressStore = defineStore("progress", {
     state: (): IProgressState => ({
         curriculum: curriculum,
         completedLessons: {},
+        lessonsDeadlines: {},
 
         // Track booleans for the checkmark UI
         completedCourses: {},
@@ -39,6 +40,9 @@ export const useProgressStore = defineStore("progress", {
         courseCompletedCounts: {},
         moduleCompletedCounts: {},
     }),
+    getters: {
+        allLessonsFlat: () => curriculum.flatMap(m => m.courses).flatMap(c => c.lessons).flatMap(l => l)
+    },
     actions: {
         toggleLesson(lessonId: string, courseId: string, moduleId: string) {
             const isNowComplete = !this.completedLessons[lessonId];
@@ -110,6 +114,19 @@ export const useProgressStore = defineStore("progress", {
         },
     },
     persist: {
-        pick: ["completedLessons"],
+        pick: ["completedLessons", "lessonsDeadlines"],
+        serializer: {
+            serialize: JSON.stringify,
+            deserialize: (parseString) => {
+                return JSON.parse(parseString, (key, value) => {
+                    // Regex to detect standard ISO 8601 date strings
+                    const isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
+                    if (typeof value === 'string' && isoDateRegex.test(value)) {
+                        return new Date(value);
+                    }
+                    return value;
+                });
+            }
+        }
     },
 });

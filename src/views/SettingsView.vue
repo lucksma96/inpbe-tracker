@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
+import { computed, onMounted, ref, watch } from "vue";
 import { useSettingsStore } from "../stores/useSettingsStore";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useTheme } from "vuetify";
 import { Cropper, CircleStencil } from 'vue-advanced-cropper';
 import 'vue-advanced-cropper/dist/style.css';
-import type { IProgressState } from "@/models/states/IProgressState";
 import type { ISettingsState } from "@/models/states/ISettingsState";
+import type { Module } from "../models/module";
+import type { Course } from "../models/course";
+import type { Lesson } from "../models/lesson";
 
 const settingsStore = useSettingsStore();
 const progressStore = useProgressStore();
@@ -20,7 +22,34 @@ const currentTheme = computed({
     },
 });
 
+const selectCoursesList = computed(() => {
+    const selectedModule = starterModule.value;
+    if (!selectedModule) return [];
+
+    return selectedModule.courses;
+});
+
+const selectLessonsList = computed(() => {
+    const selectedCourse = starterCourse.value;
+    if (!selectedCourse) return [];
+
+    return selectedCourse.lessons;
+});
+
 const profilePictureDialogActive = ref(false);
+
+const isCalculating = ref(false);
+const isCalculated = ref(false);
+const isValid = ref(false);
+const isDirty = ref(false);
+const enableStartDate = ref(false);
+const enableStarterLesson = ref(false);
+const deadlineStartDate = ref<Date>();
+const deadlineEndDate = ref<Date>();
+const starterModule = ref<Module>();
+const starterCourse = ref<Course>();
+const starterLesson = ref<Lesson>();
+
 const exportDialogActive = ref(false);
 const importDialogActive = ref(false);
 const confirmationDialogActive = ref(false);
@@ -34,6 +63,45 @@ const exportCurriculum = ref(false);
 const exportSettings = ref(false);
 
 const crpProfilePicture = ref();
+
+onMounted(() => {
+    if (settingsStore.startDate) {
+        deadlineStartDate.value = settingsStore.startDate;
+        enableStartDate.value = true;
+    }
+
+    if (settingsStore.endDate) {
+        deadlineEndDate.value = settingsStore.endDate;
+    }
+
+    const storedStarterLesson = settingsStore.starterLesson;
+    if (storedStarterLesson) {
+        const [moduleId, courseId, _] = storedStarterLesson.lessonId.split('-');
+        starterModule.value = progressStore.curriculum.find(m => m.moduleId === moduleId);
+        starterCourse.value = starterModule.value?.courses.find(c => c.courseId === `${moduleId}-${courseId}`);
+        starterLesson.value = storedStarterLesson;
+        enableStarterLesson.value = true;
+    }
+});
+
+watch(
+    [
+        enableStartDate,
+        () => deadlineStartDate,
+        () => deadlineEndDate,
+        enableStarterLesson,
+        starterLesson
+    ],
+    () => {
+        isDirty.value = true;
+        isCalculated.value = false;
+
+        const validStarterDate = !enableStartDate.value || !!deadlineStartDate.value;
+        const validStarterLesson = !enableStarterLesson.value || !!starterLesson.value;
+        isValid.value = validStarterDate && validStarterLesson && !!deadlineEndDate.value;
+    },
+    { deep: true }
+);
 
 const fileToDataURL = (file: File): Promise<string> => {
     return new Promise((resolve, reject) => {
@@ -76,6 +144,62 @@ const saveProfilePicture = () => {
 const removeProfilePicture = () => {
     settingsStore.profilePicture = '';
     profilePictureDialogActive.value = false;
+}
+
+const handleCalculate = async () => {
+    isCalculating.value = true;
+
+    calculateDeadlines();
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    settingsStore.startDate = deadlineStartDate.value;
+    settingsStore.endDate = deadlineEndDate.value;
+    settingsStore.starterLesson = starterLesson.value;
+
+    isCalculating.value = false;
+    isCalculated.value = true;
+    isDirty.value = false;
+};
+
+const calculateDeadlines = () => {
+    const startDate = settingsStore.startDate || new Date();
+    const endDate = settingsStore.endDate || new Date();
+
+    let lessons = progressStore.allLessonsFlat;
+    if (enableStarterLesson.value && starterLesson.value) {
+        const startIndex = lessons.findIndex(l => l.lessonId == starterLesson.value?.lessonId);
+        if (startIndex !== -1) {
+            lessons = lessons.slice(startIndex);
+        }
+    }
+
+    if (lessons.length === 0) {
+        isCalculating.value = false;
+        return;
+    }
+
+    const totalDurationMinutes = lessons.map(l => l.durationMinutes).reduce((t, v) => t + v, 0);
+    const millisBetweenStartEndDates = Math.abs(endDate.getTime() - startDate.getTime());
+    const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+    const daysBetweenStartEndDates = Math.max(1, Math.ceil(millisBetweenStartEndDates / ONE_DAY_MS));
+    const maxMinutesPerDay = totalDurationMinutes / daysBetweenStartEndDates;
+
+    let minutesAccumulator = 0;
+    for (const lesson of lessons) {
+        minutesAccumulator += lesson.durationMinutes;
+        const daysRequired = maxMinutesPerDay > 0 ? Math.ceil(minutesAccumulator / maxMinutesPerDay) : 0;
+        const deadlineMillis = startDate.getTime() + (daysRequired * ONE_DAY_MS);
+        const lessonDeadline = new Date(deadlineMillis);
+        lessonDeadline.setHours(23, 59, 59, 999);
+        progressStore.lessonsDeadlines[lesson.lessonId] = lessonDeadline;
+    }
+}
+
+const clearStarterSelections = (module: boolean = true, course: boolean = true, lesson: boolean = true) => {
+    if (module) starterModule.value = undefined;
+    if (course) starterCourse.value = undefined;
+    if (lesson) starterLesson.value = undefined;
 }
 
 const importFile = async () => {
@@ -240,6 +364,67 @@ const exportFile = () => {
                             <span>Escuro</span>
                         </v-btn>
                     </v-btn-toggle>
+                </div>
+
+                <v-divider class="my-2"></v-divider>
+
+                <div>
+                    <div class="d-flex align-center">
+                        <v-icon icon="mdi-calendar-range" color="primary" class="mr-2"></v-icon>
+                        <h3 class="text-h6 font-weight-medium">Prazo</h3>
+                    </div>
+
+                    <p class="text-body-2 text-medium-emphasis mb-4">Defina uma data para calcular prazos para
+                        finalização das
+                        aulas:</p>
+
+                    <v-container>
+                        <v-row>
+                            <v-col v-if="enableStartDate">
+                                <v-date-input v-model="deadlineStartDate" clearable label="Data de início"
+                                    class="mr-3"></v-date-input>
+                            </v-col>
+                            <v-col>
+                                <v-date-input v-model="deadlineEndDate" clearable label="Data de fim"></v-date-input>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                    <v-checkbox-btn v-model="enableStartDate" label="Configurar data de início"></v-checkbox-btn>
+                    <v-checkbox-btn v-model="enableStarterLesson" label="Mudar aula inicial"></v-checkbox-btn>
+                    <v-container v-if="enableStarterLesson">
+                        <v-row>
+                            <v-col>
+                                <v-select v-model="starterModule" clearable label="Módulo"
+                                    :items="progressStore.curriculum" item-title="title" item-value="moduleId"
+                                    return-object @click:clear="clearStarterSelections()"></v-select>
+                            </v-col>
+                            <v-col>
+                                <v-select v-model="starterCourse" :disabled="!starterModule" clearable label="Curso"
+                                    :items="selectCoursesList" item-title="title" item-value="courseId" return-object
+                                    @click:clear="clearStarterSelections(false)"></v-select>
+                            </v-col>
+                            <v-col>
+                                <v-select v-model="starterLesson" :disabled="!starterCourse" clearable label="Aula"
+                                    :items="selectLessonsList" item-title="title" item-value="lessonId" return-object
+                                    @click:clear="clearStarterSelections(false, false)"></v-select>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                    <v-btn :loading="isCalculating" :disabled="!isDirty || !isValid"
+                        :color="isCalculated && !isDirty ? 'success' : 'primary'" @click="handleCalculate"
+                        class="transition-swing">
+                        <v-fade-transition mode="out-in">
+                            <!-- SUCCESS STATE -->
+                            <span v-if="isCalculated && !isDirty" key="success">
+                                <v-icon icon="mdi-check-circle"></v-icon>
+                            </span>
+
+                            <!-- DEFAULT STATE -->
+                            <span v-else key="default">
+                                Calcular
+                            </span>
+                        </v-fade-transition>
+                    </v-btn>
                 </div>
 
                 <v-divider class="my-2"></v-divider>

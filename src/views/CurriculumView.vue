@@ -3,6 +3,8 @@ import { onMounted, ref, computed } from "vue";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useCurriculumMetrics } from '../composables/useCurriculumMetrics';
 
+import LessonDeadlineChip from '../components/LessonDeadlineChip.vue';
+
 import type { Module } from "../models/module";
 import type { Course } from "../models/course";
 
@@ -89,7 +91,6 @@ const toolbarTimeLeftFormatted = computed((): string => {
 <template>
     <v-container class="py-6">
         <v-card max-width="800" class="mx-auto" elevation="2" rounded="xl">
-            <!-- Dynamic Header with Back Button -->
             <v-toolbar color="primary">
                 <v-btn v-if="currentDepth > 0" icon="mdi-arrow-left" @click="goBack"></v-btn>
                 <v-toolbar-title>{{ toolbarTitle }}</v-toolbar-title>
@@ -102,7 +103,6 @@ const toolbarTimeLeftFormatted = computed((): string => {
                 </template>
             </v-toolbar>
 
-            <!-- v-window handles the left/right sliding animation automatically -->
             <v-window v-model="currentDepth">
                 <!-- DEPTH 0: MODULES -->
                 <v-window-item :value="0">
@@ -144,9 +144,9 @@ const toolbarTimeLeftFormatted = computed((): string => {
 
                 <!-- DEPTH 2: LESSONS -->
                 <v-window-item :value="2">
-                    <v-list>
+                    <v-list lines="two">
                         <v-list-item class="my-1 py-3" v-for="(l, i) in selectedCourse?.lessons" :key="l.lessonId"
-                            :title="`Aula ${i + 1} - ${l.title}`" :subtitle="`${l.durationMinutes} min`">
+                            :title="`Aula ${i + 1} - ${l.title}`">
                             <template v-slot:prepend>
                                 <v-checkbox-btn :model-value="!!store.completedLessons[l.lessonId]" @update:model-value="
                                     store.toggleLesson(
@@ -155,6 +155,14 @@ const toolbarTimeLeftFormatted = computed((): string => {
                                         selectedModule!.moduleId,
                                     )
                                     " color="success" class="mr-4"></v-checkbox-btn>
+                            </template>
+                            <v-list-item-subtitle class="mt-1 d-flex align-center">
+                                <v-icon icon="mdi-clock-outline" size="small" class="mr-1"></v-icon>
+                                {{ l.durationMinutes }} min
+                            </v-list-item-subtitle>
+                            <template v-slot:append>
+                                <LessonDeadlineChip :deadline="store.lessonsDeadlines[l.lessonId]"
+                                    :is-completed="!!store.completedLessons[l.lessonId]" />
                             </template>
                         </v-list-item>
                     </v-list>
