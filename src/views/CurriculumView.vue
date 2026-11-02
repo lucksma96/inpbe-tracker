@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted, ref, computed } from "vue";
-import { useDate } from 'vuetify';
 import { useProgressStore } from "../stores/useProgressStore";
 import { useCurriculumMetrics } from '../composables/useCurriculumMetrics';
 
@@ -8,8 +7,6 @@ import LessonDeadlineChip from '../components/LessonDeadlineChip.vue';
 
 import type { Module } from "../models/module";
 import type { Course } from "../models/course";
-
-const date = useDate();
 
 const store = useProgressStore();
 const {
@@ -89,37 +86,11 @@ const toolbarTimeLeftFormatted = computed((): string => {
             return "";
     }
 });
-
-// Check if lesson is past deadline AND not yet completed
-const isLessonOverdue = (lessonId: string, deadline?: Date | string) => {
-    if (!deadline) return false;
-
-    const isCompleted = !!store.completedLessons[lessonId];
-    if (isCompleted) return false;
-
-    const today = new Date();
-    return today.getTime() > new Date(deadline).getTime();
-};
-
-const isTodaysLessonIncomplete = (lessonId: string, deadline?: Date) => {
-    if (!deadline) return false;
-
-    const isCompleted = !!store.completedLessons[lessonId];
-    if (isCompleted) return false;
-
-    const today = new Date();
-    today.setHours(deadline.getHours());
-    today.setMinutes(deadline.getMinutes());
-    today.setSeconds(deadline.getSeconds());
-    today.setMilliseconds(deadline.getMilliseconds());
-    return today.getTime() == new Date(deadline).getTime();
-};
 </script>
 
 <template>
     <v-container class="py-6">
         <v-card max-width="800" class="mx-auto" elevation="2" rounded="xl">
-            <!-- Dynamic Header with Back Button -->
             <v-toolbar color="primary">
                 <v-btn v-if="currentDepth > 0" icon="mdi-arrow-left" @click="goBack"></v-btn>
                 <v-toolbar-title>{{ toolbarTitle }}</v-toolbar-title>
@@ -132,7 +103,6 @@ const isTodaysLessonIncomplete = (lessonId: string, deadline?: Date) => {
                 </template>
             </v-toolbar>
 
-            <!-- v-window handles the left/right sliding animation automatically -->
             <v-window v-model="currentDepth">
                 <!-- DEPTH 0: MODULES -->
                 <v-window-item :value="0">
