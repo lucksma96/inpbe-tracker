@@ -1,10 +1,13 @@
 <script setup lang="ts">
 import { onMounted, ref, computed } from "vue";
+import { useDate } from 'vuetify';
 import { useProgressStore } from "../stores/useProgressStore";
 import { useCurriculumMetrics } from '../composables/useCurriculumMetrics';
 
 import type { Module } from "../models/module";
 import type { Course } from "../models/course";
+
+const date = useDate();
 
 const store = useProgressStore();
 const {
@@ -84,6 +87,31 @@ const toolbarTimeLeftFormatted = computed((): string => {
             return "";
     }
 });
+
+// Check if lesson is past deadline AND not yet completed
+const isLessonOverdue = (lessonId: string, deadline?: Date | string) => {
+    if (!deadline) return false;
+
+    const isCompleted = !!store.completedLessons[lessonId];
+    if (isCompleted) return false;
+
+    const today = new Date();
+    return today.getTime() > new Date(deadline).getTime();
+};
+
+const isTodaysLessonIncomplete = (lessonId: string, deadline?: Date) => {
+    if (!deadline) return false;
+
+    const isCompleted = !!store.completedLessons[lessonId];
+    if (isCompleted) return false;
+
+    const today = new Date();
+    today.setHours(deadline.getHours());
+    today.setMinutes(deadline.getMinutes());
+    today.setSeconds(deadline.getSeconds());
+    today.setMilliseconds(deadline.getMilliseconds());
+    return today.getTime() == new Date(deadline).getTime();
+};
 </script>
 
 <template>
@@ -144,9 +172,9 @@ const toolbarTimeLeftFormatted = computed((): string => {
 
                 <!-- DEPTH 2: LESSONS -->
                 <v-window-item :value="2">
-                    <v-list>
+                    <v-list lines="two">
                         <v-list-item class="my-1 py-3" v-for="(l, i) in selectedCourse?.lessons" :key="l.lessonId"
-                            :title="`Aula ${i + 1} - ${l.title}`" :subtitle="`${l.durationMinutes} min`">
+                            :title="`Aula ${i + 1} - ${l.title}`">
                             <template v-slot:prepend>
                                 <v-checkbox-btn :model-value="!!store.completedLessons[l.lessonId]" @update:model-value="
                                     store.toggleLesson(
@@ -155,6 +183,28 @@ const toolbarTimeLeftFormatted = computed((): string => {
                                         selectedModule!.moduleId,
                                     )
                                     " color="success" class="mr-4"></v-checkbox-btn>
+                            </template>
+                            <v-list-item-subtitle class="mt-1 d-flex align-center">
+                                <v-icon icon="mdi-clock-outline" size="small" class="mr-1"></v-icon>
+                                {{ l.durationMinutes }} min
+                            </v-list-item-subtitle>
+                            <template v-slot:append v-if="store.lessonsDeadlines[l.lessonId]">
+                                <v-chip size="small"
+                                    :color="isLessonOverdue(l.lessonId, store.lessonsDeadlines[l.lessonId]) ? 'error' : 'default'"
+                                    :variant="isLessonOverdue(l.lessonId, store.lessonsDeadlines[l.lessonId]) ? 'tonal' : 'text'"
+                                    class="font-weight-medium px-2">
+                                    <!-- Keep conditional logic inside the slot -->
+                                    <template v-slot:prepend>
+                                        <v-icon v-if="isLessonOverdue(l.lessonId, store.lessonsDeadlines[l.lessonId])"
+                                            icon="mdi-alert" start size="small"></v-icon>
+                                        <v-icon
+                                            v-else-if="isTodaysLessonIncomplete(l.lessonId, store.lessonsDeadlines[l.lessonId])"
+                                            icon="mdi-clock-alert" start size="small"></v-icon>
+                                        <v-icon v-else icon="mdi-calendar-check-outline" start size="small"></v-icon>
+                                    </template>
+
+                                    {{ date.format(store.lessonsDeadlines[l.lessonId], 'keyboardDate') }}
+                                </v-chip>
                             </template>
                         </v-list-item>
                     </v-list>
