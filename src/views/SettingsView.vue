@@ -37,6 +37,10 @@ const selectLessonsList = computed(() => {
 });
 
 const profilePictureDialogActive = ref(false);
+
+const isCalculating = ref(false);
+const isCalculated = ref(false);
+const isDirty = ref(false);
 const enableStartDate = ref(false);
 const enableStarterLesson = ref(false);
 const deadlineStartDate = ref<Date>();
@@ -44,7 +48,7 @@ const deadlineEndDate = ref<Date>();
 const starterModule = ref<Module>();
 const starterCourse = ref<Course>();
 const starterLesson = ref<Lesson>();
-const calculatingDeadlines = ref<boolean>(false);
+
 const exportDialogActive = ref(false);
 const importDialogActive = ref(false);
 const confirmationDialogActive = ref(false);
@@ -122,9 +126,23 @@ const removeProfilePicture = () => {
     profilePictureDialogActive.value = false;
 }
 
-const calculateDeadlines = () => {
-    calculatingDeadlines.value = true;
+const handleCalculate = async () => {
+    isCalculating.value = true;
 
+    calculateDeadlines();
+
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    settingsStore.startDate = deadlineStartDate.value;
+    settingsStore.endDate = deadlineEndDate.value;
+    settingsStore.starterLesson = starterLesson.value;
+
+    isCalculating.value = false;
+    isCalculated.value = true;
+    isDirty.value = false;
+};
+
+const calculateDeadlines = () => {
     const startDate = settingsStore.startDate || new Date();
     const endDate = settingsStore.endDate || new Date();
 
@@ -137,7 +155,7 @@ const calculateDeadlines = () => {
     }
 
     if (lessons.length === 0) {
-        calculatingDeadlines.value = false;
+        isCalculating.value = false;
         return;
     }
 
@@ -156,12 +174,6 @@ const calculateDeadlines = () => {
         lessonDeadline.setHours(23, 59, 59, 999);
         progressStore.lessonsDeadlines[lesson.lessonId] = lessonDeadline;
     }
-
-    settingsStore.startDate = deadlineStartDate.value;
-    settingsStore.endDate = deadlineEndDate.value;
-    settingsStore.starterLesson = starterLesson.value;
-
-    calculatingDeadlines.value = false;
 }
 
 const clearStarterSelections = (module: boolean = true, course: boolean = true, lesson: boolean = true) => {
@@ -378,7 +390,21 @@ const exportFile = () => {
                             </v-col>
                         </v-row>
                     </v-container>
-                    <v-btn :loading="calculatingDeadlines" color="primary" @click="calculateDeadlines">Calcular</v-btn>
+                    <v-btn :loading="isCalculating" :disabled="!isDirty"
+                        :color="isCalculated && !isDirty ? 'success' : 'primary'" @click="handleCalculate"
+                        class="transition-swing">
+                        <v-fade-transition mode="out-in">
+                            <!-- SUCCESS STATE -->
+                            <span v-if="isCalculated && !isDirty" key="success">
+                                <v-icon icon="mdi-check-circle"></v-icon>
+                            </span>
+
+                            <!-- DEFAULT STATE -->
+                            <span v-else key="default">
+                                Calcular
+                            </span>
+                        </v-fade-transition>
+                    </v-btn>
                 </div>
 
                 <v-divider class="my-2"></v-divider>
