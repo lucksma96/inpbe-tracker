@@ -4,6 +4,8 @@ import { useDate } from 'vuetify';
 import { useProgressStore } from "../stores/useProgressStore";
 import { useCurriculumMetrics } from '../composables/useCurriculumMetrics';
 
+import LessonDeadlineChip from '../components/LessonDeadlineChip.vue';
+
 import type { Module } from "../models/module";
 import type { Course } from "../models/course";
 
@@ -188,23 +190,9 @@ const isTodaysLessonIncomplete = (lessonId: string, deadline?: Date) => {
                                 <v-icon icon="mdi-clock-outline" size="small" class="mr-1"></v-icon>
                                 {{ l.durationMinutes }} min
                             </v-list-item-subtitle>
-                            <template v-slot:append v-if="store.lessonsDeadlines[l.lessonId]">
-                                <v-chip size="small"
-                                    :color="isLessonOverdue(l.lessonId, store.lessonsDeadlines[l.lessonId]) ? 'error' : 'default'"
-                                    :variant="isLessonOverdue(l.lessonId, store.lessonsDeadlines[l.lessonId]) ? 'tonal' : 'text'"
-                                    class="font-weight-medium px-2">
-                                    <!-- Keep conditional logic inside the slot -->
-                                    <template v-slot:prepend>
-                                        <v-icon v-if="isLessonOverdue(l.lessonId, store.lessonsDeadlines[l.lessonId])"
-                                            icon="mdi-alert" start size="small"></v-icon>
-                                        <v-icon
-                                            v-else-if="isTodaysLessonIncomplete(l.lessonId, store.lessonsDeadlines[l.lessonId])"
-                                            icon="mdi-clock-alert" start size="small"></v-icon>
-                                        <v-icon v-else icon="mdi-calendar-check-outline" start size="small"></v-icon>
-                                    </template>
-
-                                    {{ date.format(store.lessonsDeadlines[l.lessonId], 'keyboardDate') }}
-                                </v-chip>
+                            <template v-slot:append>
+                                <LessonDeadlineChip :deadline="store.lessonsDeadlines[l.lessonId]"
+                                    :is-completed="!!store.completedLessons[l.lessonId]" />
                             </template>
                         </v-list-item>
                     </v-list>
