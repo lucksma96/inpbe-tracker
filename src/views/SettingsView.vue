@@ -5,8 +5,10 @@ import { useProgressStore } from "../stores/useProgressStore";
 import { useTheme } from "vuetify";
 import { Cropper, CircleStencil } from 'vue-advanced-cropper';
 import 'vue-advanced-cropper/dist/style.css';
-import type { IProgressState } from "@/models/states/IProgressState";
 import type { ISettingsState } from "@/models/states/ISettingsState";
+import type { Module } from "../models/module";
+import type { Course } from "../models/course";
+import type { Lesson } from "../models/lesson";
 
 const settingsStore = useSettingsStore();
 const progressStore = useProgressStore();
@@ -20,7 +22,27 @@ const currentTheme = computed({
     },
 });
 
+const selectCoursesList = computed(() => {
+    const selectedModule = starterModule.value;
+    if (!selectedModule) return [];
+
+    return selectedModule.courses;
+});
+
+const selectLessonsList = computed(() => {
+    const selectedCourse = starterCourse.value;
+    if (!selectedCourse) return [];
+
+    return selectedCourse.lessons;
+});
+
 const profilePictureDialogActive = ref(false);
+const enableStartDate = ref(false);
+const enableStarterLesson = ref(false);
+const starterModule = ref<Module>();
+const starterCourse = ref<Course>();
+const starterLesson = ref<Lesson>();
+const calculatingDeadlines = ref<boolean>(false);
 const exportDialogActive = ref(false);
 const importDialogActive = ref(false);
 const confirmationDialogActive = ref(false);
@@ -240,6 +262,54 @@ const exportFile = () => {
                             <span>Escuro</span>
                         </v-btn>
                     </v-btn-toggle>
+                </div>
+
+                <v-divider class="my-2"></v-divider>
+
+                <div>
+                    <div class="d-flex align-center">
+                        <v-icon icon="mdi-calendar-range" color="primary" class="mr-2"></v-icon>
+                        <h3 class="text-h6 font-weight-medium">Prazo</h3>
+                    </div>
+
+                    <p class="text-body-2 text-medium-emphasis mb-4">Defina uma data para calcular prazos para
+                        finalização das
+                        aulas:</p>
+
+                    <v-container>
+                        <v-row>
+                            <v-col v-if="enableStartDate">
+                                <v-date-input v-model="settingsStore.startDate" clearable label="Data de início"
+                                    class="mr-3"></v-date-input>
+                            </v-col>
+                            <v-col>
+                                <v-date-input v-model="settingsStore.endDate" clearable
+                                    label="Data de fim"></v-date-input>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                    <v-checkbox-btn v-model="enableStartDate" label="Configurar data de início"></v-checkbox-btn>
+                    <v-checkbox-btn v-model="enableStarterLesson" label="Mudar aula inicial"></v-checkbox-btn>
+                    <v-container v-if="enableStarterLesson">
+                        <v-row>
+                            <v-col>
+                                <v-select v-model="starterModule" clearable label="Módulo"
+                                    :items="progressStore.curriculum" item-title="title" item-value="moduleId"
+                                    return-object></v-select>
+                            </v-col>
+                            <v-col>
+                                <v-select v-model="starterCourse" :disabled="!starterModule" clearable label="Curso"
+                                    :items="selectCoursesList" item-title="title" item-value="courseId"
+                                    return-object></v-select>
+                            </v-col>
+                            <v-col>
+                                <v-select v-model="starterLesson" :disabled="!starterCourse" clearable label="Aula"
+                                    :items="selectLessonsList" item-title="title" item-value="lessonId"
+                                    return-object></v-select>
+                            </v-col>
+                        </v-row>
+                    </v-container>
+                    <v-btn :loading="calculatingDeadlines" color="primary" @click="calculateDeadlines">Calcular</v-btn>
                 </div>
 
                 <v-divider class="my-2"></v-divider>
