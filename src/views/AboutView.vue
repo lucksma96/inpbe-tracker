@@ -1,6 +1,6 @@
 <script setup lang="ts">
-
-const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdytoP8ahedf6H1MbAlbrVk31bUM_p5g/viewform?usp=publish-editor"
+const FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdytoP8ahedf6H1MbAlbrVk31bUM_p5g/viewform?usp=publish-editor";
 </script>
 
 <template>
@@ -11,9 +11,7 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdyt
                 <v-avatar color="purple-lighten-5" size="80" class="mb-4">
                     <v-icon icon="mdi-heart" color="purple" size="40"></v-icon>
                 </v-avatar>
-                <v-card-title class="text-h4 font-weight-bold text-primary">
-                    InPBE Tracker
-                </v-card-title>
+                <v-card-title class="text-h4 font-weight-bold text-primary"> InPBE Tracker </v-card-title>
                 <v-card-subtitle class="text-subtitle-1 mt-2 text-medium-emphasis">
                     Feito com carinho para minha amada Ana 💜
                 </v-card-subtitle>
@@ -32,34 +30,43 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdyt
 
                 <p class="mb-8">
                     Assim surgiu o <strong class="text-primary font-weight-bold">InPBE Tracker</strong>. Não é
-                    necessário criar conta, e todas as informações
-                    são armazenadas localmente no navegador. Basta entrar e marcar as aulas.
+                    necessário criar conta, e todas as informações são armazenadas localmente no navegador. Basta entrar
+                    e marcar as aulas.
                 </p>
 
-                <h3 class="text-h6 font-weight-regular mb-3 text-high-emphasis">
-                    Funcionalidades planejadas:
-                </h3>
+                <h3 class="text-h6 font-weight-regular mb-3 text-high-emphasis">Funcionalidades planejadas:</h3>
 
                 <!-- Planned Features List -->
                 <v-list density="compact" class="mb-8 bg-transparent pa-0">
                     <v-list-item prepend-icon="mdi-swap-horizontal" title="Exportar/importar progresso"></v-list-item>
                     <v-list-item prepend-icon="mdi-magnify" title="Pesquisa rápida de aulas"></v-list-item>
-                    <v-list-item prepend-icon="mdi-palette-outline"
-                        title="Personalizações (foto e nome de perfil)"></v-list-item>
+                    <v-list-item
+                        prepend-icon="mdi-palette-outline"
+                        title="Personalizações (foto e nome de perfil)"
+                    ></v-list-item>
                 </v-list>
 
                 <!-- Feedback Action Area -->
                 <v-sheet color="grey-lighten-4" rounded="lg" class="pa-5 mb-8 text-center">
-                    <p class="text-body-2 mt-0 mb-4 text-high-emphasis">
+                    <p class="text-body-2 mt-0 mb-4 text-high-emphasis text-black">
                         Sinta-se à vontade para reportar problemas ou fazer sugestões:
                     </p>
                     <div class="d-flex flex-wrap ga-4 justify-center">
-                        <v-btn :href="FORM_URL" target="_blank" prepend-icon="mdi-message-text" color="primary"
-                            variant="flat">
+                        <v-btn
+                            :href="FORM_URL"
+                            target="_blank"
+                            prepend-icon="mdi-message-text"
+                            color="primary"
+                            variant="flat"
+                        >
                             Formulário
                         </v-btn>
-                        <v-btn href="mailto:lz.magnanimous@gmail.com" prepend-icon="mdi-email" color="primary"
-                            variant="outlined">
+                        <v-btn
+                            href="mailto:lz.magnanimous@gmail.com"
+                            prepend-icon="mdi-email"
+                            color="primary"
+                            variant="outlined"
+                        >
                             Enviar Email
                         </v-btn>
                     </div>
@@ -67,17 +74,19 @@ const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdyt
 
                 <!-- GitHub Repository Link -->
                 <div class="d-flex justify-center mb-10">
-                    <v-btn href="https://github.com/lucksma96/inpbe-tracker" target="_blank" prepend-icon="mdi-github"
-                        color="black" variant="tonal">
+                    <v-btn
+                        href="https://github.com/lucksma96/inpbe-tracker"
+                        target="_blank"
+                        prepend-icon="mdi-github"
+                        variant="tonal"
+                    >
                         Código Fonte no GitHub
                     </v-btn>
                 </div>
 
                 <!-- Tech Stack Footer -->
                 <div class="d-flex flex-wrap align-center justify-center ga-3">
-                    <v-chip size="small" variant="tonal" color="success" prepend-icon="mdi-vuejs">
-                        Vue 3
-                    </v-chip>
+                    <v-chip size="small" variant="tonal" color="success" prepend-icon="mdi-vuejs"> Vue 3 </v-chip>
                     <v-chip size="small" variant="tonal" color="blue-darken-2" prepend-icon="mdi-language-typescript">
                         TypeScript
                     </v-chip>
