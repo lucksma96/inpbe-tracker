@@ -21,7 +21,14 @@ const routes = [
     <v-app id="inpbe">
         <v-app-bar flat>
             <v-container class="mx-auto d-flex align-center justify-center">
-                <v-btn class="mx-1" v-for="r in routes" :to="r.route" :text="r.title" variant="text"></v-btn>
+                <v-btn
+                    class="mx-1"
+                    v-for="r in routes"
+                    :key="r.route"
+                    :to="r.route"
+                    :text="r.title"
+                    variant="text"
+                ></v-btn>
 
                 <v-spacer></v-spacer>
 
