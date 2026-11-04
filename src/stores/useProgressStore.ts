@@ -41,7 +41,17 @@ export const useProgressStore = defineStore("progress", {
         moduleCompletedCounts: {},
     }),
     getters: {
-        allLessonsFlat: () => curriculum.flatMap(m => m.courses).flatMap(c => c.lessons).flatMap(l => l)
+        allLessonsFlat: (state) =>
+            state.curriculum
+                .flatMap((m) => m.courses)
+                .flatMap((c) => c.lessons)
+                .flatMap((l) => l),
+        isCurriculumCompleted: (state) => state.curriculum.every((m) => m.completed),
+        curriculumPercentageComplete: (state) => {
+            const completedModulesCount = Object.values(state.moduleCompletedCounts).filter((m) => m).length;
+            if (completedModulesCount === 0) return 0;
+            return (completedModulesCount / state.curriculum.length) * 100;
+        },
     },
     actions: {
         toggleLesson(lessonId: string, courseId: string, moduleId: string) {
@@ -121,12 +131,12 @@ export const useProgressStore = defineStore("progress", {
                 return JSON.parse(parseString, (key, value) => {
                     // Regex to detect standard ISO 8601 date strings
                     const isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
-                    if (typeof value === 'string' && isoDateRegex.test(value)) {
+                    if (typeof value === "string" && isoDateRegex.test(value)) {
                         return new Date(value);
                     }
                     return value;
                 });
-            }
-        }
+            },
+        },
     },
 });
