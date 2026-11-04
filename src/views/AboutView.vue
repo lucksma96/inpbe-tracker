@@ -34,17 +34,58 @@ const FORM_URL =
                     e marcar as aulas.
                 </p>
 
-                <h3 class="text-h6 font-weight-regular mb-3 text-high-emphasis">Funcionalidades planejadas:</h3>
-
-                <!-- Planned Features List -->
-                <v-list density="compact" class="mb-8 bg-transparent pa-0">
-                    <v-list-item prepend-icon="mdi-swap-horizontal" title="Exportar/importar progresso"></v-list-item>
-                    <v-list-item prepend-icon="mdi-magnify" title="Pesquisa rápida de aulas"></v-list-item>
-                    <v-list-item
-                        prepend-icon="mdi-palette-outline"
-                        title="Personalizações (foto e nome de perfil)"
-                    ></v-list-item>
-                </v-list>
+                <h3 class="text-h6 font-weight-regular mb-0 text-high-emphasis">Funcionalidades planejadas:</h3>
+                <v-container>
+                    <v-row>
+                        <v-spacer></v-spacer>
+                        <v-col cols="8">
+                            <v-list density="compact" class="mb-8 bg-transparent pa-0">
+                                <v-list-item prepend-icon="mdi-swap-horizontal">
+                                    <v-list-item-title class="text-decoration-line-through">
+                                        Exportar/importar progresso
+                                    </v-list-item-title>
+                                    <template v-slot:append>
+                                        <v-list-item-action>
+                                            <v-icon color="green-lighten-1">mdi-check-bold</v-icon>
+                                        </v-list-item-action>
+                                    </template>
+                                </v-list-item>
+                                <v-list-item prepend-icon="mdi-palette-outline">
+                                    <v-list-item-title class="text-decoration-line-through">
+                                        Personalizações
+                                    </v-list-item-title>
+                                    <v-list-item-subtitle> Foto, nome de usuário, tema </v-list-item-subtitle>
+                                    <template v-slot:append>
+                                        <v-list-item-action>
+                                            <v-icon color="green-lighten-1">mdi-check-bold</v-icon>
+                                        </v-list-item-action>
+                                    </template>
+                                </v-list-item>
+                                <v-list-item prepend-icon="mdi-calendar">
+                                    <v-list-item-title class="text-decoration-line-through">
+                                        Configuração de prazo para conclusão
+                                    </v-list-item-title>
+                                    <v-list-item-subtitle>
+                                        Com cálculo de datas para cmompletar cada aula
+                                    </v-list-item-subtitle>
+                                    <template v-slot:append>
+                                        <v-list-item-action>
+                                            <v-icon color="green-lighten-1">mdi-check-bold</v-icon>
+                                        </v-list-item-action>
+                                    </template>
+                                </v-list-item>
+                                <v-list-item prepend-icon="mdi-magnify" title="Pesquisa rápida de aulas">
+                                    <template v-slot:append>
+                                        <v-list-item-action>
+                                            <v-icon color="yellow-lighten-1">mdi-help</v-icon>
+                                        </v-list-item-action>
+                                    </template>
+                                </v-list-item>
+                            </v-list>
+                        </v-col>
+                        <v-spacer></v-spacer>
+                    </v-row>
+                </v-container>
 
                 <!-- Feedback Action Area -->
                 <v-sheet color="grey-lighten-4" rounded="lg" class="pa-5 mb-8 text-center">
