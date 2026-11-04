@@ -40,7 +40,7 @@ const routes = [
                         alt="Foto de perfil"
                         cover
                     ></v-img>
-                    <v-icon v-else icon="mdi-account" size="56" color="purple"></v-icon>
+                    <v-icon v-else icon="mdi-account" size="32" color="purple"></v-icon>
                 </v-avatar>
 
                 <v-responsive max-width="160" v-if="false">
