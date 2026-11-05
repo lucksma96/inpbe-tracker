@@ -66,7 +66,7 @@ const FORM_URL =
                                         Configuração de prazo para conclusão
                                     </v-list-item-title>
                                     <v-list-item-subtitle>
-                                        Com cálculo de datas para cmompletar cada aula
+                                        Com cálculo de datas para completar cada aula
                                     </v-list-item-subtitle>
                                     <template v-slot:append>
                                         <v-list-item-action>
