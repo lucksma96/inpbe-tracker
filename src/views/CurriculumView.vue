@@ -1,14 +1,17 @@
 <script setup lang="ts">
 import { onMounted, ref, computed } from "vue";
+import { useDate } from "vuetify";
 import { useProgressStore } from "../stores/useProgressStore";
-import { useCurriculumMetrics } from '../composables/useCurriculumMetrics';
+import { useSettingsStore } from "../stores/useSettingsStore";
+import { useCurriculumMetrics } from "../composables/useCurriculumMetrics";
 
-import LessonDeadlineChip from '../components/LessonDeadlineChip.vue';
+import LessonDeadlineChip from "../components/LessonDeadlineChip.vue";
 
 import type { Module } from "../models/module";
 import type { Course } from "../models/course";
 
 const store = useProgressStore();
+const settingsStore = useSettingsStore();
 const {
     formatTime,
     getModulePercentage,
@@ -17,6 +20,7 @@ const {
     getModuleTimeLeft,
     getCourseTimeLeft,
 } = useCurriculumMetrics();
+const date = useDate();
 
 onMounted(() => {
     store.initializeCompletions();
@@ -46,14 +50,12 @@ const goBack = () => {
 const completeAll = () => {
     if (!selectedCourse.value || !selectedModule.value) return;
 
-    const lessonIds = selectedCourse.value.lessons.map(l => l.lessonId);
+    const lessonIds = selectedCourse.value.lessons.map((l) => l.lessonId);
 
-    store.completeCourse(
-        selectedCourse.value.courseId,
-        selectedModule.value.moduleId,
-        lessonIds
-    );
+    store.completeCourse(selectedCourse.value.courseId, selectedModule.value.moduleId, lessonIds);
 };
+
+const showCurriculumDeadline = computed((): boolean => currentDepth.value === 0 && !!settingsStore.endDate);
 
 const isSelectedCourseIncomplete = computed((): boolean => {
     if (!selectedCourse.value) return false;
@@ -98,8 +100,29 @@ const toolbarTimeLeftFormatted = computed((): string => {
                     <v-chip class="mr-2 font-weight-bold" color="white" variant="outlined" size="small">
                         {{ toolbarTimeLeftFormatted }}
                     </v-chip>
-                    <v-btn v-if="currentDepth === 2 && isSelectedCourseIncomplete" icon="mdi-check-all"
-                        @click="completeAll"></v-btn>
+                    <v-chip
+                        v-if="currentDepth === 0"
+                        class="mr-2 font-weight-bold"
+                        color="white"
+                        variant="outlined"
+                        size="small"
+                    >
+                        {{ store.curriculumPercentageComplete.toFixed(2) }}% completo
+                    </v-chip>
+                    <v-chip
+                        v-if="showCurriculumDeadline"
+                        class="mr-2 font-weight-bold"
+                        color="white"
+                        variant="outlined"
+                        size="small"
+                    >
+                        Prazo: {{ date.format(settingsStore.endDate, "keyboardDate") }}
+                    </v-chip>
+                    <v-btn
+                        v-if="currentDepth === 2 && isSelectedCourseIncomplete"
+                        icon="mdi-check-all"
+                        @click="completeAll"
+                    ></v-btn>
                 </template>
             </v-toolbar>
 
@@ -107,13 +130,24 @@ const toolbarTimeLeftFormatted = computed((): string => {
                 <!-- DEPTH 0: MODULES -->
                 <v-window-item :value="0">
                     <v-list>
-                        <v-list-item class="my-1 py-3" v-for="(m, i) in store.curriculum" :key="m.moduleId"
-                            :title="`Módulo ${i + 1} - ${m.title}`" :subtitle="formatTime(getModuleTimeLeft(m))"
+                        <v-list-item
+                            class="my-1 py-3"
+                            v-for="(m, i) in store.curriculum"
+                            :key="m.moduleId"
+                            :title="`Módulo ${i + 1} - ${m.title}`"
+                            :subtitle="formatTime(getModuleTimeLeft(m))"
                             :prepend-icon="store.completedModules[m.moduleId] ? 'mdi-check-circle' : 'mdi-folder'"
                             :base-color="store.completedModules[m.moduleId] ? 'success' : undefined"
-                            append-icon="mdi-chevron-right" @click="openModule(m)">
-                            <v-progress-linear :model-value="getModulePercentage(m.moduleId)" chunk-gap="2"
-                                color="primary" height="15" rounded="sm">
+                            append-icon="mdi-chevron-right"
+                            @click="openModule(m)"
+                        >
+                            <v-progress-linear
+                                :model-value="getModulePercentage(m.moduleId)"
+                                chunk-gap="2"
+                                color="primary"
+                                height="15"
+                                rounded="sm"
+                            >
                                 <template v-slot:default="{ value }">
                                     <small class="text-secondary">{{ Math.round(value) }}%</small>
                                 </template>
@@ -125,15 +159,26 @@ const toolbarTimeLeftFormatted = computed((): string => {
                 <!-- DEPTH 1: COURSES -->
                 <v-window-item :value="1">
                     <v-list>
-                        <v-list-item class="my-1 py-3" v-for="(c, i) in selectedModule?.courses" :key="c.courseId"
-                            :title="`Curso ${i + 1} - ${c.title}`" :subtitle="formatTime(getCourseTimeLeft(c))"
-                            :prepend-icon="store.completedCourses[c.courseId]
-                                ? 'mdi-check-circle-outline'
-                                : 'mdi-play-box-outline'
-                                " :base-color="store.completedCourses[c.courseId] ? 'success' : undefined"
-                            append-icon="mdi-chevron-right" @click="openCourse(c)">
-                            <v-progress-linear :model-value="getCoursePercentage(c.courseId)" chunk-gap="2"
-                                color="primary" height="15" rounded="sm">
+                        <v-list-item
+                            class="my-1 py-3"
+                            v-for="(c, i) in selectedModule?.courses"
+                            :key="c.courseId"
+                            :title="`Curso ${i + 1} - ${c.title}`"
+                            :subtitle="formatTime(getCourseTimeLeft(c))"
+                            :prepend-icon="
+                                store.completedCourses[c.courseId] ? 'mdi-check-circle-outline' : 'mdi-play-box-outline'
+                            "
+                            :base-color="store.completedCourses[c.courseId] ? 'success' : undefined"
+                            append-icon="mdi-chevron-right"
+                            @click="openCourse(c)"
+                        >
+                            <v-progress-linear
+                                :model-value="getCoursePercentage(c.courseId)"
+                                chunk-gap="2"
+                                color="primary"
+                                height="15"
+                                rounded="sm"
+                            >
                                 <template v-slot:default="{ value }">
                                     <small class="text-secondary">{{ Math.round(value) }}%</small>
                                 </template>
@@ -145,24 +190,35 @@ const toolbarTimeLeftFormatted = computed((): string => {
                 <!-- DEPTH 2: LESSONS -->
                 <v-window-item :value="2">
                     <v-list lines="two">
-                        <v-list-item class="my-1 py-3" v-for="(l, i) in selectedCourse?.lessons" :key="l.lessonId"
-                            :title="`Aula ${i + 1} - ${l.title}`">
+                        <v-list-item
+                            class="my-1 py-3"
+                            v-for="(l, i) in selectedCourse?.lessons"
+                            :key="l.lessonId"
+                            :title="`Aula ${i + 1} - ${l.title}`"
+                        >
                             <template v-slot:prepend>
-                                <v-checkbox-btn :model-value="!!store.completedLessons[l.lessonId]" @update:model-value="
-                                    store.toggleLesson(
-                                        l.lessonId,
-                                        selectedCourse!.courseId,
-                                        selectedModule!.moduleId,
-                                    )
-                                    " color="success" class="mr-4"></v-checkbox-btn>
+                                <v-checkbox-btn
+                                    :model-value="!!store.completedLessons[l.lessonId]"
+                                    @update:model-value="
+                                        store.toggleLesson(
+                                            l.lessonId,
+                                            selectedCourse!.courseId,
+                                            selectedModule!.moduleId,
+                                        )
+                                    "
+                                    color="success"
+                                    class="mr-4"
+                                ></v-checkbox-btn>
                             </template>
                             <v-list-item-subtitle class="mt-1 d-flex align-center">
                                 <v-icon icon="mdi-clock-outline" size="small" class="mr-1"></v-icon>
                                 {{ l.durationMinutes }} min
                             </v-list-item-subtitle>
                             <template v-slot:append>
-                                <LessonDeadlineChip :deadline="store.lessonsDeadlines[l.lessonId]"
-                                    :is-completed="!!store.completedLessons[l.lessonId]" />
+                                <LessonDeadlineChip
+                                    :deadline="store.lessonsDeadlines[l.lessonId]"
+                                    :is-completed="!!store.completedLessons[l.lessonId]"
+                                />
                             </template>
                         </v-list-item>
                     </v-list>
