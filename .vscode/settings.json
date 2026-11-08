@@ -11,11 +11,5 @@
     "source.fixAll": "explicit"
   },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "oxc.oxc-vscode",
-  "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "Vue.volar"
-  }
+  "editor.defaultFormatter": "oxc.oxc-vscode"
 }
