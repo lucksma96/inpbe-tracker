@@ -1,10 +1,10 @@
-import type { Course } from './course'
+import type { Course } from './course';
 
 export interface Lesson {
-  lessonId: string
-  title: string
-  durationMinutes: number
-  completed: boolean
+    lessonId: string;
+    title: string;
+    durationMinutes: number;
+    completed: boolean;
 
-  course: Course
+    course: Course;
 }

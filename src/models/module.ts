@@ -1,9 +1,9 @@
-import type { Course } from './course'
+import type { Course } from './course';
 
 export interface Module {
-  moduleId: string
-  title: string
-  completed: boolean
+    moduleId: string;
+    title: string;
+    completed: boolean;
 
-  courses: Array<Course>
+    courses: Array<Course>;
 }

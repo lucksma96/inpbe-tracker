@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const FORM_URL =
-    "https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdytoP8ahedf6H1MbAlbrVk31bUM_p5g/viewform?usp=publish-editor";
+    'https://docs.google.com/forms/d/e/1FAIpQLSf4E_KB-gw22jIYqMPdytoP8ahedf6H1MbAlbrVk31bUM_p5g/viewform?usp=publish-editor';
 </script>
 
 <template>

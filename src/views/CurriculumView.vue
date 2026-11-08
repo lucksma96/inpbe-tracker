@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { onMounted, ref, computed } from "vue";
-import { useDate } from "vuetify";
-import { useProgressStore } from "../stores/useProgressStore";
-import { useSettingsStore } from "../stores/useSettingsStore";
-import { useCurriculumMetrics } from "../composables/useCurriculumMetrics";
+import { onMounted, ref, computed } from 'vue';
+import { useDate } from 'vuetify';
+import { useProgressStore } from '../stores/useProgressStore';
+import { useSettingsStore } from '../stores/useSettingsStore';
+import { useCurriculumMetrics } from '../composables/useCurriculumMetrics';
 
-import LessonDeadlineChip from "../components/LessonDeadlineChip.vue";
+import LessonDeadlineChip from '../components/LessonDeadlineChip.vue';
 
-import type { Module } from "../models/module";
-import type { Course } from "../models/course";
+import type { Module } from '../models/module';
+import type { Course } from '../models/course';
 
 const store = useProgressStore();
 const settingsStore = useSettingsStore();
@@ -66,13 +66,13 @@ const isSelectedCourseIncomplete = computed((): boolean => {
 const toolbarTitle = computed((): string => {
     switch (currentDepth.value) {
         case 0:
-            return "Currículo";
+            return 'Currículo';
         case 1:
-            return selectedModule.value?.title || "";
+            return selectedModule.value?.title || '';
         case 2:
-            return selectedCourse.value?.title || "";
+            return selectedCourse.value?.title || '';
         default:
-            return "";
+            return '';
     }
 });
 
@@ -85,7 +85,7 @@ const toolbarTimeLeftFormatted = computed((): string => {
         case 2:
             return formatTime(getCourseTimeLeft(selectedCourse.value as Course));
         default:
-            return "";
+            return '';
     }
 });
 </script>
@@ -116,7 +116,7 @@ const toolbarTimeLeftFormatted = computed((): string => {
                         variant="outlined"
                         size="small"
                     >
-                        Prazo: {{ date.format(settingsStore.endDate, "keyboardDate") }}
+                        Prazo: {{ date.format(settingsStore.endDate, 'keyboardDate') }}
                     </v-chip>
                     <v-btn
                         v-if="currentDepth === 2 && isSelectedCourseIncomplete"

@@ -1,15 +1,14 @@
-import { defineStore } from "pinia";
-import type { ISettingsState } from "../models/states/ISettingsState";
+import { defineStore } from 'pinia';
+import type { ISettingsState } from '../models/states/ISettingsState';
 
-
-export const useSettingsStore = defineStore("settings", {
+export const useSettingsStore = defineStore('settings', {
     state: (): ISettingsState => ({
         theme: 'system',
-        username: "",
-        profilePicture: "",
+        username: '',
+        profilePicture: '',
         startDate: undefined,
         endDate: undefined,
-        starterLesson: undefined
+        starterLesson: undefined,
     }),
     persist: {
         serializer: {
@@ -23,7 +22,7 @@ export const useSettingsStore = defineStore("settings", {
                     }
                     return value;
                 });
-            }
-        }
-    }
-})
+            },
+        },
+    },
+});

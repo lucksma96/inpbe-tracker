@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
-import { useProgressStore } from "./stores/useProgressStore";
-import { useSettingsStore } from "./stores/useSettingsStore";
+import { onMounted } from 'vue';
+import { useProgressStore } from './stores/useProgressStore';
+import { useSettingsStore } from './stores/useSettingsStore';
 
 const progressStore = useProgressStore();
 const settingsStore = useSettingsStore();
@@ -11,9 +11,9 @@ onMounted(() => {
 });
 
 const routes = [
-    { route: "/", title: "Início" },
-    { route: "/settings", title: "Configurações" },
-    { route: "/about", title: "Sobre" },
+    { route: '/', title: 'Início' },
+    { route: '/settings', title: 'Configurações' },
+    { route: '/about', title: 'Sobre' },
 ];
 </script>
 

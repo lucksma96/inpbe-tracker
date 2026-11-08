@@ -11,7 +11,7 @@ const states = {
     completed: { color: 'success', variant: 'text', icon: 'mdi-calendar-check' },
     overdue: { color: 'error', variant: 'tonal', icon: 'mdi-alert' },
     due: { color: 'warning', variant: 'text', icon: 'mdi-clock-alert' },
-    ontime: { color: 'default', variant: 'text', icon: 'mdi-calendar-question' }
+    ontime: { color: 'default', variant: 'text', icon: 'mdi-calendar-question' },
 } as const;
 
 const chipConfig = computed(() => {
@@ -33,8 +33,13 @@ const chipConfig = computed(() => {
 });
 </script>
 <template>
-    <v-chip v-if="chipConfig && deadline" size="small" :color="chipConfig.color" :variant="chipConfig.variant"
-        class="font-weight-medium px-2">
+    <v-chip
+        v-if="chipConfig && deadline"
+        size="small"
+        :color="chipConfig.color"
+        :variant="chipConfig.variant"
+        class="font-weight-medium px-2"
+    >
         <template v-slot:prepend>
             <v-icon :icon="chipConfig.icon" start size="small"></v-icon>
         </template>

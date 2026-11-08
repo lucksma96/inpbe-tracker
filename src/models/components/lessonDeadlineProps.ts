@@ -1,4 +1,4 @@
 export interface LessonDeadlineProps {
-    deadline?: Date | string,
-    isCompleted: boolean
+    deadline?: Date | string;
+    isCompleted: boolean;
 }

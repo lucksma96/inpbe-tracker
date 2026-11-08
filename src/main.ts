@@ -1,23 +1,23 @@
-import { createApp } from "vue";
-import { createPinia } from "pinia";
+import { createApp } from 'vue';
+import { createPinia } from 'pinia';
 
-import App from "./App.vue";
+import App from './App.vue';
 
-import router from "./router";
+import router from './router';
 
-import piniaPluginPersistedState from "pinia-plugin-persistedstate";
+import piniaPluginPersistedState from 'pinia-plugin-persistedstate';
 
-import "unfonts.css";
-import "@mdi/font/css/materialdesignicons.css";
-import "./assets/main.css";
+import 'unfonts.css';
+import '@mdi/font/css/materialdesignicons.css';
+import './assets/main.css';
 
 // Vuetify
-import "vuetify/styles";
-import { createVuetify } from "vuetify";
-import * as components from "vuetify/components";
-import * as directives from "vuetify/directives";
-import colors from "vuetify/util/colors";
-import { pt, en } from "vuetify/locale";
+import 'vuetify/styles';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
+import colors from 'vuetify/util/colors';
+import { pt, en } from 'vuetify/locale';
 
 const app = createApp(App);
 const pinia = createPinia();
@@ -45,8 +45,8 @@ const vuetify = createVuetify({
         },
     },
     locale: {
-        locale: "pt",
-        fallback: "en",
+        locale: 'pt',
+        fallback: 'en',
         messages: { pt, en },
     },
 });
@@ -55,4 +55,4 @@ app.use(router);
 app.use(pinia);
 app.use(vuetify);
 
-app.mount("#app");
+app.mount('#app');
