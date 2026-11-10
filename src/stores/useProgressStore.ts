@@ -1,7 +1,8 @@
-import { defineStore } from "pinia";
-import type { Module } from "../models/module";
-import type { IProgressState } from "../models/states/IProgressState";
-import curriculumJSON from "../assets/curriculum.json";
+import { defineStore } from 'pinia';
+import { dateSerializer } from '@/utils/serializer';
+import type { Module } from '@/models/module';
+import type { IProgressState } from '@/models/states/IProgressState';
+import curriculumJSON from '@/assets/curriculum.json';
 
 const curriculum = curriculumJSON as Array<Module>;
 
@@ -26,7 +27,7 @@ curriculum.forEach((m) => {
     moduleTotalLessons[m.moduleId] = mTotal;
 });
 
-export const useProgressStore = defineStore("progress", {
+export const useProgressStore = defineStore('progress', {
     state: (): IProgressState => ({
         curriculum: curriculum,
         completedLessons: {},
@@ -99,8 +100,8 @@ export const useProgressStore = defineStore("progress", {
             for (const [lessonId, isComplete] of Object.entries(this.completedLessons)) {
                 if (isComplete) {
                     // Extract parent IDs via string manipulation (e.g. 'm1-c1-l1' -> 'm1-c1' -> 'm1')
-                    const courseId = lessonId.substring(0, lessonId.lastIndexOf("-"));
-                    const moduleId = courseId.substring(0, courseId.lastIndexOf("-"));
+                    const courseId = lessonId.substring(0, lessonId.lastIndexOf('-'));
+                    const moduleId = courseId.substring(0, courseId.lastIndexOf('-'));
 
                     this.courseCompletedCounts[courseId] = (this.courseCompletedCounts[courseId] ?? 0) + 1;
                     this.moduleCompletedCounts[moduleId] = (this.moduleCompletedCounts[moduleId] ?? 0) + 1;
@@ -124,19 +125,7 @@ export const useProgressStore = defineStore("progress", {
         },
     },
     persist: {
-        pick: ["completedLessons", "lessonsDeadlines"],
-        serializer: {
-            serialize: JSON.stringify,
-            deserialize: (parseString) => {
-                return JSON.parse(parseString, (key, value) => {
-                    // Regex to detect standard ISO 8601 date strings
-                    const isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/;
-                    if (typeof value === "string" && isoDateRegex.test(value)) {
-                        return new Date(value);
-                    }
-                    return value;
-                });
-            },
-        },
+        pick: ['completedLessons', 'lessonsDeadlines'],
+        serializer: dateSerializer,
     },
 });
