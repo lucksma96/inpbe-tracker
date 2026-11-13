@@ -45,8 +45,7 @@ export const useProgressStore = defineStore('progress', {
         allLessonsFlat: (state) =>
             state.curriculum
                 .flatMap((m) => m.courses)
-                .flatMap((c) => c.lessons)
-                .flatMap((l) => l),
+                .flatMap((c) => c.lessons),
         isCurriculumCompleted: (state) => state.curriculum.every((m) => m.completed),
         curriculumPercentageComplete: (state) => {
             const completedModulesCount = Object.values(state.moduleCompletedCounts).filter((m) => m).length;
