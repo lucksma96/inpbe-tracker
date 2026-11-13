@@ -11,14 +11,6 @@ export function useCurriculumMetrics() {
 
     const store = useProgressStore();
 
-    // Helper to format minutes into a readable string
-    const formatTime = (minutes: number): string => {
-        if (minutes <= 0) return "Concluído";
-        const h = Math.floor(minutes / 60);
-        const m = minutes % 60;
-        return h > 0 ? `${h}h ${m}m restantes` : `${m}m restantes`;
-    };
-
     const getModulePercentage = (moduleId: string): number => {
         if (store.completedModules[moduleId]) return 100;
 
@@ -64,7 +56,6 @@ export function useCurriculumMetrics() {
     };
 
     return {
-        formatTime,
         getModulePercentage,
         getCoursePercentage,
         getGlobalTimeLeft,
