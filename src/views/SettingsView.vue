@@ -3,12 +3,16 @@ import { computed, onMounted, ref, watch } from "vue";
 import { useSettingsStore } from "../stores/useSettingsStore";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useTheme } from "vuetify";
+
 import { Cropper, CircleStencil } from 'vue-advanced-cropper';
 import 'vue-advanced-cropper/dist/style.css';
+
 import type { ISettingsState } from "@/models/states/ISettingsState";
 import type { Module } from "../models/module";
 import type { Course } from "../models/course";
 import type { Lesson } from "../models/lesson";
+
+import { fileToDataURL, downloadBlob } from "@/utils/data";
 
 const settingsStore = useSettingsStore();
 const progressStore = useProgressStore();
@@ -102,15 +106,6 @@ watch(
     },
     { deep: true }
 );
-
-const fileToDataURL = (file: File): Promise<string> => {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.onload = () => resolve(reader.result as string);
-        reader.onerror = (error) => reject(error);
-        reader.readAsDataURL(file);
-    });
-};
 
 const uploadProfilePicture = async () => {
     const rawFile = temporaryProfilePictureFile.value;
@@ -274,16 +269,9 @@ const exportFile = () => {
 
         const jsonString = JSON.stringify(dataToExport, null, 4);
         const blob = new Blob([jsonString], { type: "application/json" });
-
-        const url = URL.createObjectURL(blob);
-        const link = document.createElement("a");
-        link.href = url;
         const today = new Date().toISOString().split("T")[0];
-        link.download = `inpbe-tracker-export-${today}.json`;
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        URL.revokeObjectURL(url);
+        const filename = `inpbe-tracker-export-${today}.json`;
+        downloadBlob(blob, filename);
 
         confirmationDialogActive.value = true;
     } catch (error) {

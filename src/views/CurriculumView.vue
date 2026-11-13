@@ -4,6 +4,7 @@ import { useDate } from "vuetify";
 import { useProgressStore } from "../stores/useProgressStore";
 import { useSettingsStore } from "../stores/useSettingsStore";
 import { useCurriculumMetrics } from "../composables/useCurriculumMetrics";
+import { formatTimeLeft } from '@/utils/formatters/timeFormatter';
 
 import LessonDeadlineChip from "../components/LessonDeadlineChip.vue";
 
@@ -13,7 +14,6 @@ import type { Course } from "../models/course";
 const store = useProgressStore();
 const settingsStore = useSettingsStore();
 const {
-    formatTime,
     getModulePercentage,
     getCoursePercentage,
     getGlobalTimeLeft,
@@ -79,11 +79,11 @@ const toolbarTitle = computed((): string => {
 const toolbarTimeLeftFormatted = computed((): string => {
     switch (currentDepth.value) {
         case 0:
-            return formatTime(getGlobalTimeLeft());
+            return formatTimeLeft(getGlobalTimeLeft());
         case 1:
-            return formatTime(getModuleTimeLeft(selectedModule.value as Module));
+            return formatTimeLeft(getModuleTimeLeft(selectedModule.value as Module));
         case 2:
-            return formatTime(getCourseTimeLeft(selectedCourse.value as Course));
+            return formatTimeLeft(getCourseTimeLeft(selectedCourse.value as Course));
         default:
             return "";
     }
@@ -135,7 +135,7 @@ const toolbarTimeLeftFormatted = computed((): string => {
                             v-for="(m, i) in store.curriculum"
                             :key="m.moduleId"
                             :title="`Módulo ${i + 1} - ${m.title}`"
-                            :subtitle="formatTime(getModuleTimeLeft(m))"
+                            :subtitle="formatTimeLeft(getModuleTimeLeft(m))"
                             :prepend-icon="store.completedModules[m.moduleId] ? 'mdi-check-circle' : 'mdi-folder'"
                             :base-color="store.completedModules[m.moduleId] ? 'success' : undefined"
                             append-icon="mdi-chevron-right"
@@ -164,7 +164,7 @@ const toolbarTimeLeftFormatted = computed((): string => {
                             v-for="(c, i) in selectedModule?.courses"
                             :key="c.courseId"
                             :title="`Curso ${i + 1} - ${c.title}`"
-                            :subtitle="formatTime(getCourseTimeLeft(c))"
+                            :subtitle="formatTimeLeft(getCourseTimeLeft(c))"
                             :prepend-icon="
                                 store.completedCourses[c.courseId] ? 'mdi-check-circle-outline' : 'mdi-play-box-outline'
                             "

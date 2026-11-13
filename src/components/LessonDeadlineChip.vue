@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { computed } from 'vue';
 import { useDate } from 'vuetify';
-import type { LessonDeadlineProps } from '../models/components/lessonDeadlineProps';
+import type { LessonDeadlineChipProps } from '@/models/components/lessonDeadlineChipProps';
 
-const props = defineProps<LessonDeadlineProps>();
+const props = defineProps<LessonDeadlineChipProps>();
 
 const date = useDate();
 
