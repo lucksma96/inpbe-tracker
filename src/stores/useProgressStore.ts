@@ -2,8 +2,8 @@ import { defineStore } from 'pinia';
 import { dateSerializer } from '@/utils/serializer';
 import type { Module } from '@/models/module';
 import type { IProgressState } from '@/models/states/IProgressState';
-import curriculumJSON from '@/assets/curriculum.json';
 
+const { default: curriculumJSON } = await import('@/assets/curriculum.json');
 const curriculum = curriculumJSON as Array<Module>;
 
 // STATIC LOOKUP MAPS (Generated once on load for O(1) sibling checks)
