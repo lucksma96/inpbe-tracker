@@ -38,8 +38,8 @@ export const useProgressStore = defineStore('progress', {
         completedModules: {},
 
         // Track raw numbers for the progress bars
-        courseCompletedCounts: {},
-        moduleCompletedCounts: {},
+        completedLessonsPerCourse: {},
+        completedCoursesPerModule: {},
     }),
     getters: {
         allLessonsFlat: (state) =>
@@ -48,7 +48,7 @@ export const useProgressStore = defineStore('progress', {
                 .flatMap((c) => c.lessons),
         isCurriculumCompleted: (state) => state.curriculum.every((m) => m.completed),
         curriculumPercentageComplete: (state) => {
-            const completedModulesCount = Object.values(state.moduleCompletedCounts).filter((m) => m).length;
+            const completedModulesCount = Object.values(state.completedCoursesPerModule).filter((m) => m).length;
             if (completedModulesCount === 0) return 0;
             return (completedModulesCount / state.curriculum.length) * 100;
         },
@@ -61,12 +61,12 @@ export const useProgressStore = defineStore('progress', {
             // O(1) Updates: Just increment or decrement the parent counters
             const modifier = isNowComplete ? 1 : -1;
 
-            this.courseCompletedCounts[courseId] = (this.courseCompletedCounts[courseId] ?? 0) + modifier;
-            this.moduleCompletedCounts[moduleId] = (this.moduleCompletedCounts[moduleId] ?? 0) + modifier;
+            this.completedLessonsPerCourse[courseId] = (this.completedLessonsPerCourse[courseId] ?? 0) + modifier;
+            this.completedCoursesPerModule[moduleId] = (this.completedCoursesPerModule[moduleId] ?? 0) + modifier;
 
             // O(1) Checks: Compare current count against the static total
-            this.completedCourses[courseId] = this.courseCompletedCounts[courseId] === courseTotalLessons[courseId];
-            this.completedModules[moduleId] = this.moduleCompletedCounts[moduleId] === moduleTotalLessons[moduleId];
+            this.completedCourses[courseId] = this.completedLessonsPerCourse[courseId] === courseTotalLessons[courseId];
+            this.completedModules[moduleId] = this.completedCoursesPerModule[moduleId] === moduleTotalLessons[moduleId];
         },
         completeCourse(courseId: string, moduleId: string, lessonIds: string[]) {
             // 1. Mark all individual lessons as true
@@ -76,7 +76,7 @@ export const useProgressStore = defineStore('progress', {
 
             // 2. Instantly max out the course count and boolean
             const totalInCourse = courseTotalLessons[courseId] || 0;
-            this.courseCompletedCounts[courseId] = totalInCourse;
+            this.completedLessonsPerCourse[courseId] = totalInCourse;
             this.completedCourses[courseId] = true;
 
             // 3. Recalculate the parent module count based on sibling courses
@@ -85,15 +85,15 @@ export const useProgressStore = defineStore('progress', {
             let newModuleCount = 0;
 
             siblingCourseIds.forEach((cId) => {
-                newModuleCount += this.courseCompletedCounts[cId] || 0;
+                newModuleCount += this.completedLessonsPerCourse[cId] || 0;
             });
 
-            this.moduleCompletedCounts[moduleId] = newModuleCount;
+            this.completedCoursesPerModule[moduleId] = newModuleCount;
             this.completedModules[moduleId] = newModuleCount === moduleTotalLessons[moduleId];
         },
         initializeCompletions() {
-            for (const mId in moduleTotalLessons) this.moduleCompletedCounts[mId] = 0;
-            for (const cId in courseTotalLessons) this.courseCompletedCounts[cId] = 0;
+            for (const mId in moduleTotalLessons) this.completedCoursesPerModule[mId] = 0;
+            for (const cId in courseTotalLessons) this.completedLessonsPerCourse[cId] = 0;
 
             // Loop only through the saved lessons to restore parent counts
             for (const [lessonId, isComplete] of Object.entries(this.completedLessons)) {
@@ -102,25 +102,25 @@ export const useProgressStore = defineStore('progress', {
                     const courseId = lessonId.substring(0, lessonId.lastIndexOf('-'));
                     const moduleId = courseId.substring(0, courseId.lastIndexOf('-'));
 
-                    this.courseCompletedCounts[courseId] = (this.courseCompletedCounts[courseId] ?? 0) + 1;
-                    this.moduleCompletedCounts[moduleId] = (this.moduleCompletedCounts[moduleId] ?? 0) + 1;
+                    this.completedLessonsPerCourse[courseId] = (this.completedLessonsPerCourse[courseId] ?? 0) + 1;
+                    this.completedCoursesPerModule[moduleId] = (this.completedCoursesPerModule[moduleId] ?? 0) + 1;
                 }
             }
 
             // Restore parent booleans based on the newly calculated counts
             for (const cId in courseTotalLessons) {
-                this.completedCourses[cId] = this.courseCompletedCounts[cId] === courseTotalLessons[cId];
+                this.completedCourses[cId] = this.completedLessonsPerCourse[cId] === courseTotalLessons[cId];
             }
             for (const mId in moduleTotalLessons) {
-                this.completedModules[mId] = this.moduleCompletedCounts[mId] === moduleTotalLessons[mId];
+                this.completedModules[mId] = this.completedCoursesPerModule[mId] === moduleTotalLessons[mId];
             }
         },
         clearProgress() {
             this.completedLessons = {};
             this.completedCourses = {};
             this.completedModules = {};
-            this.courseCompletedCounts = {};
-            this.moduleCompletedCounts = {};
+            this.completedLessonsPerCourse = {};
+            this.completedCoursesPerModule = {};
         },
     },
     persist: {

@@ -14,16 +14,17 @@ export function useCurriculumMetrics() {
     const getModulePercentage = (moduleId: string): number => {
         if (store.completedModules[moduleId]) return 100;
 
-        const completed = store.moduleCompletedCounts[moduleId] || 0;
+        const completed = store.completedCoursesPerModule[moduleId] || 0;
         const total = moduleTotalLessons[moduleId] || 1; // fallback to 1 to prevent divide-by-zero
 
         return Math.round((completed / total) * 100);
     };
 
     const getCoursePercentage = (courseId: string): number => {
+
         if (store.completedCourses[courseId]) return 100;
 
-        const completed = store.courseCompletedCounts[courseId] || 0;
+        const completed = store.completedLessonsPerCourse[courseId] || 0;
         const total = courseTotalLessons[courseId] || 1;
 
         return Math.round((completed / total) * 100);
