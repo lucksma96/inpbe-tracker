@@ -14,8 +14,6 @@ import '@/assets/main.css';
 // Vuetify
 import 'vuetify/styles';
 import { createVuetify } from 'vuetify';
-import * as components from 'vuetify/components';
-import * as directives from 'vuetify/directives';
 import colors from 'vuetify/util/colors';
 import { pt, en } from 'vuetify/locale';
 
@@ -23,8 +21,6 @@ const app = createApp(App);
 const pinia = createPinia();
 pinia.use(piniaPluginPersistedState);
 const vuetify = createVuetify({
-    components,
-    directives,
     theme: {
         themes: {
             light: {
